@@ -166,6 +166,9 @@ strn = semver.inc(str, 'prerelease', { loose: false }, 'alpha');
 // @ts-expect-error
 strn = semver.inc(str, 'prerelease', { includePrerelease: false }, 'alpha');
 strn = semver.inc(str, 'prerelease', 'beta');
+strn = semver.inc('1.2.3', 'prerelease', 'alpha', '0');
+strn = semver.inc('1.2.3', 'prerelease', 'alpha', '1');
+strn = semver.inc('1.2.3', 'prerelease', 'beta', false);
 num = semver.major(str, loose);
 num = semver.major(str, { loose: false });
 // @ts-expect-error
@@ -338,6 +341,7 @@ str = range.toString();
 bool = range.test(ver);
 bool = range.intersects(new semver.Range(''));
 bool = range.intersects(new semver.Range(''), bool);
+bool = range.intersects(new semver.Range('', { includePrerelease: true }));
 
 const sets: ReadonlyArray<ReadonlyArray<semver.Comparator>> = range.set;
 

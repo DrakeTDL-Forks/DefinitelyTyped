@@ -87,13 +87,11 @@ import * as R from 'ramda';
     )(123); // $ExpectType 123
 
     R.tryCatch(R.prop('x'), R.F)({ x: true }); // $ExpectType boolean
-    R.tryCatch(R.prop<'x', true>('x'), R.F)({ x: true }); // $ExpectType boolean
+    R.tryCatch(R.prop<true>('x'), R.F)({ x: true }); // $ExpectType boolean
     R.tryCatch(R.prop('x'), R.F)({ x: 13 }); // $ExpectType number | false
     R.tryCatch(R.prop('x'))(R.F)({ x: 13 }); // $ExpectType number | false
-    // @ts-expect-error
-    R.tryCatch(R.prop('x'), R.F)(null);
-    // @ts-expect-error
-    R.tryCatch(R.prop('x'), R.F)(null);
+    R.tryCatch(R.prop('x'), R.F)(null); // $ExpectType false | undefined
+    R.tryCatch(R.prop('x'), R.F)(null); // $ExpectType false | undefined
 
     // Curried generic tryer
 
@@ -106,5 +104,5 @@ import * as R from 'ramda';
 
     gtf('arg2' as const); // $ExpectType "some-error" | { x: "arg"; y: "arg2"; }
 
-    R.tryCatch(R.and, R.always(undefined))(true); // $ExpectType (<U>(b: U) => boolean | U) | undefined
+    R.tryCatch(R.and, R.always(undefined))(true); // $ExpectType (<B>(b: B) => boolean | B) | undefined
 };

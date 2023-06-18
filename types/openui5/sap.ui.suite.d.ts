@@ -1,4 +1,4 @@
-// For Library Version: 1.107.0
+// For Library Version: 1.115.0
 
 declare module "sap/ui/suite/library" {
   /**
@@ -38,11 +38,13 @@ declare module "sap/ui/suite/TaskCircle" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @EXPERIMENTAL (since 1.2)
+   * @deprecated (since 1.108) - there's no replacement for this functionality as no active use cases are
+   * known
+   * @experimental (since 1.2) - The API may change. Use with care.
    *
    * This control shows a circle which radius and color depends on the given parameters
    */
-  export default class TaskCircle extends Control {
+  class TaskCircle extends Control {
     /**
      * Constructor for a new TaskCircle.
      *
@@ -188,6 +190,8 @@ declare module "sap/ui/suite/TaskCircle" {
       oListener?: object
     ): this;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Fires event {@link #event:press press} to attached listeners.
      *
      * @returns Reference to `this` in order to allow method chaining
@@ -203,13 +207,11 @@ declare module "sap/ui/suite/TaskCircle" {
      */
     focus(): void;
     /**
-     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy
-     * ariaDescribedBy}.
+     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
      */
     getAriaDescribedBy(): ID[];
     /**
-     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy
-     * ariaLabelledBy}.
+     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
      */
     getAriaLabelledBy(): ID[];
     /**
@@ -357,6 +359,7 @@ declare module "sap/ui/suite/TaskCircle" {
       iValue?: int
     ): this;
   }
+  export default TaskCircle;
 
   export interface $TaskCircleSettings extends $ControlSettings {
     /**
@@ -398,6 +401,8 @@ declare module "sap/ui/suite/TaskCircle" {
      */
     press?: (oEvent: Event) => void;
   }
+
+  export interface $TaskCirclePressEventParameters {}
 }
 
 declare module "sap/ui/suite/VerticalProgressIndicator" {
@@ -412,12 +417,14 @@ declare module "sap/ui/suite/VerticalProgressIndicator" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @EXPERIMENTAL (since 1.2)
+   * @deprecated (since 1.108) - there's no replacement for this functionality as no active use cases are
+   * known
+   * @experimental (since 1.2) - The API may change. Use with care.
    *
    * This control shows a vertical progress bar in dependency of the given percentage. Only values between
    * 0 and 100 are valid.
    */
-  export default class VerticalProgressIndicator extends Control {
+  class VerticalProgressIndicator extends Control {
     /**
      * Constructor for a new VerticalProgressIndicator.
      *
@@ -565,6 +572,8 @@ declare module "sap/ui/suite/VerticalProgressIndicator" {
       oListener?: object
     ): this;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Fires event {@link #event:press press} to attached listeners.
      *
      * @returns Reference to `this` in order to allow method chaining
@@ -580,13 +589,11 @@ declare module "sap/ui/suite/VerticalProgressIndicator" {
      */
     focus(): void;
     /**
-     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy
-     * ariaDescribedBy}.
+     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
      */
     getAriaDescribedBy(): ID[];
     /**
-     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy
-     * ariaLabelledBy}.
+     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
      */
     getAriaLabelledBy(): ID[];
     /**
@@ -641,6 +648,7 @@ declare module "sap/ui/suite/VerticalProgressIndicator" {
      */
     setPercentage(iPercentage: int): this;
   }
+  export default VerticalProgressIndicator;
 
   export interface $VerticalProgressIndicatorSettings extends $ControlSettings {
     /**
@@ -664,6 +672,8 @@ declare module "sap/ui/suite/VerticalProgressIndicator" {
      */
     press?: (oEvent: Event) => void;
   }
+
+  export interface $VerticalProgressIndicatorPressEventParameters {}
 }
 
 declare namespace sap {

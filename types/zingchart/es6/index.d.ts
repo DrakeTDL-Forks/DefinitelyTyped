@@ -352,6 +352,18 @@ declare namespace zingchart {
      */
     type?: string;
   }
+  interface choropleth {
+    aspect?: string;
+    color?: string;
+    effect?: string;
+    steps?: number[];
+    colors?: string[];
+    intervals?: number;
+    progression?: string;
+    maxPercent?: number;
+    mirrored?: boolean;
+    labels?: label[];
+  }
   interface contextMenu {
     button?: {
       /**
@@ -916,6 +928,116 @@ declare namespace zingchart {
     gui?: gui;
     history?: history;
     refresh?: refresh;
+  }
+  interface gridStyles {
+    align?: string;
+    alpha?: number;
+    backgroundColor?: string;
+    'background-color'?: string;
+    backgroundColor1?: string;
+    'background-color-1'?: string;
+    backgroundColor2?: string;
+    'background-color-2'?: string;
+    bold?: boolean;
+    borderAlpha?: number;
+    'border-alpha'?: number;
+    borderBottom?: number;
+    'border-bottom'?: number;
+    borderColor?: string;
+    'border-color'?: string;
+    borderLeft?: number;
+    'border-left'?: number;
+    borderRadius?: number;
+    'border-radius'?: number;
+    borderRadiusBottomLeft?: number;
+    'border-radius-bottom-left'?: number;
+    borderRadiusBottomRight?: number;
+    'border-radius-bottom-right'?: number;
+    borderRadiusTopLeft?: number;
+    'border-radius-top-left'?: number;
+    borderRadiusTopRight?: number;
+    'border-radius-top-right'?: number;
+    borderRight?: number;
+    'border-right'?: number;
+    borderTop?: number;
+    'border-top'?: number;
+    borderWidth?: number;
+    'border-width'?: number;
+    class?: string;
+    clipText?: boolean;
+    'clip-text'?: boolean;
+    color?: string;
+    cursor?: string;
+    dataN?: any;
+    'data-n'?: any;
+    fillAngle?: number;
+    'fill-angle'?: number;
+    fillOffsetX?: number;
+    'fill-offset-x'?: number;
+    fillOffsetY?: number;
+    'fill-offset-y'?: number;
+    fillType?: string;
+    'fill-type'?: string;
+    fontColor?: string;
+    'font-color'?: string;
+    fontFamily?: string;
+    'font-family'?: string;
+    fontSize?: number;
+    'font-size'?: number;
+    fontStyle?: string;
+    'font-style'?: string;
+    fontWeight?: string|number;
+    'font-weight'?: string|number;
+    gradientColors?: string;
+    'gradient-colors'?: string;
+    gradientStops?: string;
+    'gradient-stops'?: string;
+    id?: string;
+    italic?: boolean;
+    lineGapSize?: number;
+    'line-gap-size'?: number;
+    lineHeight?: number;
+    'line-height'?: number;
+    lineSegmentSize?: number;
+    'line-segment-size'?: number;
+    lineStyle?: string;
+    'line-style'?: string;
+    maxChars?: number;
+    'max-chars'?: number;
+    mediaRules?: Array<{}>;
+    'media-rules'?: Array<{}>;
+    offsetX?: number;
+    'offset-x'?: number;
+    offsetY?: number;
+    'offset-y'?: number;
+    overlap?: boolean;
+    padding?: number;
+    paddingBottom?: number;
+    'padding-bottom'?: number;
+    paddingLeft?: number;
+    'padding-left'?: number;
+    paddingRight?: number;
+    'padding-right'?: number;
+    paddingTop?: number;
+    'padding-top'?: number;
+    rectShortcut?: boolean;
+    'rect-shortcut'?: boolean;
+    rtl?: boolean;
+    text?: string;
+    textAlign?: string;
+    'text-align'?: string;
+    textAlpha?: number;
+    'text-alpha'?: number;
+    textDecoration?: string;
+    'text-decoration'?: string;
+    underline?: boolean;
+    verticalAlign?: string;
+    'vertical-align'?: string;
+    visible?: boolean;
+    wrapText?: boolean;
+    'wrap-text'?: boolean;
+    zIndex?: number;
+    'z-index'?: number;
   }
   interface guideLabel {
     /**
@@ -2930,14 +3052,6 @@ declare namespace zingchart {
      */
     cursor?: string;
     /**
-     * @description Prefix attribute or array using "data-" to define a custom token.
-     */
-    [key: `data${string}`]: any;
-    /**
-     * @description Prefix attribute or array using "data-" to define a custom token.
-     */
-    [key: `data-${string}`]: any;
-    /**
      * @description Set true to enable optimization for large data set when connecting two points.
      */
     fastVectorPath?: any;
@@ -3788,14 +3902,6 @@ declare namespace zingchart {
      * @description Sets the cursor shape when hovering over the object.
      */
     cursor?: string;
-    /**
-     * @description Prefix attribute or array using "data-" to define a custom token.
-     */
-    [key: `data${string}`]: any;
-    /**
-     * @description Prefix attribute or array using "data-" to define a custom token.
-     */
-    [key: `data-${string}`]: any;
     /**
      * @description Sets the angle of the axis along which the linear gradient is drawn.
      */
@@ -7491,6 +7597,7 @@ declare namespace zingchart {
      */
     'minor-ticks'?: number;
     minorTicks?: number;
+    aperture?: number;
     /**
      * Gauge Charts Only: To set the minimum, maximum, and step scale values. '0:10' | '0:25:5' | ...
      */
@@ -15472,11 +15579,30 @@ declare namespace zingchart {
        */
       color?: string;
       /**
+       * Use the choropleth object to configure how the map is colored with the following properties.
+       */
+      choropleth?: choropleth;
+      /**
        * To set the type of color arrangement applied to the word cloud. Use the "color" value with the "color" attribute. Use the "palette
        * " value with the "palette" array. "random" (default) | "color" | "palette"
        */
       'color-type'?: string;
       colorType?: string;
+      'header-row'?: boolean;
+      headerRow?: boolean;
+      'header-col'?: boolean;
+      headerCol?: boolean;
+      rowLabels?: string[];
+      'row-labels'?: string[];
+      colLabels?: string[];
+      'col-labels'?: string[];
+      'col-widths'?: string[];
+      colWidths?: string[];
+      'data-class'?: string[];
+      dataClass?: string[];
+      flat?: boolean;
+      'force-height'?: boolean;
+      forceHeight?: boolean;
       /**
        * To set the maximum font size. 20 | "30px" | ...
        */
@@ -15639,13 +15765,6 @@ declare namespace zingchart {
       };
       link?: link;
       'link[sibling]'?: link;
-      [key: `link[cls-${string}`]: link;
-      [key: `link[container-${string}`]: link;
-      [key: `link[group-${string}`]: link;
-      [key: `link[level-${string}`]: link;
-      [key: `link[parent-${string}`]: link;
-      [key: `link[source-${string}`]: link;
-      [key: `link[target-${string}`]: link;
       links?: link;
       'max-iterations'?: any;
       /**
@@ -15736,12 +15855,23 @@ declare namespace zingchart {
       'node[collapsed]'?: node;
       'node[leaf]'?: node;
       'node[parent]'?: node;
-      [key: `node[cls-${string}`]: node;
-      [key: `node[container-${string}`]: node;
-      [key: `node[group-${string}`]: node;
-      [key: `node[level-${string}`]: node;
-      [key: `node[parent-${string}`]: node;
       style?: {
+        // The following attributes can be used to style grid charts:
+        '.td'?: gridStyles;
+        '.td_even'?: gridStyles;
+        '.td_odd'?: gridStyles;
+        '.td_first'?: gridStyles;
+        '.td_last'?: gridStyles;
+        '.th'?: gridStyles;
+        '.th_even'?: gridStyles;
+        '.th_odd'?: gridStyles;
+        '.th_first'?: gridStyles;
+        '.th_last'?: gridStyles;
+        '.tr'?: gridStyles;
+        '.tr_even'?: gridStyles;
+        '.tr_odd'?: gridStyles;
+        '.tr_first'?: gridStyles;
+        '.tr_last'?: gridStyles;
         /**
          * Sets the transparency of the object. Values must range between 0.0 and 1.0, with 0.0 being completely transparent and 1.0 being co
          * mpletely opaque. Note that the leading zero is required before the decimal. 0.3 | 0.4 | 0.9 | ...
@@ -16663,12 +16793,48 @@ declare namespace zingchart {
     scaleV?: scaleV;
     'scale-x'?: scaleX;
     scaleX?: scaleX;
-    [key: `scale-x-${number}`]: scaleX;
-    [key: `scaleX${number}`]: scaleX;
+    'scale-x-1'?: scaleX;
+    'scale-x-2'?: scaleX;
+    'scale-x-3'?: scaleX;
+    'scale-x-4'?: scaleX;
+    'scale-x-5'?: scaleX;
+    'scale-x-6'?: scaleX;
+    'scale-x-7'?: scaleX;
+    'scale-x-8'?: scaleX;
+    'scale-x-9'?: scaleX;
+    'scale-x-10'?: scaleX;
+    scaleX1?: scaleX;
+    scaleX2?: scaleX;
+    scaleX3?: scaleX;
+    scaleX4?: scaleX;
+    scaleX5?: scaleX;
+    scaleX6?: scaleX;
+    scaleX7?: scaleX;
+    scaleX8?: scaleX;
+    scaleX9?: scaleX;
+    scaleX10?: scaleX;
     'scale-y'?: scaleY;
     scaleY?: scaleY;
-    [key: `scale-y-${number}`]: scaleY;
-    [key: `scaleY${number}`]: scaleY;
+    'scale-y-1'?: scaleY;
+    'scale-y-2'?: scaleY;
+    'scale-y-3'?: scaleY;
+    'scale-y-4'?: scaleY;
+    'scale-y-5'?: scaleY;
+    'scale-y-6'?: scaleY;
+    'scale-y-7'?: scaleY;
+    'scale-y-8'?: scaleY;
+    'scale-y-9'?: scaleY;
+    'scale-y-10'?: scaleY;
+     scaleY1?: scaleY;
+     scaleY2?: scaleY;
+     scaleY3?: scaleY;
+     scaleY4?: scaleY;
+     scaleY5?: scaleY;
+     scaleY6?: scaleY;
+     scaleY7?: scaleY;
+     scaleY8?: scaleY;
+     scaleY9?: scaleY;
+     scaleY10?: scaleY;
     scale?: {
       /**
        * To modify the size of the chart. Provide a value in relation to 1.0 or 100%. 0.3 | 0.9 | "30%" | "90%" | ...
@@ -17349,6 +17515,7 @@ declare namespace zingchart {
       'z-index'?: number;
       zIndex?: number;
     };
+    stacked?: boolean;
     subtitle?: {
       /**
        * Sets the transparency of the object. Requires that background-color be set. 0.3 | 0.9 | ...
@@ -18160,6 +18327,14 @@ declare namespace zingchart {
        */
       type?: string;
     };
+    /**
+     * Sets the x position of the chart
+     */
+    x?: string | number;
+    /**
+     * Sets the y position of the chart
+     */
+    y?: string | number;
     zoom?: {
       /**
        * Sets the transparency level of the object. Values must range between 0.0 and 1.0, with 0.0 being completely transparent and 1.0 be

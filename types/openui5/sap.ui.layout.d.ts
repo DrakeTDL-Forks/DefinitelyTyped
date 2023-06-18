@@ -1,4 +1,4 @@
-// For Library Version: 1.107.0
+// For Library Version: 1.115.0
 
 declare module "sap/ui/layout/library" {
   import Control from "sap/ui/core/Control";
@@ -6,7 +6,7 @@ declare module "sap/ui/layout/library" {
   import GridLayoutBase from "sap/ui/layout/cssgrid/GridLayoutBase";
 
   /**
-   * @SINCE 1.36.0
+   * @since 1.36.0
    *
    * Available Background Design.
    */
@@ -54,7 +54,7 @@ declare module "sap/ui/layout/library" {
     Mixed = "Mixed",
   }
   /**
-   * @SINCE 1.48
+   * @since 1.48
    *
    * A string type that is used inside the BlockLayoutCell to set a predefined set of colors for the cells.
    */
@@ -105,7 +105,7 @@ declare module "sap/ui/layout/library" {
     ColorSet9 = "ColorSet9",
   }
   /**
-   * @SINCE 1.48
+   * @since 1.48
    *
    * A string type that is used inside the BlockLayoutCell to set a predefined set of color shades for the
    * cells. The colors are defined with sap.ui.layout.BlockLayoutCellColorSet. And this is for the shades
@@ -168,7 +168,7 @@ declare module "sap/ui/layout/library" {
     ColorSet4 = "ColorSet4",
   }
   /**
-   * @SINCE 1.61.0
+   * @since 1.61.0
    *
    * A string type that represents how many boxes per row should be displayed for each screen size. The breakpoints
    * are for extra large (XL), large (L), medium (M) and small (S) screen sizes.
@@ -215,7 +215,7 @@ declare module "sap/ui/layout/library" {
   export type GridSpan = string;
 
   /**
-   * @SINCE 1.30
+   * @since 1.30
    *
    * Types of the DynamicSideContent FallDown options
    */
@@ -253,7 +253,7 @@ declare module "sap/ui/layout/library" {
     End = "End",
   }
   /**
-   * @SINCE 1.30
+   * @since 1.30
    *
    * Types of the DynamicSideContent Visibility options
    */
@@ -282,7 +282,7 @@ declare module "sap/ui/layout/library" {
 
   export namespace cssgrid {
     /**
-     * @SINCE 1.60.0
+     * @since 1.60.0
      *
      * Defines the functions that need to be implemented by a Control which wants to have display:grid behavior
      * via sap.ui.layout.cssgrid.GridLayoutDelegate
@@ -291,7 +291,7 @@ declare module "sap/ui/layout/library" {
       __implements__sap_ui_layout_cssgrid_IGridConfigurable: boolean;
 
       /**
-       * @SINCE 1.60.0
+       * @since 1.60.0
        *
        * The function is used by GridLayoutDelegate to determine on which HTML Elements the display:grid styles
        * should be applied
@@ -300,7 +300,7 @@ declare module "sap/ui/layout/library" {
        */
       getGridDomRefs(): Control[] | HTMLElement[];
       /**
-       * @SINCE 1.60.0
+       * @since 1.60.0
        *
        * The function is used by GridLayoutDelegate to get the grid layout (display:grid styles) to apply
        *
@@ -310,7 +310,7 @@ declare module "sap/ui/layout/library" {
     }
 
     /**
-     * @SINCE 1.88.0
+     * @since 1.88.0
      *
      * LayoutData for grid items
      */
@@ -319,7 +319,7 @@ declare module "sap/ui/layout/library" {
     }
 
     /**
-     * @SINCE 1.60.0
+     * @since 1.60.0
      *
      * A string type that is used for CSS grid to control how the auto-placement algorithm works, specifying
      * exactly how auto-placed items get flowed into the grid.
@@ -345,7 +345,7 @@ declare module "sap/ui/layout/library" {
       RowDense = "RowDense",
     }
     /**
-     * @SINCE 1.60.0
+     * @since 1.60.0
      *
      * A string type that represents a short hand CSS grid gap.
      * See:
@@ -354,7 +354,7 @@ declare module "sap/ui/layout/library" {
     type CSSGridGapShortHand = string;
 
     /**
-     * @SINCE 1.60.0
+     * @since 1.60.0
      *
      * A string type that represents one or two grid lines. Used to define the position and size of a single
      * grid item.
@@ -375,7 +375,7 @@ declare module "sap/ui/layout/library" {
     type CSSGridLine = string;
 
     /**
-     * @SINCE 1.60.0
+     * @since 1.60.0
      *
      * A string type that represents a grid track (the space between two grid lines)
      * See:
@@ -386,13 +386,13 @@ declare module "sap/ui/layout/library" {
 
   export namespace form {
     /**
-     * @SINCE 1.16.0
+     * @since 1.16.0
      *
      * Available `FormLayouts` used to render a `SimpleForm`.
      */
     enum SimpleFormLayout {
       /**
-       * @SINCE 1.56.0
+       * @since 1.56.0
        *
        * Uses the `ColumnLayout` layout to render the `SimpleForm` control
        */
@@ -405,7 +405,7 @@ declare module "sap/ui/layout/library" {
        */
       GridLayout = "GridLayout",
       /**
-       * @SINCE 1.16.0
+       * @since 1.16.0
        *
        * Uses the `ResponsiveGridLayout` layout to render the `SimpleForm` control
        */
@@ -418,7 +418,7 @@ declare module "sap/ui/layout/library" {
       ResponsiveLayout = "ResponsiveLayout",
     }
     /**
-     * @SINCE 1.56.0
+     * @since 1.56.0
      *
      * An `int` type that defines how many cells a control inside of a column of a `Form` control using the
      * `ColumnLayout` control as layout can use.
@@ -428,7 +428,7 @@ declare module "sap/ui/layout/library" {
     type ColumnCells = int;
 
     /**
-     * @SINCE 1.56.0
+     * @since 1.56.0
      *
      * An `int` type that defines how many columns a `Form` control using the `ColumnLayout` as layout can have
      * if it has large size
@@ -438,7 +438,7 @@ declare module "sap/ui/layout/library" {
     type ColumnsL = int;
 
     /**
-     * @SINCE 1.56.0
+     * @since 1.56.0
      *
      * An `int` type that defines how many columns a `Form` control using the `ColumnLayout` as layout can have
      * if it has medium size
@@ -448,7 +448,7 @@ declare module "sap/ui/layout/library" {
     type ColumnsM = int;
 
     /**
-     * @SINCE 1.56.0
+     * @since 1.56.0
      *
      * An `int` type that defines how many columns a `Form` control using the `ColumnLayout` as layout can have
      * if it has extra-large size
@@ -458,7 +458,7 @@ declare module "sap/ui/layout/library" {
     type ColumnsXL = int;
 
     /**
-     * @SINCE 1.56.0
+     * @since 1.56.0
      *
      * An `int` type that defines how many cells beside the controls inside of a column of a `Form` control
      * using the `ColumnLayout` control as layout are empty.
@@ -493,7 +493,7 @@ declare module "sap/ui/layout/BlockLayout" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.34
+   * @since 1.34
    *
    * The BlockLayout is used to display several objects in a section-based manner. Overview: The BlockLayout
    * uses horizontal and vertical subdivisions, and full-width banners to display a set of elements. By placing
@@ -508,12 +508,12 @@ declare module "sap/ui/layout/BlockLayout" {
    * 	 - Light - a layout scheme with light colors
    * 	 - Accent - a layout scheme with 11 pre-defined color sets
    * 	 - Dashboard - a layout scheme with additional borders and no background colors  Background colors
-   * 			are attached directly to the blocks of the layout.
+   *     are attached directly to the blocks of the layout.
    *
-   * **Note:** With version 1.48 colors can be set for each individual {@link sap.ui.layout.BlockLayoutCell
-   * cell}. There are 11 pre-defined color sets, each with 4 different shades for the SAP Belize theme and
-   * 6 different shades for the Quartz and Horizon themes. To change the background of a particular cell,
-   * set `backgroundColorSet` (main color) and `backgroundColorShade` (shade).
+   * **Note:** With version 1.48 colors can be set for each individual {@link sap.ui.layout.BlockLayoutCell cell}.
+   * There are 11 pre-defined color sets, each with 4 different shades for the SAP Belize theme and 6 different
+   * shades for the Quartz and Horizon themes. To change the background of a particular cell, set `backgroundColorSet`
+   * (main color) and `backgroundColorShade` (shade).
    *
    * **Note:** Usage of disabled, emphasized or subtle links as titles is not recommended. Dark background
    * designs, for example Accent, are not fully supported with regards to Accessibility when used with links
@@ -522,14 +522,14 @@ declare module "sap/ui/layout/BlockLayout" {
    * Usage: When to use:
    * 	 - You want to create a catalogue-like page with sections of blocks.
    * 	 - The BlockLayout is intended for developing administrative tools and applications.  When not
-   * 			to use:
-   * 	 - You want to display properties or features of one content item. Use a {@link sap.uxap.ObjectPageLayout
-   * 			object page} or {@link sap.f.DynamicPage dynamic page} instead.  Responsive Behavior:
+   *     to use:
+   * 	 - You want to display properties or features of one content item. Use a {@link sap.uxap.ObjectPageLayout object page }
+   *     or {@link sap.f.DynamicPage dynamic page} instead.  Responsive Behavior:
    * 	 - The breakpoints of the block layout react to the width of the control itself and not to the actual
-   * 			screen size.
+   *     screen size.
    * 	 -  On small screens all blocks will wrap to a single scrollable column
    */
-  export default class BlockLayout extends Control {
+  class BlockLayout extends Control {
     /**
      * Constructor for a new BlockLayout.
      *
@@ -612,7 +612,7 @@ declare module "sap/ui/layout/BlockLayout" {
      */
     destroyContent(): this;
     /**
-     * @SINCE 1.42
+     * @since 1.42
      *
      * Gets current value of property {@link #getBackground background}.
      *
@@ -630,7 +630,7 @@ declare module "sap/ui/layout/BlockLayout" {
      */
     getContent(): BlockLayoutRow[];
     /**
-     * @SINCE 1.52
+     * @since 1.52
      *
      * Gets current value of property {@link #getKeepFontSize keepFontSize}.
      *
@@ -690,7 +690,7 @@ declare module "sap/ui/layout/BlockLayout" {
       vContent: int | string | BlockLayoutRow
     ): BlockLayoutRow | null;
     /**
-     * @SINCE 1.42
+     * @since 1.42
      *
      * Sets a new value for property {@link #getBackground background}.
      *
@@ -709,7 +709,7 @@ declare module "sap/ui/layout/BlockLayout" {
       sBackground?: BlockBackgroundType | keyof typeof BlockBackgroundType
     ): this;
     /**
-     * @SINCE 1.52
+     * @since 1.52
      *
      * Sets a new value for property {@link #getKeepFontSize keepFontSize}.
      *
@@ -728,10 +728,11 @@ declare module "sap/ui/layout/BlockLayout" {
       bKeepFontSize?: boolean
     ): this;
   }
+  export default BlockLayout;
 
   export interface $BlockLayoutSettings extends $ControlSettings {
     /**
-     * @SINCE 1.42
+     * @since 1.42
      *
      * Determines the background used for the Layout
      */
@@ -741,7 +742,7 @@ declare module "sap/ui/layout/BlockLayout" {
       | `{${string}}`;
 
     /**
-     * @SINCE 1.52
+     * @since 1.52
      *
      * Keeps the font-size of the contents as is, independent from the screen size.
      */
@@ -776,12 +777,12 @@ declare module "sap/ui/layout/BlockLayoutCell" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.34
+   * @since 1.34
    *
    * The BlockLayoutCell is used as an aggregation of the BlockLayoutRow. It contains Controls. The BlockLayoutCell
    * should be used only as aggregation of the BlockLayoutRow.
    */
-  export default class BlockLayoutCell extends Control {
+  class BlockLayoutCell extends Control {
     /**
      * Constructor for a new BlockLayoutCell.
      *
@@ -860,7 +861,7 @@ declare module "sap/ui/layout/BlockLayoutCell" {
      */
     destroyContent(): this;
     /**
-     * @SINCE 1.56
+     * @since 1.56
      *
      * Destroys the titleLink in the aggregation {@link #getTitleLink titleLink}.
      *
@@ -868,7 +869,7 @@ declare module "sap/ui/layout/BlockLayoutCell" {
      */
     destroyTitleLink(): this;
     /**
-     * @SINCE 1.48
+     * @since 1.48
      *
      * Gets current value of property {@link #getBackgroundColorSet backgroundColorSet}.
      *
@@ -881,7 +882,7 @@ declare module "sap/ui/layout/BlockLayoutCell" {
       | BlockLayoutCellColorSet
       | keyof typeof BlockLayoutCellColorSet;
     /**
-     * @SINCE 1.48
+     * @since 1.48
      *
      * Gets current value of property {@link #getBackgroundColorShade backgroundColorShade}.
      *
@@ -930,7 +931,7 @@ declare module "sap/ui/layout/BlockLayoutCell" {
      */
     getTitleLevel(): TitleLevel | keyof typeof TitleLevel;
     /**
-     * @SINCE 1.56
+     * @since 1.56
      *
      * Gets content of aggregation {@link #getTitleLink titleLink}.
      *
@@ -1006,7 +1007,7 @@ declare module "sap/ui/layout/BlockLayoutCell" {
       vContent: int | string | Control
     ): Control | null;
     /**
-     * @SINCE 1.48
+     * @since 1.48
      *
      * Sets a new value for property {@link #getBackgroundColorSet backgroundColorSet}.
      *
@@ -1026,7 +1027,7 @@ declare module "sap/ui/layout/BlockLayoutCell" {
         | keyof typeof BlockLayoutCellColorSet
     ): this;
     /**
-     * @SINCE 1.48
+     * @since 1.48
      *
      * Sets a new value for property {@link #getBackgroundColorShade backgroundColorShade}.
      *
@@ -1097,7 +1098,7 @@ declare module "sap/ui/layout/BlockLayoutCell" {
       sTitleLevel?: TitleLevel | keyof typeof TitleLevel
     ): this;
     /**
-     * @SINCE 1.56
+     * @since 1.56
      *
      * Sets the aggregated {@link #getTitleLink titleLink}.
      *
@@ -1121,6 +1122,7 @@ declare module "sap/ui/layout/BlockLayoutCell" {
       iWidth: number
     ): this;
   }
+  export default BlockLayoutCell;
 
   export interface $BlockLayoutCellSettings extends $ControlSettings {
     /**
@@ -1161,7 +1163,7 @@ declare module "sap/ui/layout/BlockLayoutCell" {
     width?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.48
+     * @since 1.48
      *
      * The Background color set from which the background color will be selected. **Note:** backgroundColorSet
      * should be used only in combination with backgroundColorShade.
@@ -1172,7 +1174,7 @@ declare module "sap/ui/layout/BlockLayoutCell" {
       | `{${string}}`;
 
     /**
-     * @SINCE 1.48
+     * @since 1.48
      *
      * The index of the background color in the color set from which the color will be selected. **Note:** backgroundColorShade
      * should be used only in combination with backgroundColorSet.
@@ -1188,7 +1190,7 @@ declare module "sap/ui/layout/BlockLayoutCell" {
     content?: Control[] | Control | AggregationBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.56
+     * @since 1.56
      *
      * The link that will replace the title of the cell. **Note:** The only possible value is the `sap.m.Link`
      * control.
@@ -1208,11 +1210,11 @@ declare module "sap/ui/layout/BlockLayoutCellData" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.50.0
+   * @since 1.50.0
    *
    * Holds layout data for the BlockLayoutCells contents.
    */
-  export default class BlockLayoutCellData extends LayoutData {
+  class BlockLayoutCellData extends LayoutData {
     /**
      * Constructor for a new BlockLayoutCellData.
      *
@@ -1386,6 +1388,7 @@ declare module "sap/ui/layout/BlockLayoutCellData" {
       iXlSize?: int
     ): this;
   }
+  export default BlockLayoutCellData;
 
   export interface $BlockLayoutCellDataSettings extends $LayoutDataSettings {
     /**
@@ -1427,12 +1430,12 @@ declare module "sap/ui/layout/BlockLayoutRow" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.34
+   * @since 1.34
    *
    * The BlockLayoutRow is used as an aggregation to the BlockLayout. It aggregates Block Layout cells. The
    * BlockLayoutRow has 2 rendering modes - scrollable and non scrollable.
    */
-  export default class BlockLayoutRow extends Control {
+  class BlockLayoutRow extends Control {
     /**
      * Constructor for a new BlockLayoutRow.
      *
@@ -1494,7 +1497,7 @@ declare module "sap/ui/layout/BlockLayoutRow" {
      */
     static getMetadata(): ElementMetadata;
     /**
-     * @SINCE 1.42
+     * @since 1.42
      *
      * Adds some accentCell into the association {@link #getAccentCells accentCells}.
      *
@@ -1524,10 +1527,9 @@ declare module "sap/ui/layout/BlockLayoutRow" {
      */
     destroyContent(): this;
     /**
-     * @SINCE 1.42
+     * @since 1.42
      *
-     * Returns array of IDs of the elements which are the current targets of the association {@link #getAccentCells
-     * accentCells}.
+     * Returns array of IDs of the elements which are the current targets of the association {@link #getAccentCells accentCells}.
      */
     getAccentCells(): ID[];
     /**
@@ -1537,7 +1539,7 @@ declare module "sap/ui/layout/BlockLayoutRow" {
      */
     getContent(): BlockLayoutCell[];
     /**
-     * @SINCE 1.42
+     * @since 1.42
      *
      * Gets current value of property {@link #getRowColorSet rowColorSet}.
      *
@@ -1587,7 +1589,7 @@ declare module "sap/ui/layout/BlockLayoutRow" {
       iIndex: int
     ): this;
     /**
-     * @SINCE 1.42
+     * @since 1.42
      *
      * Removes an accentCell from the association named {@link #getAccentCells accentCells}.
      *
@@ -1600,7 +1602,7 @@ declare module "sap/ui/layout/BlockLayoutRow" {
       vAccentCell: int | ID | BlockLayoutCell
     ): ID | null;
     /**
-     * @SINCE 1.42
+     * @since 1.42
      *
      * Removes all the controls in the association named {@link #getAccentCells accentCells}.
      *
@@ -1627,7 +1629,7 @@ declare module "sap/ui/layout/BlockLayoutRow" {
       vContent: int | string | BlockLayoutCell
     ): BlockLayoutCell | null;
     /**
-     * @SINCE 1.42
+     * @since 1.42
      *
      * Changes dynamically row color set Note: this might invalidate cells inside and also change color sets
      * of the other BlockLayoutRow-s below it.
@@ -1654,6 +1656,7 @@ declare module "sap/ui/layout/BlockLayoutRow" {
       bScrollable?: boolean
     ): this;
   }
+  export default BlockLayoutRow;
 
   export interface $BlockLayoutRowSettings extends $ControlSettings {
     /**
@@ -1663,7 +1666,7 @@ declare module "sap/ui/layout/BlockLayoutRow" {
     scrollable?: boolean | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.42
+     * @since 1.42
      *
      * Defines background type for that row. There might be several rows with the same type
      */
@@ -1682,7 +1685,7 @@ declare module "sap/ui/layout/BlockLayoutRow" {
       | `{${string}}`;
 
     /**
-     * @SINCE 1.42
+     * @since 1.42
      *
      * Cells that would be accented. *Note:* This association has visual impact only for BlockLayouts with background
      * types "Mixed" and "Accent".
@@ -1714,7 +1717,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.60
+   * @since 1.60
    *
    * A layout control, used to create full page layouts or user interface elements.
    *
@@ -1742,10 +1745,10 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
    * 	 - Grid lines - The lines around and between the rows and columns
    * 	 - Grid tracks - The space between any two lines in the grid
    * 	 - "fr" Unit - A special grid unit (short from "fraction") which represents a fraction of the available
-   * 			space in the grid
+   *     space in the grid
    * 	 - Implicit and Explicit grid - Explicit grid consists of rows and columns defined with `gridTemplateColumns`
-   * 			and `gridTemplateRows`. The grid also creates rows and columns on its own when needed. Their dimensions
-   * 			are defined with `gridAutoColumns` and `gridAutoRows`.
+   *     and `gridTemplateRows`. The grid also creates rows and columns on its own when needed. Their dimensions
+   *     are defined with `gridAutoColumns` and `gridAutoRows`.
    *
    * Structure: The `CSSGrid` has the following elements:
    * 	 - `items` - The items of the `CSSGrid`
@@ -1754,33 +1757,30 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
    * Usage:
    *
    * For general cases, use the `CSSGrid` properties to configure how the layout should look. For Box case
-   * (equal sized items), use `customLayout` aggregation with {@link sap.ui.layout.cssgrid.GridBoxLayout GridBoxLayout}
+   * (equal sized items), use `customLayout` aggregation with {@link sap.ui.layout.cssgrid.GridBoxLayout GridBoxLayout }
    * For Grids which need different configurations based on available width, use `customLayout` aggregation
    * with {@link sap.ui.layout.cssgrid.GridResponsiveLayout GridResponsiveLayout} To set a specific position
-   * to an item or define its dimensions in the grid, pass `layoutData` of type {@link sap.ui.layout.cssgrid.GridItemLayoutData
-   * GridItemLayoutData}
+   * to an item or define its dimensions in the grid, pass `layoutData` of type {@link sap.ui.layout.cssgrid.GridItemLayoutData GridItemLayoutData}
    *
    * When to use
    * 	 - If a two-dimensional layout configuration is needed (both columns and rows are defined)
    *
    * When not to use
-   * 	 - If the layout needs to be defined only by one dimension (either column or row, not both). Use {@link
-   * 			sap.m.FlexBox FlexBox} instead.
+   * 	 - If the layout needs to be defined only by one dimension (either column or row, not both). Use {@link sap.m.FlexBox FlexBox }
+   *     instead.
    *
    * Responsive behavior:
    * 	 - Fully configurable by the developer. It is possible to create a "breathing" columns layout which
-   * 			means columns width will grow/shrink depending on grid size.
-   * 	 - It is possible to pass a {@link sap.ui.layout.cssgrid.GridResponsiveLayout GridResponsiveLayout}
-   * 			to the `customLayout` aggregation of the `CSSGrid` and configure how it will look in different breakpoints
-   * 			(S, M, L, XL).
+   *     means columns width will grow/shrink depending on grid size.
+   * 	 - It is possible to pass a {@link sap.ui.layout.cssgrid.GridResponsiveLayout GridResponsiveLayout }
+   *     to the `customLayout` aggregation of the `CSSGrid` and configure how it will look in different breakpoints
+   *     (S, M, L, XL).
    *
    * Out of current scope::
    * 	 - Alignment and ordering
    * 	 - Named grid areas and lines
    */
-  export default class CSSGrid
-    extends Control
-    implements cssgrid.IGridConfigurable {
+  class CSSGrid extends Control implements cssgrid.IGridConfigurable {
     __implements__sap_ui_layout_cssgrid_IGridConfigurable: boolean;
     /**
      * Constructor for a new CSSGrid.
@@ -1789,7 +1789,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
      * objects as well as event handlers. See {@link sap.ui.base.ManagedObject#constructor} for a general description
      * of the syntax of the settings object.
      * See:
-     * 	{@link topic:32d4b9c2b981425dbc374d3e9d5d0c2e Grid Controls}
+     * 	{@link https://ui5.sap.com/#/topic/32d4b9c2b981425dbc374d3e9d5d0c2e Grid Controls}
      * 	{@link fiori:https://experience.sap.com/fiori-design-web/flexible-grid/ Flexible Grid}
      * 	{@link https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout MDN web docs: CSS Grid Layout}
      */
@@ -1806,7 +1806,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
      * objects as well as event handlers. See {@link sap.ui.base.ManagedObject#constructor} for a general description
      * of the syntax of the settings object.
      * See:
-     * 	{@link topic:32d4b9c2b981425dbc374d3e9d5d0c2e Grid Controls}
+     * 	{@link https://ui5.sap.com/#/topic/32d4b9c2b981425dbc374d3e9d5d0c2e Grid Controls}
      * 	{@link fiori:https://experience.sap.com/fiori-design-web/flexible-grid/ Flexible Grid}
      * 	{@link https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout MDN web docs: CSS Grid Layout}
      */
@@ -1882,8 +1882,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Gets current value of property {@link #getGridAutoColumns gridAutoColumns}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns
-     * MDN web docs: grid-auto-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns MDN web docs: grid-auto-columns}
      *
      * Default value is `empty string`.
      *
@@ -1893,8 +1892,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Gets current value of property {@link #getGridAutoFlow gridAutoFlow}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow
-     * MDN web docs: grid-auto-flow}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow MDN web docs: grid-auto-flow}
      *
      * Default value is `"Row"`.
      *
@@ -1906,8 +1904,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Gets current value of property {@link #getGridAutoRows gridAutoRows}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows
-     * MDN web docs: grid-auto-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows MDN web docs: grid-auto-rows}
      *
      * Default value is `empty string`.
      *
@@ -1917,8 +1914,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Gets current value of property {@link #getGridColumnGap gridColumnGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap
-     * MDN web docs: grid-column-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap MDN web docs: grid-column-gap}
      *
      * Default value is `empty string`.
      *
@@ -1926,6 +1922,8 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
      */
     getGridColumnGap(): CSSSize;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Implements IGridConfigurable interface
      *
      * @returns An array with the DOM elements
@@ -1934,9 +1932,9 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Gets current value of property {@link #getGridGap gridGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap
-     * MDN web docs: grid-gap} It is a shorthand for gridRowGap and gridColumnGap. If some of them is set, the
-     * gridGap value will have less priority and will be overwritten.
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap MDN web docs: grid-gap }
+     * It is a shorthand for gridRowGap and gridColumnGap. If some of them is set, the gridGap value will have
+     * less priority and will be overwritten.
      *
      * Default value is `empty string`.
      *
@@ -1944,6 +1942,8 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
      */
     getGridGap(): cssgrid.CSSGridGapShortHand;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Returns the layout configuration of the `CSSGrid`.
      *
      * @returns The grid layout
@@ -1952,8 +1952,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Gets current value of property {@link #getGridRowGap gridRowGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap
-     * MDN web docs: grid-row-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap MDN web docs: grid-row-gap}
      *
      * Default value is `empty string`.
      *
@@ -1963,8 +1962,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Gets current value of property {@link #getGridTemplateColumns gridTemplateColumns}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
-     * MDN web docs: grid-template-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns MDN web docs: grid-template-columns}
      *
      * Default value is `empty string`.
      *
@@ -1974,8 +1972,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Gets current value of property {@link #getGridTemplateRows gridTemplateRows}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows
-     * MDN web docs: grid-template-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows MDN web docs: grid-template-rows}
      *
      * Default value is `empty string`.
      *
@@ -2060,8 +2057,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Sets a new value for property {@link #getGridAutoColumns gridAutoColumns}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns
-     * MDN web docs: grid-auto-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns MDN web docs: grid-auto-columns}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2078,8 +2074,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Sets a new value for property {@link #getGridAutoFlow gridAutoFlow}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow
-     * MDN web docs: grid-auto-flow}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow MDN web docs: grid-auto-flow}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2098,8 +2093,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Sets a new value for property {@link #getGridAutoRows gridAutoRows}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows
-     * MDN web docs: grid-auto-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows MDN web docs: grid-auto-rows}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2116,8 +2110,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Sets a new value for property {@link #getGridColumnGap gridColumnGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap
-     * MDN web docs: grid-column-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap MDN web docs: grid-column-gap}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2134,9 +2127,9 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Sets a new value for property {@link #getGridGap gridGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap
-     * MDN web docs: grid-gap} It is a shorthand for gridRowGap and gridColumnGap. If some of them is set, the
-     * gridGap value will have less priority and will be overwritten.
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap MDN web docs: grid-gap }
+     * It is a shorthand for gridRowGap and gridColumnGap. If some of them is set, the gridGap value will have
+     * less priority and will be overwritten.
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2153,8 +2146,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Sets a new value for property {@link #getGridRowGap gridRowGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap
-     * MDN web docs: grid-row-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap MDN web docs: grid-row-gap}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2171,8 +2163,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Sets a new value for property {@link #getGridTemplateColumns gridTemplateColumns}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
-     * MDN web docs: grid-template-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns MDN web docs: grid-template-columns}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2189,8 +2180,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     /**
      * Sets a new value for property {@link #getGridTemplateRows gridTemplateRows}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows
-     * MDN web docs: grid-template-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows MDN web docs: grid-template-rows}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2222,6 +2212,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
       sWidth?: CSSSize
     ): this;
   }
+  export default CSSGrid;
 
   export interface $CSSGridSettings extends $ControlSettings {
     /**
@@ -2230,8 +2221,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
     width?: CSSSize | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
-     * MDN web docs: grid-template-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns MDN web docs: grid-template-columns}
      */
     gridTemplateColumns?:
       | cssgrid.CSSGridTrack
@@ -2239,8 +2229,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
       | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows
-     * MDN web docs: grid-template-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows MDN web docs: grid-template-rows}
      */
     gridTemplateRows?:
       | cssgrid.CSSGridTrack
@@ -2248,33 +2237,29 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
       | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap
-     * MDN web docs: grid-row-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap MDN web docs: grid-row-gap}
      */
     gridRowGap?: CSSSize | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap
-     * MDN web docs: grid-column-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap MDN web docs: grid-column-gap}
      */
     gridColumnGap?: CSSSize | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap
-     * MDN web docs: grid-gap} It is a shorthand for gridRowGap and gridColumnGap. If some of them is set, the
-     * gridGap value will have less priority and will be overwritten.
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap MDN web docs: grid-gap }
+     * It is a shorthand for gridRowGap and gridColumnGap. If some of them is set, the gridGap value will have
+     * less priority and will be overwritten.
      */
     gridGap?: cssgrid.CSSGridGapShortHand | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows
-     * MDN web docs: grid-auto-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows MDN web docs: grid-auto-rows}
      */
     gridAutoRows?: cssgrid.CSSGridTrack | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns
-     * MDN web docs: grid-auto-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns MDN web docs: grid-auto-columns}
      */
     gridAutoColumns?:
       | cssgrid.CSSGridTrack
@@ -2282,8 +2267,7 @@ declare module "sap/ui/layout/cssgrid/CSSGrid" {
       | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow
-     * MDN web docs: grid-auto-flow}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow MDN web docs: grid-auto-flow}
      */
     gridAutoFlow?:
       | (cssgrid.CSSGridAutoFlow | keyof typeof cssgrid.CSSGridAutoFlow)
@@ -2317,11 +2301,11 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.60
+   * @since 1.60
    *
    * Applies a sap.ui.layout.cssgrid.GridSettings to a provided DOM element or Control.
    */
-  export default class GridBasicLayout extends GridLayoutBase {
+  class GridBasicLayout extends GridLayoutBase {
     /**
      * Constructor for a new GridBasicLayout.
      *
@@ -2385,8 +2369,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Gets current value of property {@link #getGridAutoColumns gridAutoColumns}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns
-     * MDN web docs: grid-auto-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns MDN web docs: grid-auto-columns}
      *
      * Default value is `empty string`.
      *
@@ -2396,8 +2379,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Gets current value of property {@link #getGridAutoFlow gridAutoFlow}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow
-     * MDN web docs: grid-auto-flow}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow MDN web docs: grid-auto-flow}
      *
      * Default value is `"Row"`.
      *
@@ -2409,8 +2391,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Gets current value of property {@link #getGridAutoRows gridAutoRows}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows
-     * MDN web docs: grid-auto-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows MDN web docs: grid-auto-rows}
      *
      * Default value is `empty string`.
      *
@@ -2420,8 +2401,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Gets current value of property {@link #getGridColumnGap gridColumnGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap
-     * MDN web docs: grid-column-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap MDN web docs: grid-column-gap}
      *
      * Default value is `empty string`.
      *
@@ -2431,8 +2411,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Gets current value of property {@link #getGridGap gridGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap
-     * MDN web docs: grid-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap MDN web docs: grid-gap}
      *
      * Default value is `empty string`.
      *
@@ -2442,8 +2421,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Gets current value of property {@link #getGridRowGap gridRowGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap
-     * MDN web docs: grid-row-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap MDN web docs: grid-row-gap}
      *
      * Default value is `empty string`.
      *
@@ -2453,8 +2431,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Gets current value of property {@link #getGridTemplateColumns gridTemplateColumns}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
-     * MDN web docs: grid-template-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns MDN web docs: grid-template-columns}
      *
      * Default value is `empty string`.
      *
@@ -2464,8 +2441,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Gets current value of property {@link #getGridTemplateRows gridTemplateRows}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows
-     * MDN web docs: grid-template-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows MDN web docs: grid-template-rows}
      *
      * Default value is `empty string`.
      *
@@ -2475,8 +2451,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Sets a new value for property {@link #getGridAutoColumns gridAutoColumns}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns
-     * MDN web docs: grid-auto-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns MDN web docs: grid-auto-columns}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2493,8 +2468,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Sets a new value for property {@link #getGridAutoFlow gridAutoFlow}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow
-     * MDN web docs: grid-auto-flow}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow MDN web docs: grid-auto-flow}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2513,8 +2487,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Sets a new value for property {@link #getGridAutoRows gridAutoRows}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows
-     * MDN web docs: grid-auto-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows MDN web docs: grid-auto-rows}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2531,8 +2504,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Sets a new value for property {@link #getGridColumnGap gridColumnGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap
-     * MDN web docs: grid-column-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap MDN web docs: grid-column-gap}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2549,8 +2521,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Sets a new value for property {@link #getGridGap gridGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap
-     * MDN web docs: grid-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap MDN web docs: grid-gap}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2567,8 +2538,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Sets a new value for property {@link #getGridRowGap gridRowGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap
-     * MDN web docs: grid-row-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap MDN web docs: grid-row-gap}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2585,8 +2555,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Sets a new value for property {@link #getGridTemplateColumns gridTemplateColumns}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
-     * MDN web docs: grid-template-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns MDN web docs: grid-template-columns}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2603,8 +2572,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
     /**
      * Sets a new value for property {@link #getGridTemplateRows gridTemplateRows}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows
-     * MDN web docs: grid-template-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows MDN web docs: grid-template-rows}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -2619,11 +2587,11 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
       sGridTemplateRows?: cssgrid.CSSGridTrack
     ): this;
   }
+  export default GridBasicLayout;
 
   export interface $GridBasicLayoutSettings extends $GridLayoutBaseSettings {
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
-     * MDN web docs: grid-template-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns MDN web docs: grid-template-columns}
      */
     gridTemplateColumns?:
       | cssgrid.CSSGridTrack
@@ -2631,8 +2599,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
       | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows
-     * MDN web docs: grid-template-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows MDN web docs: grid-template-rows}
      */
     gridTemplateRows?:
       | cssgrid.CSSGridTrack
@@ -2640,32 +2607,27 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
       | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap
-     * MDN web docs: grid-row-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap MDN web docs: grid-row-gap}
      */
     gridRowGap?: CSSSize | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap
-     * MDN web docs: grid-column-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap MDN web docs: grid-column-gap}
      */
     gridColumnGap?: CSSSize | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap
-     * MDN web docs: grid-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap MDN web docs: grid-gap}
      */
     gridGap?: cssgrid.CSSGridGapShortHand | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows
-     * MDN web docs: grid-auto-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows MDN web docs: grid-auto-rows}
      */
     gridAutoRows?: cssgrid.CSSGridTrack | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns
-     * MDN web docs: grid-auto-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns MDN web docs: grid-auto-columns}
      */
     gridAutoColumns?:
       | cssgrid.CSSGridTrack
@@ -2673,8 +2635,7 @@ declare module "sap/ui/layout/cssgrid/GridBasicLayout" {
       | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow
-     * MDN web docs: grid-auto-flow}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow MDN web docs: grid-auto-flow}
      */
     gridAutoFlow?:
       | (cssgrid.CSSGridAutoFlow | keyof typeof cssgrid.CSSGridAutoFlow)
@@ -2698,11 +2659,11 @@ declare module "sap/ui/layout/cssgrid/GridBoxLayout" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.60
+   * @since 1.60
    *
    * Applies a sap.ui.layout.cssgrid.GridSettings to a provided DOM element or Control.
    */
-  export default class GridBoxLayout extends GridLayoutBase {
+  class GridBoxLayout extends GridLayoutBase {
     /**
      * Constructor for a new GridBoxLayout.
      *
@@ -2764,6 +2725,8 @@ declare module "sap/ui/layout/cssgrid/GridBoxLayout" {
      */
     static getMetadata(): ManagedObjectMetadata;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Returns a gridTemplateColumns value based on boxWidth and boxMinWidth properties
      *
      * @returns A value for gridTemplateColumns property
@@ -2860,6 +2823,7 @@ declare module "sap/ui/layout/cssgrid/GridBoxLayout" {
       sBoxWidth?: CSSSize
     ): this;
   }
+  export default GridBoxLayout;
 
   export interface $GridBoxLayoutSettings extends $GridLayoutBaseSettings {
     /**
@@ -2896,7 +2860,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
   /**
    * Holds layout data for a grid item.
    */
-  export default class GridItemLayoutData
+  class GridItemLayoutData
     extends LayoutData
     implements cssgrid.IGridItemLayoutData {
     __implements__sap_ui_layout_cssgrid_IGridItemLayoutData: boolean;
@@ -2963,8 +2927,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
     /**
      * Gets current value of property {@link #getGridColumn gridColumn}.
      *
-     * Sets the value for the CSS display:grid item property grid-column {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column
-     * MDN web docs: grid-column}
+     * Sets the value for the CSS display:grid item property grid-column {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column MDN web docs: grid-column}
      *
      * Default value is `empty string`.
      *
@@ -2974,8 +2937,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
     /**
      * Gets current value of property {@link #getGridColumnEnd gridColumnEnd}.
      *
-     * Sets the value for the CSS display:grid item property grid-column-end {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end
-     * MDN web docs: grid-column-end}
+     * Sets the value for the CSS display:grid item property grid-column-end {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end MDN web docs: grid-column-end}
      *
      * Default value is `empty string`.
      *
@@ -2985,8 +2947,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
     /**
      * Gets current value of property {@link #getGridColumnStart gridColumnStart}.
      *
-     * Sets the value for the CSS display:grid item property grid-column-start {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start
-     * MDN web docs: grid-column-start}
+     * Sets the value for the CSS display:grid item property grid-column-start {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start MDN web docs: grid-column-start}
      *
      * Default value is `empty string`.
      *
@@ -2996,8 +2957,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
     /**
      * Gets current value of property {@link #getGridRow gridRow}.
      *
-     * Sets the value for the CSS display:grid item property grid-row {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row
-     * MDN web docs: grid-row}
+     * Sets the value for the CSS display:grid item property grid-row {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row MDN web docs: grid-row}
      *
      * Default value is `empty string`.
      *
@@ -3007,8 +2967,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
     /**
      * Gets current value of property {@link #getGridRowEnd gridRowEnd}.
      *
-     * Sets the value for the CSS display:grid item property grid-row-end {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end
-     * MDN web docs: grid-row-end}
+     * Sets the value for the CSS display:grid item property grid-row-end {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end MDN web docs: grid-row-end}
      *
      * Default value is `empty string`.
      *
@@ -3018,8 +2977,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
     /**
      * Gets current value of property {@link #getGridRowStart gridRowStart}.
      *
-     * Sets the value for the CSS display:grid item property grid-row-start {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start
-     * MDN web docs: grid-row-start}
+     * Sets the value for the CSS display:grid item property grid-row-start {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start MDN web docs: grid-row-start}
      *
      * Default value is `empty string`.
      *
@@ -3029,8 +2987,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
     /**
      * Sets a new value for property {@link #getGridColumn gridColumn}.
      *
-     * Sets the value for the CSS display:grid item property grid-column {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column
-     * MDN web docs: grid-column}
+     * Sets the value for the CSS display:grid item property grid-column {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column MDN web docs: grid-column}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3047,8 +3004,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
     /**
      * Sets a new value for property {@link #getGridColumnEnd gridColumnEnd}.
      *
-     * Sets the value for the CSS display:grid item property grid-column-end {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end
-     * MDN web docs: grid-column-end}
+     * Sets the value for the CSS display:grid item property grid-column-end {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end MDN web docs: grid-column-end}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3065,8 +3021,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
     /**
      * Sets a new value for property {@link #getGridColumnStart gridColumnStart}.
      *
-     * Sets the value for the CSS display:grid item property grid-column-start {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start
-     * MDN web docs: grid-column-start}
+     * Sets the value for the CSS display:grid item property grid-column-start {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start MDN web docs: grid-column-start}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3083,8 +3038,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
     /**
      * Sets a new value for property {@link #getGridRow gridRow}.
      *
-     * Sets the value for the CSS display:grid item property grid-row {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row
-     * MDN web docs: grid-row}
+     * Sets the value for the CSS display:grid item property grid-row {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row MDN web docs: grid-row}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3101,8 +3055,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
     /**
      * Sets a new value for property {@link #getGridRowEnd gridRowEnd}.
      *
-     * Sets the value for the CSS display:grid item property grid-row-end {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end
-     * MDN web docs: grid-row-end}
+     * Sets the value for the CSS display:grid item property grid-row-end {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end MDN web docs: grid-row-end}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3119,8 +3072,7 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
     /**
      * Sets a new value for property {@link #getGridRowStart gridRowStart}.
      *
-     * Sets the value for the CSS display:grid item property grid-row-start {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start
-     * MDN web docs: grid-row-start}
+     * Sets the value for the CSS display:grid item property grid-row-start {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start MDN web docs: grid-row-start}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3135,41 +3087,36 @@ declare module "sap/ui/layout/cssgrid/GridItemLayoutData" {
       sGridRowStart?: cssgrid.CSSGridLine
     ): this;
   }
+  export default GridItemLayoutData;
 
   export interface $GridItemLayoutDataSettings extends $LayoutDataSettings {
     /**
-     * Sets the value for the CSS display:grid item property grid-column-start {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start
-     * MDN web docs: grid-column-start}
+     * Sets the value for the CSS display:grid item property grid-column-start {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start MDN web docs: grid-column-start}
      */
     gridColumnStart?: cssgrid.CSSGridLine | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid item property grid-column-end {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end
-     * MDN web docs: grid-column-end}
+     * Sets the value for the CSS display:grid item property grid-column-end {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end MDN web docs: grid-column-end}
      */
     gridColumnEnd?: cssgrid.CSSGridLine | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid item property grid-row-start {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start
-     * MDN web docs: grid-row-start}
+     * Sets the value for the CSS display:grid item property grid-row-start {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start MDN web docs: grid-row-start}
      */
     gridRowStart?: cssgrid.CSSGridLine | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid item property grid-row-end {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end
-     * MDN web docs: grid-row-end}
+     * Sets the value for the CSS display:grid item property grid-row-end {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end MDN web docs: grid-row-end}
      */
     gridRowEnd?: cssgrid.CSSGridLine | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid item property grid-column {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column
-     * MDN web docs: grid-column}
+     * Sets the value for the CSS display:grid item property grid-column {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column MDN web docs: grid-column}
      */
     gridColumn?: cssgrid.CSSGridLine | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid item property grid-row {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row
-     * MDN web docs: grid-row}
+     * Sets the value for the CSS display:grid item property grid-row {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row MDN web docs: grid-row}
      */
     gridRow?: cssgrid.CSSGridLine | PropertyBindingInfo | `{${string}}`;
   }
@@ -3190,18 +3137,18 @@ declare module "sap/ui/layout/cssgrid/GridLayoutBase" {
   import { cssgrid } from "sap/ui/layout/library";
 
   /**
-   * @SINCE 1.60
+   * @since 1.60
    *
    * Applies a sap.ui.layout.cssgrid.GridSettings to a provided DOM element or Control.
    */
-  export default class GridLayoutBase extends ManagedObject {
+  class GridLayoutBase extends ManagedObject {
     /**
      * Accepts an object literal `mSettings` that defines initial property values, aggregated and associated
      * objects as well as event handlers. See {@link sap.ui.base.ManagedObject#constructor} for a general description
      * of the syntax of the settings object.
      *
-     * This class does not have its own settings, but all settings applicable to the base type {@link sap.ui.base.ManagedObject#constructor
-     * sap.ui.base.ManagedObject} can be used.
+     * This class does not have its own settings, but all settings applicable to the base type {@link sap.ui.base.ManagedObject#constructor sap.ui.base.ManagedObject }
+     * can be used.
      */
     constructor(
       /**
@@ -3214,8 +3161,8 @@ declare module "sap/ui/layout/cssgrid/GridLayoutBase" {
      * objects as well as event handlers. See {@link sap.ui.base.ManagedObject#constructor} for a general description
      * of the syntax of the settings object.
      *
-     * This class does not have its own settings, but all settings applicable to the base type {@link sap.ui.base.ManagedObject#constructor
-     * sap.ui.base.ManagedObject} can be used.
+     * This class does not have its own settings, but all settings applicable to the base type {@link sap.ui.base.ManagedObject#constructor sap.ui.base.ManagedObject }
+     * can be used.
      */
     constructor(
       /**
@@ -3258,6 +3205,8 @@ declare module "sap/ui/layout/cssgrid/GridLayoutBase" {
      */
     static getMetadata(): ManagedObjectMetadata;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Removes all display:grid styles from the provided HTML element
      */
     _removeGridLayout(
@@ -3267,6 +3216,8 @@ declare module "sap/ui/layout/cssgrid/GridLayoutBase" {
       oElement: HTMLElement
     ): void;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Sets all display:grid styles to the provided HTML element
      */
     _setGridLayout(
@@ -3298,6 +3249,8 @@ declare module "sap/ui/layout/cssgrid/GridLayoutBase" {
      */
     isResponsive(): boolean;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Hook function for the Grid's onAfterRendering
      */
     onGridAfterRendering(
@@ -3307,6 +3260,8 @@ declare module "sap/ui/layout/cssgrid/GridLayoutBase" {
       oGrid: cssgrid.IGridConfigurable
     ): void;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Hook function for the Grid's resize. Will be called if the grid layout is responsive.
      */
     onGridResize(
@@ -3316,6 +3271,7 @@ declare module "sap/ui/layout/cssgrid/GridLayoutBase" {
       oEvent: jQuery.Event
     ): void;
   }
+  export default GridLayoutBase;
 
   export interface $GridLayoutBaseSettings extends $ManagedObjectSettings {}
 }
@@ -3327,9 +3283,10 @@ declare module "sap/ui/layout/cssgrid/GridLayoutDelegate" {
    * Add handlers for a sap.ui.layout.cssgrid.IGridConfigurable control lifecycle events. Applies the grid
    * layout when necessary. Calls sap.ui.layout.cssgrid.GridLayoutBase hook functions.
    */
-  export default class GridLayoutDelegate extends BaseObject {
+  class GridLayoutDelegate extends BaseObject {
     constructor();
   }
+  export default GridLayoutDelegate;
 }
 
 declare module "sap/ui/layout/cssgrid/GridResponsiveLayout" {
@@ -3347,12 +3304,12 @@ declare module "sap/ui/layout/cssgrid/GridResponsiveLayout" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.60
+   * @since 1.60
    *
    * Applies a sap.ui.layout.cssgrid.GridSettings to a provided DOM element or Control. Have to possibility
    * to hold multiple sap.ui.layout.cssgrid.GridSettings and apply the currently active GridSettings.
    */
-  export default class GridResponsiveLayout extends GridLayoutBase {
+  class GridResponsiveLayout extends GridLayoutBase {
     /**
      * Constructor for a new GridResponsiveLayout.
      *
@@ -3432,7 +3389,9 @@ declare module "sap/ui/layout/cssgrid/GridResponsiveLayout" {
       /**
        * The function to be called when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (
+        p1: Event<$GridResponsiveLayoutLayoutChangeEventParameters>
+      ) => void,
       /**
        * Context object to call the event handler with. Defaults to this `sap.ui.layout.cssgrid.GridResponsiveLayout`
        * itself
@@ -3453,7 +3412,9 @@ declare module "sap/ui/layout/cssgrid/GridResponsiveLayout" {
       /**
        * The function to be called when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (
+        p1: Event<$GridResponsiveLayoutLayoutChangeEventParameters>
+      ) => void,
       /**
        * Context object to call the event handler with. Defaults to this `sap.ui.layout.cssgrid.GridResponsiveLayout`
        * itself
@@ -3501,13 +3462,17 @@ declare module "sap/ui/layout/cssgrid/GridResponsiveLayout" {
       /**
        * The function to be called, when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (
+        p1: Event<$GridResponsiveLayoutLayoutChangeEventParameters>
+      ) => void,
       /**
        * Context object on which the given function had to be called
        */
       oListener?: object
     ): this;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Fires event {@link #event:layoutChange layoutChange} to attached listeners.
      *
      * @returns Reference to `this` in order to allow method chaining
@@ -3516,12 +3481,7 @@ declare module "sap/ui/layout/cssgrid/GridResponsiveLayout" {
       /**
        * Parameters to pass along with the event
        */
-      mParameters?: {
-        /**
-         * The name of the newly active layout aggregation
-         */
-        layout?: string;
-      }
+      mParameters?: $GridResponsiveLayoutLayoutChangeEventParameters
     ): this;
     /**
      * Gets current value of property {@link #getContainerQuery containerQuery}.
@@ -3638,6 +3598,7 @@ declare module "sap/ui/layout/cssgrid/GridResponsiveLayout" {
       oLayoutXL: GridSettings
     ): this;
   }
+  export default GridResponsiveLayout;
 
   export interface $GridResponsiveLayoutSettings
     extends $GridLayoutBaseSettings {
@@ -3675,7 +3636,16 @@ declare module "sap/ui/layout/cssgrid/GridResponsiveLayout" {
     /**
      * Fired when the currently active GridSettings changes
      */
-    layoutChange?: (oEvent: Event) => void;
+    layoutChange?: (
+      oEvent: Event<$GridResponsiveLayoutLayoutChangeEventParameters>
+    ) => void;
+  }
+
+  export interface $GridResponsiveLayoutLayoutChangeEventParameters {
+    /**
+     * The name of the newly active layout aggregation
+     */
+    layout?: string;
   }
 }
 
@@ -3693,11 +3663,11 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
   import ManagedObjectMetadata from "sap/ui/base/ManagedObjectMetadata";
 
   /**
-   * @SINCE 1.60
+   * @since 1.60
    *
    * Holds a set of CSS display:grid properties
    */
-  export default class GridSettings extends ManagedObject {
+  class GridSettings extends ManagedObject {
     /**
      * Constructor for a new GridSettings.
      *
@@ -3761,8 +3731,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Gets current value of property {@link #getGridAutoColumns gridAutoColumns}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns
-     * MDN web docs: grid-auto-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns MDN web docs: grid-auto-columns}
      *
      * Default value is `empty string`.
      *
@@ -3772,8 +3741,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Gets current value of property {@link #getGridAutoFlow gridAutoFlow}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow
-     * MDN web docs: grid-auto-flow}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow MDN web docs: grid-auto-flow}
      *
      * Default value is `"Row"`.
      *
@@ -3785,8 +3753,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Gets current value of property {@link #getGridAutoRows gridAutoRows}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows
-     * MDN web docs: grid-auto-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows MDN web docs: grid-auto-rows}
      *
      * Default value is `empty string`.
      *
@@ -3796,8 +3763,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Gets current value of property {@link #getGridColumnGap gridColumnGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap
-     * MDN web docs: grid-column-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap MDN web docs: grid-column-gap}
      *
      * Default value is `empty string`.
      *
@@ -3807,8 +3773,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Gets current value of property {@link #getGridGap gridGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap
-     * MDN web docs: grid-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap MDN web docs: grid-gap}
      *
      * Default value is `empty string`.
      *
@@ -3818,8 +3783,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Gets current value of property {@link #getGridRowGap gridRowGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap
-     * MDN web docs: grid-row-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap MDN web docs: grid-row-gap}
      *
      * Default value is `empty string`.
      *
@@ -3829,8 +3793,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Gets current value of property {@link #getGridTemplateColumns gridTemplateColumns}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
-     * MDN web docs: grid-template-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns MDN web docs: grid-template-columns}
      *
      * Default value is `empty string`.
      *
@@ -3840,8 +3803,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Gets current value of property {@link #getGridTemplateRows gridTemplateRows}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows
-     * MDN web docs: grid-template-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows MDN web docs: grid-template-rows}
      *
      * Default value is `empty string`.
      *
@@ -3851,8 +3813,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Sets a new value for property {@link #getGridAutoColumns gridAutoColumns}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns
-     * MDN web docs: grid-auto-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns MDN web docs: grid-auto-columns}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3869,8 +3830,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Sets a new value for property {@link #getGridAutoFlow gridAutoFlow}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow
-     * MDN web docs: grid-auto-flow}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow MDN web docs: grid-auto-flow}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3889,8 +3849,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Sets a new value for property {@link #getGridAutoRows gridAutoRows}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows
-     * MDN web docs: grid-auto-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows MDN web docs: grid-auto-rows}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3907,8 +3866,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Sets a new value for property {@link #getGridColumnGap gridColumnGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap
-     * MDN web docs: grid-column-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap MDN web docs: grid-column-gap}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3925,8 +3883,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Sets a new value for property {@link #getGridGap gridGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap
-     * MDN web docs: grid-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap MDN web docs: grid-gap}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3943,8 +3900,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Sets a new value for property {@link #getGridRowGap gridRowGap}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap
-     * MDN web docs: grid-row-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap MDN web docs: grid-row-gap}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3961,8 +3917,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Sets a new value for property {@link #getGridTemplateColumns gridTemplateColumns}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
-     * MDN web docs: grid-template-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns MDN web docs: grid-template-columns}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3979,8 +3934,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
     /**
      * Sets a new value for property {@link #getGridTemplateRows gridTemplateRows}.
      *
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows
-     * MDN web docs: grid-template-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows MDN web docs: grid-template-rows}
      *
      * When called with a value of `null` or `undefined`, the default value of the property will be restored.
      *
@@ -3995,11 +3949,11 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
       sGridTemplateRows?: cssgrid.CSSGridTrack
     ): this;
   }
+  export default GridSettings;
 
   export interface $GridSettingsSettings extends $ManagedObjectSettings {
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
-     * MDN web docs: grid-template-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns MDN web docs: grid-template-columns}
      */
     gridTemplateColumns?:
       | cssgrid.CSSGridTrack
@@ -4007,8 +3961,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
       | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows
-     * MDN web docs: grid-template-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows MDN web docs: grid-template-rows}
      */
     gridTemplateRows?:
       | cssgrid.CSSGridTrack
@@ -4016,32 +3969,27 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
       | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap
-     * MDN web docs: grid-row-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap MDN web docs: grid-row-gap}
      */
     gridRowGap?: CSSSize | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap
-     * MDN web docs: grid-column-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap MDN web docs: grid-column-gap}
      */
     gridColumnGap?: CSSSize | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap
-     * MDN web docs: grid-gap}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap MDN web docs: grid-gap}
      */
     gridGap?: cssgrid.CSSGridGapShortHand | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows
-     * MDN web docs: grid-auto-rows}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows MDN web docs: grid-auto-rows}
      */
     gridAutoRows?: cssgrid.CSSGridTrack | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns
-     * MDN web docs: grid-auto-columns}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns MDN web docs: grid-auto-columns}
      */
     gridAutoColumns?:
       | cssgrid.CSSGridTrack
@@ -4049,8 +3997,7 @@ declare module "sap/ui/layout/cssgrid/GridSettings" {
       | `{${string}}`;
 
     /**
-     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow
-     * MDN web docs: grid-auto-flow}
+     * Sets the value for the CSS display:grid property {@link https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow MDN web docs: grid-auto-flow}
      */
     gridAutoFlow?:
       | (cssgrid.CSSGridAutoFlow | keyof typeof cssgrid.CSSGridAutoFlow)
@@ -4072,11 +4019,11 @@ declare module "sap/ui/layout/cssgrid/ResponsiveColumnItemLayoutData" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.72
+   * @since 1.72
    *
    * Holds layout data for an item inside a responsive column layout.
    */
-  export default class ResponsiveColumnItemLayoutData
+  class ResponsiveColumnItemLayoutData
     extends LayoutData
     implements cssgrid.IGridItemLayoutData {
     __implements__sap_ui_layout_cssgrid_IGridItemLayoutData: boolean;
@@ -4195,6 +4142,7 @@ declare module "sap/ui/layout/cssgrid/ResponsiveColumnItemLayoutData" {
       iRows?: int
     ): this;
   }
+  export default ResponsiveColumnItemLayoutData;
 
   export interface $ResponsiveColumnItemLayoutDataSettings
     extends $LayoutDataSettings {
@@ -4221,7 +4169,7 @@ declare module "sap/ui/layout/cssgrid/ResponsiveColumnLayout" {
   import ManagedObjectMetadata from "sap/ui/base/ManagedObjectMetadata";
 
   /**
-   * @SINCE 1.72
+   * @since 1.72
    *
    * Represents a layout which displays variable number of columns, depending on available screen size. With
    * that it achieves flexible layouts and line breaks for large, medium, and small-sized screens, such as
@@ -4229,7 +4177,7 @@ declare module "sap/ui/layout/cssgrid/ResponsiveColumnLayout" {
    *
    * Grid row's height is dynamically determined by the height of the highest grid element on this row.
    */
-  export default class ResponsiveColumnLayout extends GridLayoutBase {
+  class ResponsiveColumnLayout extends GridLayoutBase {
     /**
      * Constructor for a new `ResponsiveColumnLayout`.
      *
@@ -4309,7 +4257,9 @@ declare module "sap/ui/layout/cssgrid/ResponsiveColumnLayout" {
       /**
        * The function to be called when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (
+        p1: Event<$ResponsiveColumnLayoutLayoutChangeEventParameters>
+      ) => void,
       /**
        * Context object to call the event handler with. Defaults to this `sap.ui.layout.cssgrid.ResponsiveColumnLayout`
        * itself
@@ -4330,7 +4280,9 @@ declare module "sap/ui/layout/cssgrid/ResponsiveColumnLayout" {
       /**
        * The function to be called when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (
+        p1: Event<$ResponsiveColumnLayoutLayoutChangeEventParameters>
+      ) => void,
       /**
        * Context object to call the event handler with. Defaults to this `sap.ui.layout.cssgrid.ResponsiveColumnLayout`
        * itself
@@ -4348,13 +4300,17 @@ declare module "sap/ui/layout/cssgrid/ResponsiveColumnLayout" {
       /**
        * The function to be called, when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (
+        p1: Event<$ResponsiveColumnLayoutLayoutChangeEventParameters>
+      ) => void,
       /**
        * Context object on which the given function had to be called
        */
       oListener?: object
     ): this;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Fires event {@link #event:layoutChange layoutChange} to attached listeners.
      *
      * @returns Reference to `this` in order to allow method chaining
@@ -4363,12 +4319,7 @@ declare module "sap/ui/layout/cssgrid/ResponsiveColumnLayout" {
       /**
        * Parameters to pass along with the event
        */
-      mParameters?: {
-        /**
-         * The name of the newly active layout - "S", "M", "ML", "L", "XL", "XXL" or "XXXL".
-         */
-        layout?: string;
-      }
+      mParameters?: $ResponsiveColumnLayoutLayoutChangeEventParameters
     ): this;
     /**
      * Returns if the Grid Layout is responsive.
@@ -4377,13 +4328,23 @@ declare module "sap/ui/layout/cssgrid/ResponsiveColumnLayout" {
      */
     isResponsive(): boolean;
   }
+  export default ResponsiveColumnLayout;
 
   export interface $ResponsiveColumnLayoutSettings
     extends $GridLayoutBaseSettings {
     /**
      * Fired when the currently active layout changes
      */
-    layoutChange?: (oEvent: Event) => void;
+    layoutChange?: (
+      oEvent: Event<$ResponsiveColumnLayoutLayoutChangeEventParameters>
+    ) => void;
+  }
+
+  export interface $ResponsiveColumnLayoutLayoutChangeEventParameters {
+    /**
+     * The name of the newly active layout - "S", "M", "ML", "L", "XL", "XXL" or "XXXL".
+     */
+    layout?: string;
   }
 }
 
@@ -4408,7 +4369,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.30
+   * @since 1.30
    *
    * Layout control that allows additional (side) content to be displayed dynamically.
    *
@@ -4446,16 +4407,16 @@ declare module "sap/ui/layout/DynamicSideContent" {
    *
    *
    * 	 - Main vs. side content ratio is 66.666 vs. 33.333 percent (with a minimum of 320px each). If the side
-   * 			content width falls below 320 px, it automatically slides under the main content, unless the app development
-   * 			team specifies that it should disappear.
+   *     content width falls below 320 px, it automatically slides under the main content, unless the app development
+   *     team specifies that it should disappear.
    *
    * Screen width <= 720 px (for example on a mobile device)
    *
    *
    * 	 - In this case, the side content automatically disappears from the screen (unless specified to stay
-   * 			under the content) and can be triggered from a pre-set trigger (specified within the app). When the side
-   * 			content is triggered, it replaces the main content. We recommend that you always place the trigger for
-   * 			the side content in the same location, such as in the app footer.
+   *     under the content) and can be triggered from a pre-set trigger (specified within the app). When the side
+   *     content is triggered, it replaces the main content. We recommend that you always place the trigger for
+   *     the side content in the same location, such as in the app footer.
    *
    * A special case, allows for comparison mode between the main and side content. In this case, the screen
    * is split into 50:50 percent for main vs. side content. The responsive behavior of the equal split is
@@ -4467,7 +4428,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
    * the sticky elements of the control from becoming fixed at the top of the viewport. This applies for example
    * to {@link sap.m.Table} and {@link sap.m.PlanningCalendar}.
    */
-  export default class DynamicSideContent extends Control {
+  class DynamicSideContent extends Control {
     /**
      * Constructor for a new `DynamicSideContent`.
      *
@@ -4535,27 +4496,27 @@ declare module "sap/ui/layout/DynamicSideContent" {
     /**
      * Adds a control to the main content area. Only the main content part in the aggregation is re-rendered.
      *
-     * @returns this pointer for chaining
+     * @returns Reference to `this` for method chaining
      */
     addMainContent(
       /**
        * Object to be added in the aggregation
        */
-      oControl: object
+      oControl: Control
     ): this;
     /**
      * Adds a control to the side content area. Only the side content part in the aggregation is re-rendered.
      *
-     * @returns this pointer for chaining
+     * @returns Reference to `this` for method chaining
      */
     addSideContent(
       /**
        * Object to be added in the aggregation
        */
-      oControl: object
+      oControl: Control
     ): this;
     /**
-     * @SINCE 1.32
+     * @since 1.32
      *
      * Attaches event handler `fnFunction` to the {@link #event:breakpointChanged breakpointChanged} event of
      * this `sap.ui.layout.DynamicSideContent`.
@@ -4576,14 +4537,16 @@ declare module "sap/ui/layout/DynamicSideContent" {
       /**
        * The function to be called when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (
+        p1: Event<$DynamicSideContentBreakpointChangedEventParameters>
+      ) => void,
       /**
        * Context object to call the event handler with. Defaults to this `sap.ui.layout.DynamicSideContent` itself
        */
       oListener?: object
     ): this;
     /**
-     * @SINCE 1.32
+     * @since 1.32
      *
      * Attaches event handler `fnFunction` to the {@link #event:breakpointChanged breakpointChanged} event of
      * this `sap.ui.layout.DynamicSideContent`.
@@ -4599,7 +4562,9 @@ declare module "sap/ui/layout/DynamicSideContent" {
       /**
        * The function to be called when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (
+        p1: Event<$DynamicSideContentBreakpointChangedEventParameters>
+      ) => void,
       /**
        * Context object to call the event handler with. Defaults to this `sap.ui.layout.DynamicSideContent` itself
        */
@@ -4618,7 +4583,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
      */
     destroySideContent(): this;
     /**
-     * @SINCE 1.32
+     * @since 1.32
      *
      * Detaches event handler `fnFunction` from the {@link #event:breakpointChanged breakpointChanged} event
      * of this `sap.ui.layout.DynamicSideContent`.
@@ -4631,14 +4596,17 @@ declare module "sap/ui/layout/DynamicSideContent" {
       /**
        * The function to be called, when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (
+        p1: Event<$DynamicSideContentBreakpointChangedEventParameters>
+      ) => void,
       /**
        * Context object on which the given function had to be called
        */
       oListener?: object
     ): this;
     /**
-     * @SINCE 1.32
+     * @since 1.32
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
      *
      * Fires event {@link #event:breakpointChanged breakpointChanged} to attached listeners.
      *
@@ -4648,9 +4616,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
       /**
        * Parameters to pass along with the event
        */
-      mParameters?: {
-        currentBreakpoint?: string;
-      }
+      mParameters?: $DynamicSideContentBreakpointChangedEventParameters
     ): this;
     /**
      * Gets current value of property {@link #getContainerQuery containerQuery}.
@@ -4691,7 +4657,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
      */
     getMainContent(): Control[];
     /**
-     * @SINCE 1.78
+     * @since 1.78
      *
      * Returns a scroll helper object used to handle scrolling.
      *
@@ -4701,7 +4667,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
       /**
        * The control instance that requested the scroll helper
        */
-      oControl: object
+      oControl: Control
     ): ScrollEnablement;
     /**
      * Gets current value of property {@link #getShowMainContent showMainContent}.
@@ -4745,7 +4711,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
       | SideContentFallDown
       | keyof typeof SideContentFallDown;
     /**
-     * @SINCE 1.36
+     * @since 1.36
      *
      * Gets current value of property {@link #getSideContentPosition sideContentPosition}.
      *
@@ -4899,7 +4865,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
     /**
      * Sets or unsets the page in equalSplit mode.
      *
-     * @returns this pointer for chaining
+     * @returns Reference to `this` for method chaining
      */
     setEqualSplit(
       /**
@@ -4910,7 +4876,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
     /**
      * Sets the showMainContent property.
      *
-     * @returns this pointer for chaining
+     * @returns Reference to `this` for method chaining
      */
     setShowMainContent(
       /**
@@ -4925,7 +4891,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
     /**
      * Sets the showSideContent property.
      *
-     * @returns this pointer for chaining
+     * @returns Reference to `this` for method chaining
      */
     setShowSideContent(
       /**
@@ -4957,7 +4923,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
         | keyof typeof SideContentFallDown
     ): this;
     /**
-     * @SINCE 1.36
+     * @since 1.36
      *
      * Sets a new value for property {@link #getSideContentPosition sideContentPosition}.
      *
@@ -4980,7 +4946,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
     /**
      * Sets the sideContentVisibility property.
      *
-     * @returns this pointer for chaining
+     * @returns Reference to `this` for method chaining
      */
     setSideContentVisibility(
       /**
@@ -4997,10 +4963,11 @@ declare module "sap/ui/layout/DynamicSideContent" {
      * area is visible. This helper method is used to implement a button/switch for changing between the main
      * and side content areas. Only works if the current breakpoint is "S".
      *
-     * @returns this pointer for chaining
+     * @returns Reference to `this` for method chaining
      */
     toggle(): this;
   }
+  export default DynamicSideContent;
 
   export interface $DynamicSideContentSettings extends $ControlSettings {
     /**
@@ -5046,7 +5013,7 @@ declare module "sap/ui/layout/DynamicSideContent" {
     containerQuery?: boolean | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.36
+     * @since 1.36
      *
      * Determines whether the side content is on the left or on the right side of the main content.
      */
@@ -5066,11 +5033,17 @@ declare module "sap/ui/layout/DynamicSideContent" {
     sideContent?: Control[] | Control | AggregationBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.32
+     * @since 1.32
      *
      * Fires when the current breakpoint has been changed.
      */
-    breakpointChanged?: (oEvent: Event) => void;
+    breakpointChanged?: (
+      oEvent: Event<$DynamicSideContentBreakpointChangedEventParameters>
+    ) => void;
+  }
+
+  export interface $DynamicSideContentBreakpointChangedEventParameters {
+    currentBreakpoint?: string;
   }
 }
 
@@ -5087,7 +5060,7 @@ declare module "sap/ui/layout/FixFlex" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.25.0
+   * @since 1.25.0
    *
    * A layout container with a fixed and a flexible part. Overview: The FixFlex control builds the container
    * for a layout with a fixed and a flexible part. The flexible container adapts its size to the fix container.
@@ -5095,21 +5068,21 @@ declare module "sap/ui/layout/FixFlex" {
    * 	 - The fix container can hold any number of controls, while the flexible container can hold only one
    *
    * 	 - In order for the FixFlex to stretch properly, the parent element, in which the control is placed,
-   * 			needs to have a specified height or needs to have an absolute position.
+   *     needs to have a specified height or needs to have an absolute position.
    * 	 - Avoid nesting FixFlex in other flexbox-based layout controls ({@link sap.ui.layout.FixFlex FixFlex},
-   * 			{@link sap.m.FlexBox FlexBox}, Hbox, Vbox). Otherwise, contents may be not accessible or multiple scrollbars
-   * 			can appear.  Structure: The behavior of the FixFlex is controlled by the following properties:
+   *     {@link sap.m.FlexBox FlexBox}, Hbox, Vbox). Otherwise, contents may be not accessible or multiple scrollbars
+   *     can appear.  Structure: The behavior of the FixFlex is controlled by the following properties:
    *
    * 	 - `fixContentSize` - The width/height of the fix part of the control
    * 	 - `fixFirst` - The ordering of the fix and flex part
    * 	 - `minFlexSize` - Scrolling inside the flex part, if its contents are large
    * 	 - `vertical` - Alignment of the FixFlex control  Responsive Behavior:
    * 	 - If the child control of the flex or the fix container has width/height bigger than the container
-   * 			itself, the child control will be cropped in the view.
+   *     itself, the child control will be cropped in the view.
    * 	 - If minFlexSize is set, then a scrollbar is shown in the flexible part, depending on the `vertical`
-   * 			property.
+   *     property.
    */
-  export default class FixFlex extends Control {
+  class FixFlex extends Control {
     /**
      * Constructor for a new FixFlex.
      *
@@ -5229,7 +5202,7 @@ declare module "sap/ui/layout/FixFlex" {
      */
     getFlexContent(): Control;
     /**
-     * @SINCE 1.29
+     * @since 1.29
      *
      * Gets current value of property {@link #getMinFlexSize minFlexSize}.
      *
@@ -5351,7 +5324,7 @@ declare module "sap/ui/layout/FixFlex" {
       oFlexContent: Control
     ): this;
     /**
-     * @SINCE 1.29
+     * @since 1.29
      *
      * Sets a new value for property {@link #getMinFlexSize minFlexSize}.
      *
@@ -5391,6 +5364,7 @@ declare module "sap/ui/layout/FixFlex" {
       bVertical?: boolean
     ): this;
   }
+  export default FixFlex;
 
   export interface $FixFlexSettings extends $ControlSettings {
     /**
@@ -5413,7 +5387,7 @@ declare module "sap/ui/layout/FixFlex" {
     fixContentSize?: CSSSize | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.29
+     * @since 1.29
      *
      * Enables scrolling inside the flexible part. The given size is calculated in "px". If the child control
      * in the flexible part is larger than the available flexible size on the screen and if the available size
@@ -5447,14 +5421,14 @@ declare module "sap/ui/layout/form/ColumnContainerData" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.56.0
+   * @since 1.56.0
    *
    * The `ColumnLayout`-specific layout data for the `FormContainer` element.
    *
    * Depending on its size, the `Form` control is divided into 1, 2, 3 or 4 columns by the `ColumnLayout`
    * control. Using `ColumnContainerData`, the size of the `FormContainer` element can be influenced.
    */
-  export default class ColumnContainerData extends LayoutData {
+  class ColumnContainerData extends LayoutData {
     /**
      * Constructor for a new sap.ui.layout.form.ColumnContainerData.
      *
@@ -5605,6 +5579,7 @@ declare module "sap/ui/layout/form/ColumnContainerData" {
       sColumnsXL?: form.ColumnsXL
     ): this;
   }
+  export default ColumnContainerData;
 
   export interface $ColumnContainerDataSettings extends $LayoutDataSettings {
     /**
@@ -5641,14 +5616,14 @@ declare module "sap/ui/layout/form/ColumnElementData" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.56.0
+   * @since 1.56.0
    *
    * The `ColumnLayout`-specific layout data for the `FormElement` content fields.
    *
    * One `FormElement` element contains 12 cells and has two sizes, small and large. Using `ColumnElementData`,
    * the default calculation of the cells used for a field or label can be overwritten.
    */
-  export default class ColumnElementData extends LayoutData {
+  class ColumnElementData extends LayoutData {
     /**
      * Constructor for a new sap.ui.layout.form.ColumnElementData.
      *
@@ -5776,6 +5751,7 @@ declare module "sap/ui/layout/form/ColumnElementData" {
       sCellsSmall?: form.ColumnCells
     ): this;
   }
+  export default ColumnElementData;
 
   export interface $ColumnElementDataSettings extends $LayoutDataSettings {
     /**
@@ -5809,7 +5785,7 @@ declare module "sap/ui/layout/form/ColumnLayout" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.56.0
+   * @since 1.56.0
    *
    * The `ColumnLayout` control renders a `Form` control in a column-based responsive way. Depending on its
    * size, the `Form` control is divided into one or more columns. (XL - max. 4 columns, L - max. 3 columns,
@@ -5844,7 +5820,7 @@ declare module "sap/ui/layout/form/ColumnLayout" {
    * **Note:** This control cannot be used stand-alone, it just renders a `Form` control, so it must be assigned
    * to a `Form` control using the `layout` aggregation.
    */
-  export default class ColumnLayout extends FormLayout {
+  class ColumnLayout extends FormLayout {
     /**
      * Constructor for a new `sap.ui.layout.form.ColumnLayout`.
      *
@@ -6051,6 +6027,7 @@ declare module "sap/ui/layout/form/ColumnLayout" {
       sLabelCellsLarge?: form.ColumnCells
     ): this;
   }
+  export default ColumnLayout;
 
   export interface $ColumnLayoutSettings extends $FormLayoutSettings {
     /**
@@ -6104,7 +6081,7 @@ declare module "sap/ui/layout/form/Form" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    *
    * A `Form` control arranges labels and fields (like input fields) into groups and rows. There are different
    * ways to visualize forms for different screen sizes.
@@ -6127,7 +6104,7 @@ declare module "sap/ui/layout/form/Form" {
    * `false`. If the `editable` property is set incorrectly, there will be visual issues like wrong label
    * alignment or wrong spacing between the controls.
    */
-  export default class Form extends Control {
+  class Form extends Control {
     /**
      * Constructor for a new sap.ui.layout.form.Form.
      *
@@ -6189,7 +6166,7 @@ declare module "sap/ui/layout/form/Form" {
      */
     static getMetadata(): ElementMetadata;
     /**
-     * @SINCE 1.28.0
+     * @since 1.28.0
      *
      * Adds some ariaLabelledBy into the association {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -6231,7 +6208,7 @@ declare module "sap/ui/layout/form/Form" {
      */
     destroyTitle(): this;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Destroys the toolbar in the aggregation {@link #getToolbar toolbar}.
      *
@@ -6239,14 +6216,13 @@ declare module "sap/ui/layout/form/Form" {
      */
     destroyToolbar(): this;
     /**
-     * @SINCE 1.28.0
+     * @since 1.28.0
      *
-     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy
-     * ariaLabelledBy}.
+     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
      */
     getAriaLabelledBy(): ID[];
     /**
-     * @SINCE 1.20.0
+     * @since 1.20.0
      *
      * Gets current value of property {@link #getEditable editable}.
      *
@@ -6277,9 +6253,8 @@ declare module "sap/ui/layout/form/Form" {
     /**
      * Gets content of aggregation {@link #getLayout layout}.
      *
-     * Layout of the `Form`. The assigned `Layout` renders the `Form`. We recommend using the {@link sap.ui.layout.form.ColumnLayout
-     * ColumnLayout} for rendering a `Form`, as its responsiveness allows the available space to be used in
-     * the best way possible.
+     * Layout of the `Form`. The assigned `Layout` renders the `Form`. We recommend using the {@link sap.ui.layout.form.ColumnLayout ColumnLayout }
+     * for rendering a `Form`, as its responsiveness allows the available space to be used in the best way possible.
      */
     getLayout(): FormLayout;
     /**
@@ -6292,12 +6267,12 @@ declare module "sap/ui/layout/form/Form" {
      *
      * **Note:** If the title is provided as a string, the title is rendered with a theme-dependent default
      * level. As the `Form` control cannot know the structure of the page, this might not fit the page structure.
-     * In this case provide the title using a `Title` element and set its {@link sap.ui.core.Title#setLevel
-     * level} to the needed value.
+     * In this case provide the title using a `Title` element and set its {@link sap.ui.core.Title#setLevel level }
+     * to the needed value.
      */
     getTitle(): Title | string;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Gets content of aggregation {@link #getToolbar toolbar}.
      *
@@ -6317,8 +6292,8 @@ declare module "sap/ui/layout/form/Form" {
      */
     getWidth(): CSSSize;
     /**
-     * Checks for the provided `sap.ui.layout.form.FormContainer` in the aggregation {@link #getFormContainers
-     * formContainers}. and returns its index if found or -1 otherwise.
+     * Checks for the provided `sap.ui.layout.form.FormContainer` in the aggregation {@link #getFormContainers formContainers}.
+     * and returns its index if found or -1 otherwise.
      *
      * @returns The index of the provided control in the aggregation if found, or -1 otherwise
      */
@@ -6346,7 +6321,7 @@ declare module "sap/ui/layout/form/Form" {
       iIndex: int
     ): this;
     /**
-     * @SINCE 1.28.0
+     * @since 1.28.0
      *
      * Removes all the controls in the association named {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -6362,7 +6337,7 @@ declare module "sap/ui/layout/form/Form" {
      */
     removeAllFormContainers(): FormContainer[];
     /**
-     * @SINCE 1.28.0
+     * @since 1.28.0
      *
      * Removes an ariaLabelledBy from the association named {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -6386,7 +6361,7 @@ declare module "sap/ui/layout/form/Form" {
       vFormContainer: int | string | FormContainer
     ): FormContainer | null;
     /**
-     * @SINCE 1.20.0
+     * @since 1.20.0
      *
      * Sets a new value for property {@link #getEditable editable}.
      *
@@ -6438,7 +6413,7 @@ declare module "sap/ui/layout/form/Form" {
       vTitle: Title | string
     ): this;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Sets the aggregated {@link #getToolbar toolbar}.
      *
@@ -6466,6 +6441,7 @@ declare module "sap/ui/layout/form/Form" {
       sWidth?: CSSSize
     ): this;
   }
+  export default Form;
 
   export interface $FormSettings extends $ControlSettings {
     /**
@@ -6474,7 +6450,7 @@ declare module "sap/ui/layout/form/Form" {
     width?: CSSSize | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.20.0
+     * @since 1.20.0
      *
      * Applies a device-specific and theme-specific line height and label alignment to the form rows if the
      * form has editable content. If set, all (not only the editable) rows of the form will get the line height
@@ -6508,13 +6484,13 @@ declare module "sap/ui/layout/form/Form" {
      *
      * **Note:** If the title is provided as a string, the title is rendered with a theme-dependent default
      * level. As the `Form` control cannot know the structure of the page, this might not fit the page structure.
-     * In this case provide the title using a `Title` element and set its {@link sap.ui.core.Title#setLevel
-     * level} to the needed value.
+     * In this case provide the title using a `Title` element and set its {@link sap.ui.core.Title#setLevel level }
+     * to the needed value.
      */
     title?: string | Title | PropertyBindingInfo;
 
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Toolbar of the `Form`.
      *
@@ -6525,14 +6501,13 @@ declare module "sap/ui/layout/form/Form" {
     toolbar?: Toolbar;
 
     /**
-     * Layout of the `Form`. The assigned `Layout` renders the `Form`. We recommend using the {@link sap.ui.layout.form.ColumnLayout
-     * ColumnLayout} for rendering a `Form`, as its responsiveness allows the available space to be used in
-     * the best way possible.
+     * Layout of the `Form`. The assigned `Layout` renders the `Form`. We recommend using the {@link sap.ui.layout.form.ColumnLayout ColumnLayout }
+     * for rendering a `Form`, as its responsiveness allows the available space to be used in the best way possible.
      */
     layout?: FormLayout;
 
     /**
-     * @SINCE 1.28.0
+     * @since 1.28.0
      *
      * Association to controls / IDs that label this control (see WAI-ARIA attribute `aria-labelledby`).
      */
@@ -6559,12 +6534,12 @@ declare module "sap/ui/layout/form/FormContainer" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    *
    * A `FormContainer` represents a group inside a `Form`. It consists of `FormElements`. The rendering of
    * the `FormContainer` is done by the `FormLayout` assigned to the `Form`.
    */
-  export default class FormContainer extends UI5Element {
+  class FormContainer extends UI5Element {
     /**
      * Constructor for a new sap.ui.layout.form.FormContainer.
      *
@@ -6626,7 +6601,8 @@ declare module "sap/ui/layout/form/FormContainer" {
      */
     static getMetadata(): ElementMetadata;
     /**
-     * @SINCE 1.74.0
+     * @since 1.74.0
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
      *
      * Sets the editable state of the `FormContainer`.
      *
@@ -6641,7 +6617,7 @@ declare module "sap/ui/layout/form/FormContainer" {
       bEditable: boolean
     ): void;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Adds some ariaLabelledBy into the association {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -6677,7 +6653,7 @@ declare module "sap/ui/layout/form/FormContainer" {
      */
     destroyTitle(): this;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Destroys the toolbar in the aggregation {@link #getToolbar toolbar}.
      *
@@ -6685,10 +6661,9 @@ declare module "sap/ui/layout/form/FormContainer" {
      */
     destroyToolbar(): this;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
-     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy
-     * ariaLabelledBy}.
+     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
      */
     getAriaLabelledBy(): ID[];
     /**
@@ -6731,12 +6706,12 @@ declare module "sap/ui/layout/form/FormContainer" {
      *
      * **Note:** If the title is provided as a string, the title is rendered with a theme-dependent default
      * level. As the `Form` control cannot know the structure of the page, this might not fit the page structure.
-     * In this case provide the title using a `Title` element and set its {@link sap.ui.core.Title#setLevel
-     * level} to the needed value.
+     * In this case provide the title using a `Title` element and set its {@link sap.ui.core.Title#setLevel level }
+     * to the needed value.
      */
     getTitle(): Title | string;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Gets content of aggregation {@link #getToolbar toolbar}.
      *
@@ -6796,7 +6771,7 @@ declare module "sap/ui/layout/form/FormContainer" {
      */
     isVisible(): boolean;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Removes all the controls in the association named {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -6812,7 +6787,7 @@ declare module "sap/ui/layout/form/FormContainer" {
      */
     removeAllFormElements(): FormElement[];
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Removes an ariaLabelledBy from the association named {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -6885,7 +6860,7 @@ declare module "sap/ui/layout/form/FormContainer" {
       vTitle: Title | string
     ): this;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Sets the aggregated {@link #getToolbar toolbar}.
      *
@@ -6915,6 +6890,7 @@ declare module "sap/ui/layout/form/FormContainer" {
       bVisible?: boolean
     ): this;
   }
+  export default FormContainer;
 
   export interface $FormContainerSettings extends $ElementSettings {
     /**
@@ -6953,13 +6929,13 @@ declare module "sap/ui/layout/form/FormContainer" {
      *
      * **Note:** If the title is provided as a string, the title is rendered with a theme-dependent default
      * level. As the `Form` control cannot know the structure of the page, this might not fit the page structure.
-     * In this case provide the title using a `Title` element and set its {@link sap.ui.core.Title#setLevel
-     * level} to the needed value.
+     * In this case provide the title using a `Title` element and set its {@link sap.ui.core.Title#setLevel level }
+     * to the needed value.
      */
     title?: string | Title | PropertyBindingInfo;
 
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Toolbar of the `FormContainer`.
      *
@@ -6970,7 +6946,7 @@ declare module "sap/ui/layout/form/FormContainer" {
     toolbar?: Toolbar;
 
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Association to controls / IDs that label this control (see WAI-ARIA attribute `aria-labelledby`).
      *
@@ -6996,12 +6972,12 @@ declare module "sap/ui/layout/form/FormElement" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    *
    * A `FormElement` represents a row in a `FormContainer`. A `FormElement` is a combination of one label
    * and different controls associated to this label.
    */
-  export default class FormElement extends UI5Element {
+  class FormElement extends UI5Element {
     /**
      * Constructor for a new sap.ui.layout.form.FormElement.
      *
@@ -7063,7 +7039,8 @@ declare module "sap/ui/layout/form/FormElement" {
      */
     static getMetadata(): ElementMetadata;
     /**
-     * @SINCE 1.74.0
+     * @since 1.74.0
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
      *
      * Sets the editable state of the `FormElement`.
      *
@@ -7166,6 +7143,8 @@ declare module "sap/ui/layout/form/FormElement" {
       iIndex: int
     ): this;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Labels inside of a Form must be invalidated if "editable" changed on Form
      */
     invalidateLabel(): void;
@@ -7226,6 +7205,7 @@ declare module "sap/ui/layout/form/FormElement" {
       bVisible?: boolean
     ): this;
   }
+  export default FormElement;
 
   export interface $FormElementSettings extends $ElementSettings {
     /**
@@ -7262,14 +7242,14 @@ declare module "sap/ui/layout/form/FormLayout" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    *
    * Base layout to render a `Form`. Other layouts to render a `Form` must inherit from this one.
    *
    * **Note:** This control must not be used to render a `Form` in productive applications as it does not
    * fulfill any design guidelines and usability standards.
    */
-  export default class FormLayout extends Control {
+  class FormLayout extends Control {
     /**
      * Constructor for a new sap.ui.layout.form.FormLayout.
      *
@@ -7331,7 +7311,7 @@ declare module "sap/ui/layout/form/FormLayout" {
      */
     static getMetadata(): ElementMetadata;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
      *
@@ -7345,7 +7325,7 @@ declare module "sap/ui/layout/form/FormLayout" {
      */
     getBackgroundDesign(): BackgroundDesign | keyof typeof BackgroundDesign;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
      *
@@ -7366,10 +7346,11 @@ declare module "sap/ui/layout/form/FormLayout" {
       sBackgroundDesign?: BackgroundDesign | keyof typeof BackgroundDesign
     ): this;
   }
+  export default FormLayout;
 
   export interface $FormLayoutSettings extends $ControlSettings {
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Specifies the background color of the `Form` content.
      *
@@ -7393,11 +7374,11 @@ declare module "sap/ui/layout/form/GridContainerData" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    *
    * The `GridLayout`-specific layout data for `FormContainers`.
    */
-  export default class GridContainerData extends LayoutData {
+  class GridContainerData extends LayoutData {
     /**
      * Constructor for a new sap.ui.layout.form.GridContainerData.
      *
@@ -7490,6 +7471,7 @@ declare module "sap/ui/layout/form/GridContainerData" {
       bHalfGrid?: boolean
     ): this;
   }
+  export default GridContainerData;
 
   export interface $GridContainerDataSettings extends $LayoutDataSettings {
     /**
@@ -7514,11 +7496,11 @@ declare module "sap/ui/layout/form/GridElementData" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    *
    * The `GridLayout`-specific layout data for `FormElement` fields.
    */
-  export default class GridElementData extends LayoutData {
+  class GridElementData extends LayoutData {
     /**
      * Constructor for a new sap.ui.layout.form.GridElementData.
      *
@@ -7654,6 +7636,7 @@ declare module "sap/ui/layout/form/GridElementData" {
       iVCells?: int
     ): this;
   }
+  export default GridElementData;
 
   export interface $GridElementDataSettings extends $LayoutDataSettings {
     /**
@@ -7689,7 +7672,7 @@ declare module "sap/ui/layout/form/GridLayout" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    * @deprecated (since 1.67.0) - as `sap.ui.commons` library is deprecated and the `GridLayout` must not
    * be used in responsive applications. Please use `ResponsiveGridLayout` or `ColumnLayout` instead.
    *
@@ -7706,7 +7689,7 @@ declare module "sap/ui/layout/form/GridLayout" {
    * This control cannot be used stand-alone, it just renders a `Form`, so it must be assigned to a `Form`
    * using the `layout` aggregation.
    */
-  export default class GridLayout extends FormLayout {
+  class GridLayout extends FormLayout {
     /**
      * Constructor for a new sap.ui.layout.form.GridLayout.
      *
@@ -7803,6 +7786,7 @@ declare module "sap/ui/layout/form/GridLayout" {
       bSingleColumn?: boolean
     ): this;
   }
+  export default GridLayout;
 
   export interface $GridLayoutSettings extends $FormLayoutSettings {
     /**
@@ -7827,7 +7811,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    *
    * The `ResponsiveGridLayout` control renders a `Form` using a responsive grid. Internally the `Grid` control
    * is used for rendering. Using this layout, the `Form` is rendered in a responsive way. Depending on the
@@ -7845,7 +7829,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
    * This control cannot be used stand-alone, it just renders a `Form`, so it must be assigned to a `Form`
    * using the `layout` aggregation.
    */
-  export default class ResponsiveGridLayout extends FormLayout {
+  class ResponsiveGridLayout extends FormLayout {
     /**
      * Constructor for a new `sap.ui.layout.form.ResponsiveGridLayout`.
      *
@@ -7907,7 +7891,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     static getMetadata(): ElementMetadata;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Gets current value of property {@link #getAdjustLabelSpan adjustLabelSpan}.
      *
@@ -7926,7 +7910,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getAdjustLabelSpan(): boolean;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getBreakpointL breakpointL}.
      *
@@ -7938,7 +7922,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getBreakpointL(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getBreakpointM breakpointM}.
      *
@@ -7950,7 +7934,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getBreakpointM(): int;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Gets current value of property {@link #getBreakpointXL breakpointXL}.
      *
@@ -7962,7 +7946,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getBreakpointXL(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getColumnsL columnsL}.
      *
@@ -7976,7 +7960,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getColumnsL(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getColumnsM columnsM}.
      *
@@ -7988,7 +7972,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getColumnsM(): int;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Gets current value of property {@link #getColumnsXL columnsXL}.
      *
@@ -8004,7 +7988,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getColumnsXL(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getEmptySpanL emptySpanL}.
      *
@@ -8016,7 +8000,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getEmptySpanL(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getEmptySpanM emptySpanM}.
      *
@@ -8028,7 +8012,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getEmptySpanM(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getEmptySpanS emptySpanS}.
      *
@@ -8040,7 +8024,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getEmptySpanS(): int;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Gets current value of property {@link #getEmptySpanXL emptySpanXL}.
      *
@@ -8055,7 +8039,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getEmptySpanXL(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getLabelSpanL labelSpanL}.
      *
@@ -8070,7 +8054,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getLabelSpanL(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getLabelSpanM labelSpanM}.
      *
@@ -8085,7 +8069,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getLabelSpanM(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getLabelSpanS labelSpanS}.
      *
@@ -8097,7 +8081,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getLabelSpanS(): int;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Gets current value of property {@link #getLabelSpanXL labelSpanXL}.
      *
@@ -8112,7 +8096,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getLabelSpanXL(): int;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Gets current value of property {@link #getSingleContainerFullSize singleContainerFullSize}.
      *
@@ -8128,7 +8112,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
      */
     getSingleContainerFullSize(): boolean;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Sets a new value for property {@link #getAdjustLabelSpan adjustLabelSpan}.
      *
@@ -8154,7 +8138,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       bAdjustLabelSpan?: boolean
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getBreakpointL breakpointL}.
      *
@@ -8173,7 +8157,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iBreakpointL?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getBreakpointM breakpointM}.
      *
@@ -8192,7 +8176,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iBreakpointM?: int
     ): this;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Sets a new value for property {@link #getBreakpointXL breakpointXL}.
      *
@@ -8211,7 +8195,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iBreakpointXL?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getColumnsL columnsL}.
      *
@@ -8232,7 +8216,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iColumnsL?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getColumnsM columnsM}.
      *
@@ -8251,7 +8235,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iColumnsM?: int
     ): this;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Sets a new value for property {@link #getColumnsXL columnsXL}.
      *
@@ -8274,7 +8258,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iColumnsXL?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getEmptySpanL emptySpanL}.
      *
@@ -8293,7 +8277,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iEmptySpanL?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getEmptySpanM emptySpanM}.
      *
@@ -8312,7 +8296,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iEmptySpanM?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getEmptySpanS emptySpanS}.
      *
@@ -8331,7 +8315,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iEmptySpanS?: int
     ): this;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Sets a new value for property {@link #getEmptySpanXL emptySpanXL}.
      *
@@ -8353,7 +8337,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iEmptySpanXL?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getLabelSpanL labelSpanL}.
      *
@@ -8375,7 +8359,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iLabelSpanL?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getLabelSpanM labelSpanM}.
      *
@@ -8397,7 +8381,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iLabelSpanM?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getLabelSpanS labelSpanS}.
      *
@@ -8416,7 +8400,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iLabelSpanS?: int
     ): this;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Sets a new value for property {@link #getLabelSpanXL labelSpanXL}.
      *
@@ -8438,7 +8422,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       iLabelSpanXL?: int
     ): this;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Sets a new value for property {@link #getSingleContainerFullSize singleContainerFullSize}.
      *
@@ -8461,10 +8445,11 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
       bSingleContainerFullSize?: boolean
     ): this;
   }
+  export default ResponsiveGridLayout;
 
   export interface $ResponsiveGridLayoutSettings extends $FormLayoutSettings {
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Default span for labels in extra large size.
      *
@@ -8474,7 +8459,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
     labelSpanXL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Default span for labels in large size.
      *
@@ -8484,7 +8469,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
     labelSpanL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Default span for labels in medium size.
      *
@@ -8494,14 +8479,14 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
     labelSpanM?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Default span for labels in small size.
      */
     labelSpanS?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * If set, the usage of `labelSpanL` and `labelSpanM` are dependent on the number of `FormContainers` in
      * one row. If only one `FormContainer` is displayed in one row, `labelSpanM` is used to define the size
@@ -8515,7 +8500,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
     adjustLabelSpan?: boolean | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Number of grid cells that are empty at the end of each line on extra large size.
      *
@@ -8525,28 +8510,28 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
     emptySpanXL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Number of grid cells that are empty at the end of each line on large size.
      */
     emptySpanL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Number of grid cells that are empty at the end of each line on medium size.
      */
     emptySpanM?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Number of grid cells that are empty at the end of each line on small size.
      */
     emptySpanS?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Number of columns for extra large size.
      *
@@ -8557,7 +8542,7 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
     columnsXL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Number of columns for large size.
      *
@@ -8566,14 +8551,14 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
     columnsL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Number of columns for medium size.
      */
     columnsM?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * If the `Form` contains only one single `FormContainer` and this property is set, the `FormContainer`
      * is displayed using the full size of the `Form`. In this case the properties `columnsXL`, `columnsL` and
@@ -8584,21 +8569,21 @@ declare module "sap/ui/layout/form/ResponsiveGridLayout" {
     singleContainerFullSize?: boolean | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Breakpoint (in pixel) between large size and extra large (XL) size.
      */
     breakpointXL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Breakpoint (in pixel) between Medium size and Large size.
      */
     breakpointL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Breakpoint (in pixel) between Small size and Medium size.
      */
@@ -8615,7 +8600,7 @@ declare module "sap/ui/layout/form/ResponsiveLayout" {
   import ElementMetadata from "sap/ui/core/ElementMetadata";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    * @deprecated (since 1.93) - replaced by {@link sap.ui.layout.form.ColumnLayout ColumnLayout}
    *
    * The `ResponsiveLayout` renders a `Form` with a responsive layout. Internally the `ResponsiveFlowLayout`
@@ -8636,7 +8621,7 @@ declare module "sap/ui/layout/form/ResponsiveLayout" {
    * This control cannot be used stand-alone, it just renders a `Form`, so it must be assigned to a `Form`
    * using the `layout` aggregation.
    */
-  export default class ResponsiveLayout extends FormLayout {
+  class ResponsiveLayout extends FormLayout {
     /**
      * Constructor for a new sap.ui.layout.form.ResponsiveLayout.
      *
@@ -8644,8 +8629,8 @@ declare module "sap/ui/layout/form/ResponsiveLayout" {
      * objects as well as event handlers. See {@link sap.ui.base.ManagedObject#constructor} for a general description
      * of the syntax of the settings object.
      *
-     * This class does not have its own settings, but all settings applicable to the base type {@link sap.ui.layout.form.FormLayout#constructor
-     * sap.ui.layout.form.FormLayout} can be used.
+     * This class does not have its own settings, but all settings applicable to the base type {@link sap.ui.layout.form.FormLayout#constructor sap.ui.layout.form.FormLayout }
+     * can be used.
      */
     constructor(
       /**
@@ -8660,8 +8645,8 @@ declare module "sap/ui/layout/form/ResponsiveLayout" {
      * objects as well as event handlers. See {@link sap.ui.base.ManagedObject#constructor} for a general description
      * of the syntax of the settings object.
      *
-     * This class does not have its own settings, but all settings applicable to the base type {@link sap.ui.layout.form.FormLayout#constructor
-     * sap.ui.layout.form.FormLayout} can be used.
+     * This class does not have its own settings, but all settings applicable to the base type {@link sap.ui.layout.form.FormLayout#constructor sap.ui.layout.form.FormLayout }
+     * can be used.
      */
     constructor(
       /**
@@ -8704,6 +8689,7 @@ declare module "sap/ui/layout/form/ResponsiveLayout" {
      */
     static getMetadata(): ElementMetadata;
   }
+  export default ResponsiveLayout;
 
   export interface $ResponsiveLayoutSettings extends $FormLayoutSettings {}
 }
@@ -8724,8 +8710,8 @@ declare module "sap/ui/layout/form/SemanticFormElement" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.86.0
-   * @EXPERIMENTAL (since 1.86)
+   * @since 1.86.0
+   * @experimental (since 1.86)
    *
    * A `SemanticFormElement` element is a special `FormElement` that contains semantically connected fields.
    * These field controls are divided by delimiter controls. In display mode, they are rendered as one condensed
@@ -8734,7 +8720,7 @@ declare module "sap/ui/layout/form/SemanticFormElement" {
    * **Note:** Please use the `ColumnLayout` as `layout` of the `Form`. For other layouts, the field arrangement
    * might not be suitable in every case.
    */
-  export default class SemanticFormElement extends FormElement {
+  class SemanticFormElement extends FormElement {
     /**
      * Constructor for a new sap.ui.layout.form.SemanticFormElement.
      *
@@ -8903,6 +8889,7 @@ declare module "sap/ui/layout/form/SemanticFormElement" {
       sDelimiter?: string
     ): this;
   }
+  export default SemanticFormElement;
 
   export interface $SemanticFormElementSettings extends $FormElementSettings {
     /**
@@ -8945,23 +8932,23 @@ declare module "sap/ui/layout/form/SimpleForm" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    *
    * The `SimpleForm` control provides an easy-to-use API to create simple forms. Inside a `SimpleForm` control,
-   * a `{@link sap.ui.layout.form.Form Form}` control is created along with its `{@link sap.ui.layout.form.FormContainer
-   * FormContainer}` elements and `{@link sap.ui.layout.form.FormElement FormElement}` elements, but the complexity
-   * in the API is not exposed to the user.
-   * 	 - A new `sap.ui.core.Title` element or `Toolbar` control starts a new group (`{@link sap.ui.layout.form.FormContainer
-   * 			FormContainer}`) in the form.
+   * a `{@link sap.ui.layout.form.Form Form}` control is created along with its `{@link sap.ui.layout.form.FormContainer FormContainer}`
+   * elements and `{@link sap.ui.layout.form.FormElement FormElement}` elements, but the complexity in the
+   * API is not exposed to the user.
+   * 	 - A new `sap.ui.core.Title` element or `Toolbar` control starts a new group (`{@link sap.ui.layout.form.FormContainer FormContainer}`)
+   *     in the form.
    * 	 - A new `Label` control starts a new row (`{@link sap.ui.layout.form.FormElement FormElement}`) in
-   * 			the form.
+   *     the form.
    * 	 - All other controls will be assigned to the row (`{@link sap.ui.layout.form.FormElement FormElement}`)
-   * 			that started with the last label.  Use `LayoutData` to influence the layout for special cases in
-   * 			the Input/Display controls.
+   *     that started with the last label.  Use `LayoutData` to influence the layout for special cases in
+   *     the Input/Display controls.
    *
    * **Note:** If a more complex form is needed, use the `{@link sap.ui.layout.form.Form Form}` control instead.
    */
-  export default class SimpleForm extends Control {
+  class SimpleForm extends Control {
     /**
      * Constructor for a new sap.ui.layout.form.SimpleForm.
      *
@@ -9023,7 +9010,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     static getMetadata(): ElementMetadata;
     /**
-     * @SINCE 1.32.0
+     * @since 1.32.0
      *
      * Adds some ariaLabelledBy into the association {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -9053,7 +9040,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     destroyContent(): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Destroys the title in the aggregation {@link #getTitle title}.
      *
@@ -9061,7 +9048,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     destroyTitle(): this;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Destroys the toolbar in the aggregation {@link #getToolbar toolbar}.
      *
@@ -9069,7 +9056,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     destroyToolbar(): this;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Gets current value of property {@link #getAdjustLabelSpan adjustLabelSpan}.
      *
@@ -9090,14 +9077,13 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getAdjustLabelSpan(): boolean;
     /**
-     * @SINCE 1.32.0
+     * @since 1.32.0
      *
-     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy
-     * ariaLabelledBy}.
+     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
      */
     getAriaLabelledBy(): ID[];
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
      *
@@ -9111,7 +9097,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getBackgroundDesign(): BackgroundDesign | keyof typeof BackgroundDesign;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getBreakpointL breakpointL}.
      *
@@ -9125,7 +9111,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getBreakpointL(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getBreakpointM breakpointM}.
      *
@@ -9139,7 +9125,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getBreakpointM(): int;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Gets current value of property {@link #getBreakpointXL breakpointXL}.
      *
@@ -9153,7 +9139,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getBreakpointXL(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getColumnsL columnsL}.
      *
@@ -9168,7 +9154,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getColumnsL(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getColumnsM columnsM}.
      *
@@ -9182,7 +9168,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getColumnsM(): int;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Gets current value of property {@link #getColumnsXL columnsXL}.
      *
@@ -9202,18 +9188,18 @@ declare module "sap/ui/layout/form/SimpleForm" {
      * Gets content of aggregation {@link #getContent content}.
      *
      * The content of the form is structured in the following way:
-     * 	 - Add a `sap.ui.core.Title` element or `Toolbar` control to start a new group (`{@link sap.ui.layout.form.FormContainer
-     * 			FormContainer}`).
+     * 	 - Add a `sap.ui.core.Title` element or `Toolbar` control to start a new group (`{@link sap.ui.layout.form.FormContainer FormContainer}`).
+     *
      * 	 - Add a `Label` control to start a new row (`{@link sap.ui.layout.form.FormElement FormElement}`).
      *
      * 	 - Add controls as input fields, text fields or other as needed.
      * 	 - Use `LayoutData` to influence the layout for special cases in the single controls. For example, if
-     * 			a `ColumnLayout` is used as a layout, the form content is weighted using 4 cells for the labels and 8
-     * 			cells for the field part, for large size. If there is only little space, the labels are above the fields
-     * 			and each field uses 12 cells. If your input controls should influence their width, you can add `sap.ui.layout.ColumnElementData`
-     * 			to them via `setLayoutData` method. Ensure that the sum of the weights in the `ColumnElementData` is
-     * 			not more than 12, as this is the total width of the input control part of each form row.  Example
-     * 			for a row where the `Input` uses 6 cells and the second `Input` uses 2 cells (using `ColumnElementData`):
+     *     a `ColumnLayout` is used as a layout, the form content is weighted using 4 cells for the labels and 8
+     *     cells for the field part, for large size. If there is only little space, the labels are above the fields
+     *     and each field uses 12 cells. If your input controls should influence their width, you can add `sap.ui.layout.ColumnElementData`
+     *     to them via `setLayoutData` method. Ensure that the sum of the weights in the `ColumnElementData` is
+     *     not more than 12, as this is the total width of the input control part of each form row.  Example
+     *     for a row where the `Input` uses 6 cells and the second `Input` uses 2 cells (using `ColumnElementData`):
      *
      * ```javascript
      *
@@ -9267,7 +9253,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getEditable(): boolean;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getEmptySpanL emptySpanL}.
      *
@@ -9282,7 +9268,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getEmptySpanL(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getEmptySpanM emptySpanM}.
      *
@@ -9296,7 +9282,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getEmptySpanM(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getEmptySpanS emptySpanS}.
      *
@@ -9310,7 +9296,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getEmptySpanS(): int;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Gets current value of property {@link #getEmptySpanXL emptySpanXL}.
      *
@@ -9338,7 +9324,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getLabelMinWidth(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getLabelSpanL labelSpanL}.
      *
@@ -9356,7 +9342,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getLabelSpanL(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getLabelSpanM labelSpanM}.
      *
@@ -9373,7 +9359,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getLabelSpanM(): int;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets current value of property {@link #getLabelSpanS labelSpanS}.
      *
@@ -9387,7 +9373,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getLabelSpanS(): int;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Gets current value of property {@link #getLabelSpanXL labelSpanXL}.
      *
@@ -9453,7 +9439,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getMinWidth(): int;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Gets current value of property {@link #getSingleContainerFullSize singleContainerFullSize}.
      *
@@ -9471,7 +9457,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getSingleContainerFullSize(): boolean;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Gets content of aggregation {@link #getTitle title}.
      *
@@ -9479,7 +9465,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getTitle(): Title | string;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Gets content of aggregation {@link #getToolbar toolbar}.
      *
@@ -9490,7 +9476,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     getToolbar(): Toolbar;
     /**
-     * @SINCE 1.28.0
+     * @since 1.28.0
      *
      * Gets current value of property {@link #getWidth width}.
      *
@@ -9529,7 +9515,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iIndex: int
     ): this;
     /**
-     * @SINCE 1.32.0
+     * @since 1.32.0
      *
      * Removes all the controls in the association named {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -9545,7 +9531,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
      */
     removeAllContent(): UI5Element[];
     /**
-     * @SINCE 1.32.0
+     * @since 1.32.0
      *
      * Removes an ariaLabelledBy from the association named {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -9569,7 +9555,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       vContent: int | string | UI5Element
     ): UI5Element | null;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Sets a new value for property {@link #getAdjustLabelSpan adjustLabelSpan}.
      *
@@ -9597,7 +9583,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       bAdjustLabelSpan?: boolean
     ): this;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
      *
@@ -9618,7 +9604,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       sBackgroundDesign?: BackgroundDesign | keyof typeof BackgroundDesign
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getBreakpointL breakpointL}.
      *
@@ -9639,7 +9625,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iBreakpointL?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getBreakpointM breakpointM}.
      *
@@ -9660,7 +9646,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iBreakpointM?: int
     ): this;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Sets a new value for property {@link #getBreakpointXL breakpointXL}.
      *
@@ -9681,7 +9667,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iBreakpointXL?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getColumnsL columnsL}.
      *
@@ -9703,7 +9689,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iColumnsL?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getColumnsM columnsM}.
      *
@@ -9724,7 +9710,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iColumnsM?: int
     ): this;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Sets a new value for property {@link #getColumnsXL columnsXL}.
      *
@@ -9774,7 +9760,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       bEditable?: boolean
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getEmptySpanL emptySpanL}.
      *
@@ -9796,7 +9782,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iEmptySpanL?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getEmptySpanM emptySpanM}.
      *
@@ -9817,7 +9803,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iEmptySpanM?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getEmptySpanS emptySpanS}.
      *
@@ -9838,7 +9824,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iEmptySpanS?: int
     ): this;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Sets a new value for property {@link #getEmptySpanXL emptySpanXL}.
      *
@@ -9880,7 +9866,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iLabelMinWidth?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getLabelSpanL labelSpanL}.
      *
@@ -9905,7 +9891,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iLabelSpanL?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getLabelSpanM labelSpanM}.
      *
@@ -9929,7 +9915,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iLabelSpanM?: int
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets a new value for property {@link #getLabelSpanS labelSpanS}.
      *
@@ -9950,7 +9936,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iLabelSpanS?: int
     ): this;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Sets a new value for property {@link #getLabelSpanXL labelSpanXL}.
      *
@@ -10044,7 +10030,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       iMinWidth?: int
     ): this;
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Sets a new value for property {@link #getSingleContainerFullSize singleContainerFullSize}.
      *
@@ -10069,7 +10055,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       bSingleContainerFullSize?: boolean
     ): this;
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Sets the aggregated {@link #getTitle title}.
      *
@@ -10082,7 +10068,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       vTitle: Title | string
     ): this;
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Sets the aggregated {@link #getToolbar toolbar}.
      *
@@ -10095,7 +10081,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       oToolbar: Toolbar
     ): this;
     /**
-     * @SINCE 1.28.0
+     * @since 1.28.0
      *
      * Sets a new value for property {@link #getWidth width}.
      *
@@ -10112,6 +10098,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       sWidth?: CSSSize
     ): this;
   }
+  export default SimpleForm;
 
   export interface $SimpleFormSettings extends $ControlSettings {
     /**
@@ -10136,7 +10123,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     minWidth?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.28.0
+     * @since 1.28.0
      *
      * Width of the form.
      */
@@ -10183,7 +10170,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
       | `{${string}}`;
 
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Default span for labels in extra large size.
      *
@@ -10194,7 +10181,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     labelSpanXL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Default span for labels in large size.
      *
@@ -10207,7 +10194,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     labelSpanL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Default span for labels in medium size.
      *
@@ -10219,7 +10206,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     labelSpanM?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Default span for labels in small size.
      *
@@ -10228,7 +10215,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     labelSpanS?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * If set, the usage of `labelSpanL` and `labelSpanM` are dependent on the number of `FormContainers` in
      * one row. If only one `FormContainer` is displayed in one row, `labelSpanM` is used to define the size
@@ -10244,7 +10231,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     adjustLabelSpan?: boolean | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Number of grid cells that are empty at the end of each line on extra large size.
      *
@@ -10255,7 +10242,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     emptySpanXL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Number of grid cells that are empty at the end of each line on large size.
      *
@@ -10265,7 +10252,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     emptySpanL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Number of grid cells that are empty at the end of each line on medium size.
      *
@@ -10274,7 +10261,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     emptySpanM?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Number of grid cells that are empty at the end of each line on small size.
      *
@@ -10283,7 +10270,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     emptySpanS?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Form columns for extra large size. The number of columns for extra large size must not be smaller than
      * the number of columns for large size.
@@ -10295,7 +10282,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     columnsXL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Form columns for large size. The number of columns for large size must not be smaller than the number
      * of columns for medium size.
@@ -10305,7 +10292,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     columnsL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Form columns for medium size.
      *
@@ -10314,7 +10301,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     columnsM?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * If the `Form` contains only one single `FormContainer` and this property is set, the `FormContainer`
      * is displayed using the full size of the `Form`. In this case the properties `columnsL` and `columnsM`
@@ -10327,7 +10314,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     singleContainerFullSize?: boolean | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.34.0
+     * @since 1.34.0
      *
      * Breakpoint between Medium size and Large size.
      *
@@ -10336,7 +10323,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     breakpointXL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Breakpoint between Medium size and Large size.
      *
@@ -10345,7 +10332,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     breakpointL?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Breakpoint between Small size and Medium size.
      *
@@ -10354,7 +10341,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     breakpointM?: int | PropertyBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Specifies the background color of the `SimpleForm` content.
      *
@@ -10367,18 +10354,18 @@ declare module "sap/ui/layout/form/SimpleForm" {
 
     /**
      * The content of the form is structured in the following way:
-     * 	 - Add a `sap.ui.core.Title` element or `Toolbar` control to start a new group (`{@link sap.ui.layout.form.FormContainer
-     * 			FormContainer}`).
+     * 	 - Add a `sap.ui.core.Title` element or `Toolbar` control to start a new group (`{@link sap.ui.layout.form.FormContainer FormContainer}`).
+     *
      * 	 - Add a `Label` control to start a new row (`{@link sap.ui.layout.form.FormElement FormElement}`).
      *
      * 	 - Add controls as input fields, text fields or other as needed.
      * 	 - Use `LayoutData` to influence the layout for special cases in the single controls. For example, if
-     * 			a `ColumnLayout` is used as a layout, the form content is weighted using 4 cells for the labels and 8
-     * 			cells for the field part, for large size. If there is only little space, the labels are above the fields
-     * 			and each field uses 12 cells. If your input controls should influence their width, you can add `sap.ui.layout.ColumnElementData`
-     * 			to them via `setLayoutData` method. Ensure that the sum of the weights in the `ColumnElementData` is
-     * 			not more than 12, as this is the total width of the input control part of each form row.  Example
-     * 			for a row where the `Input` uses 6 cells and the second `Input` uses 2 cells (using `ColumnElementData`):
+     *     a `ColumnLayout` is used as a layout, the form content is weighted using 4 cells for the labels and 8
+     *     cells for the field part, for large size. If there is only little space, the labels are above the fields
+     *     and each field uses 12 cells. If your input controls should influence their width, you can add `sap.ui.layout.ColumnElementData`
+     *     to them via `setLayoutData` method. Ensure that the sum of the weights in the `ColumnElementData` is
+     *     not more than 12, as this is the total width of the input control part of each form row.  Example
+     *     for a row where the `Input` uses 6 cells and the second `Input` uses 2 cells (using `ColumnElementData`):
      *
      * ```javascript
      *
@@ -10418,14 +10405,14 @@ declare module "sap/ui/layout/form/SimpleForm" {
       | `{${string}}`;
 
     /**
-     * @SINCE 1.16.3
+     * @since 1.16.3
      *
      * Title element of the `SimpleForm`. Can either be a `Title` element, or a string.
      */
     title?: string | Title | PropertyBindingInfo;
 
     /**
-     * @SINCE 1.36.0
+     * @since 1.36.0
      *
      * Toolbar of the `SimpleForm`.
      *
@@ -10435,7 +10422,7 @@ declare module "sap/ui/layout/form/SimpleForm" {
     toolbar?: Toolbar;
 
     /**
-     * @SINCE 1.32.0
+     * @since 1.32.0
      *
      * Association to controls / IDs which label this control (see WAI-ARIA attribute `aria-labelledby`).
      */
@@ -10458,7 +10445,7 @@ declare module "sap/ui/layout/Grid" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.15.0
+   * @since 1.15.0
    *
    * A layout control which positions its child controls in a 12 column flow layout.
    *
@@ -10471,12 +10458,12 @@ declare module "sap/ui/layout/Grid" {
    *
    * **Notes:**
    * 	 - The visibility of the child control does not affect the horizontal space it occupies, meaning that
-   * 			even if the control is not visible, its horizontal space still exists, even if it is empty.
+   *     even if the control is not visible, its horizontal space still exists, even if it is empty.
    * 	 -  If it gets wider, the content of the columns is designed to overflow outside of its dimensions.
-   * 			An additional `sapUiRespGridOverflowHidden` CSS class should be added to the control in order to hide
-   * 			the overflowing part of it.
+   *     An additional `sapUiRespGridOverflowHidden` CSS class should be added to the control in order to hide
+   *     the overflowing part of it.
    */
-  export default class Grid extends Control {
+  class Grid extends Control {
     /**
      * Constructor for a new `Grid`.
      *
@@ -10485,8 +10472,8 @@ declare module "sap/ui/layout/Grid" {
      * of the syntax of the settings object.
      * See:
      * 	{@link fiori:https://experience.sap.com/fiori-design-web/grid-layout/#responsive-grid Grid}
-     * 	{@link topic:43ae317cf39640a88bc8be979d2671df Grid}
-     * 	{@link topic:32d4b9c2b981425dbc374d3e9d5d0c2e Grid Controls}
+     * 	{@link https://ui5.sap.com/#/topic/43ae317cf39640a88bc8be979d2671df Grid}
+     * 	{@link https://ui5.sap.com/#/topic/32d4b9c2b981425dbc374d3e9d5d0c2e Grid Controls}
      */
     constructor(
       /**
@@ -10502,8 +10489,8 @@ declare module "sap/ui/layout/Grid" {
      * of the syntax of the settings object.
      * See:
      * 	{@link fiori:https://experience.sap.com/fiori-design-web/grid-layout/#responsive-grid Grid}
-     * 	{@link topic:43ae317cf39640a88bc8be979d2671df Grid}
-     * 	{@link topic:32d4b9c2b981425dbc374d3e9d5d0c2e Grid Controls}
+     * 	{@link https://ui5.sap.com/#/topic/43ae317cf39640a88bc8be979d2671df Grid}
+     * 	{@link https://ui5.sap.com/#/topic/32d4b9c2b981425dbc374d3e9d5d0c2e Grid Controls}
      */
     constructor(
       /**
@@ -10546,7 +10533,7 @@ declare module "sap/ui/layout/Grid" {
      */
     static getMetadata(): ElementMetadata;
     /**
-     * @SINCE 1.48.7
+     * @since 1.48.7
      *
      * Adds some ariaLabelledBy into the association {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -10576,6 +10563,8 @@ declare module "sap/ui/layout/Grid" {
      */
     destroyContent(): this;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Returns the `Grid` accessibility information.
      * See:
      * 	sap.ui.core.Control#getAccessibilityInfo
@@ -10584,10 +10573,9 @@ declare module "sap/ui/layout/Grid" {
      */
     getAccessibilityInfo(): object;
     /**
-     * @SINCE 1.48.7
+     * @since 1.48.7
      *
-     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy
-     * ariaLabelledBy}.
+     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
      */
     getAriaLabelledBy(): ID[];
     /**
@@ -10708,7 +10696,7 @@ declare module "sap/ui/layout/Grid" {
       iIndex: int
     ): this;
     /**
-     * @SINCE 1.48.7
+     * @since 1.48.7
      *
      * Removes all the controls in the association named {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -10724,7 +10712,7 @@ declare module "sap/ui/layout/Grid" {
      */
     removeAllContent(): Control[];
     /**
-     * @SINCE 1.48.7
+     * @since 1.48.7
      *
      * Removes an ariaLabelledBy from the association named {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -10879,6 +10867,7 @@ declare module "sap/ui/layout/Grid" {
       sWidth?: CSSSize
     ): this;
   }
+  export default Grid;
 
   export interface $GridSettings extends $ControlSettings {
     /**
@@ -10937,7 +10926,7 @@ declare module "sap/ui/layout/Grid" {
     content?: Control[] | Control | AggregationBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.48.7
+     * @since 1.48.7
      *
      * Association to controls / IDs that label this control (see WAI-ARIA attribute `aria-labelledby`).
      */
@@ -10958,7 +10947,7 @@ declare module "sap/ui/layout/GridData" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.15.0
+   * @since 1.15.0
    *
    * Defines layout data for the {@link sap.ui.layout.Grid}.
    *
@@ -10966,7 +10955,7 @@ declare module "sap/ui/layout/GridData" {
    * to `true` if the next form element has to be displayed on a new line. Otherwise the `GridData` overrides
    * the layout provided by the `Form`.
    */
-  export default class GridData extends LayoutData {
+  class GridData extends LayoutData {
     /**
      * Constructor for a new `GridData`.
      *
@@ -10974,8 +10963,8 @@ declare module "sap/ui/layout/GridData" {
      * objects as well as event handlers. See {@link sap.ui.base.ManagedObject#constructor} for a general description
      * of the syntax of the settings object.
      * See:
-     * 	{@link topic:43ae317cf39640a88bc8be979d2671df Grid}
-     * 	{@link topic:32d4b9c2b981425dbc374d3e9d5d0c2e Grid Controls}
+     * 	{@link https://ui5.sap.com/#/topic/43ae317cf39640a88bc8be979d2671df Grid}
+     * 	{@link https://ui5.sap.com/#/topic/32d4b9c2b981425dbc374d3e9d5d0c2e Grid Controls}
      */
     constructor(
       /**
@@ -10990,8 +10979,8 @@ declare module "sap/ui/layout/GridData" {
      * objects as well as event handlers. See {@link sap.ui.base.ManagedObject#constructor} for a general description
      * of the syntax of the settings object.
      * See:
-     * 	{@link topic:43ae317cf39640a88bc8be979d2671df Grid}
-     * 	{@link topic:32d4b9c2b981425dbc374d3e9d5d0c2e Grid Controls}
+     * 	{@link https://ui5.sap.com/#/topic/43ae317cf39640a88bc8be979d2671df Grid}
+     * 	{@link https://ui5.sap.com/#/topic/32d4b9c2b981425dbc374d3e9d5d0c2e Grid Controls}
      */
     constructor(
       /**
@@ -11866,6 +11855,7 @@ declare module "sap/ui/layout/GridData" {
       bVisibleXL?: boolean
     ): this;
   }
+  export default GridData;
 
   export interface $GridDataSettings extends $LayoutDataSettings {
     /**
@@ -12070,6 +12060,8 @@ declare module "sap/ui/layout/GridData" {
 declare module "sap/ui/layout/HorizontalLayout" {
   import { default as Control, $ControlSettings } from "sap/ui/core/Control";
 
+  import { AccessibilityInfo } from "sap/ui/core/library";
+
   import ElementMetadata from "sap/ui/core/ElementMetadata";
 
   import {
@@ -12078,11 +12070,11 @@ declare module "sap/ui/layout/HorizontalLayout" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    *
    * A layout that provides support for horizontal alignment of controls
    */
-  export default class HorizontalLayout extends Control {
+  class HorizontalLayout extends Control {
     /**
      * Constructor for a new HorizontalLayout.
      *
@@ -12161,12 +12153,14 @@ declare module "sap/ui/layout/HorizontalLayout" {
      */
     destroyContent(): this;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * See:
      * 	sap.ui.core.Control#getAccessibilityInfo
      *
      * @returns Current accessibility state of the control
      */
-    getAccessibilityInfo(): object;
+    getAccessibilityInfo(): AccessibilityInfo;
     /**
      * Gets current value of property {@link #getAllowWrapping allowWrapping}.
      *
@@ -12251,6 +12245,7 @@ declare module "sap/ui/layout/HorizontalLayout" {
       bAllowWrapping?: boolean
     ): this;
   }
+  export default HorizontalLayout;
 
   export interface $HorizontalLayoutSettings extends $ControlSettings {
     /**
@@ -12284,13 +12279,13 @@ declare module "sap/ui/layout/PaneContainer" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.38
+   * @since 1.38
    *
    * PaneContainer is an abstraction of Splitter.
    *
    * Could be used as an aggregation of ResponsiveSplitter or nested in other PaneContainers.
    */
-  export default class PaneContainer extends UI5Element {
+  class PaneContainer extends UI5Element {
     /**
      * Constructor for a new PaneContainer.
      *
@@ -12381,7 +12376,7 @@ declare module "sap/ui/layout/PaneContainer" {
       /**
        * The function to be called when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (p1: Event<$PaneContainerResizeEventParameters>) => void,
       /**
        * Context object to call the event handler with. Defaults to this `sap.ui.layout.PaneContainer` itself
        */
@@ -12401,7 +12396,7 @@ declare module "sap/ui/layout/PaneContainer" {
       /**
        * The function to be called when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (p1: Event<$PaneContainerResizeEventParameters>) => void,
       /**
        * Context object to call the event handler with. Defaults to this `sap.ui.layout.PaneContainer` itself
        */
@@ -12424,13 +12419,15 @@ declare module "sap/ui/layout/PaneContainer" {
       /**
        * The function to be called, when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (p1: Event<$PaneContainerResizeEventParameters>) => void,
       /**
        * Context object on which the given function had to be called
        */
       oListener?: object
     ): this;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Fires event {@link #event:resize resize} to attached listeners.
      *
      * @returns Reference to `this` in order to allow method chaining
@@ -12439,16 +12436,7 @@ declare module "sap/ui/layout/PaneContainer" {
       /**
        * Parameters to pass along with the event
        */
-      mParameters?: {
-        /**
-         * An array of values representing the old (pixel)sizes of the split panes, which are inside the pane container.
-         */
-        oldSizes?: float[];
-        /**
-         * An array of values representing the new (pixel)sizes of the split panes, which are inside the pane container.
-         */
-        newSizes?: float[];
-      }
+      mParameters?: $PaneContainerResizeEventParameters
     ): this;
     /**
      * Getter for property layoutData.
@@ -12527,6 +12515,7 @@ declare module "sap/ui/layout/PaneContainer" {
       sOrientation: Orientation | keyof typeof Orientation
     ): this;
   }
+  export default PaneContainer;
 
   export interface $PaneContainerSettings extends $ElementSettings {
     /**
@@ -12545,7 +12534,19 @@ declare module "sap/ui/layout/PaneContainer" {
     /**
      * Fired when contents are resized.
      */
-    resize?: (oEvent: Event) => void;
+    resize?: (oEvent: Event<$PaneContainerResizeEventParameters>) => void;
+  }
+
+  export interface $PaneContainerResizeEventParameters {
+    /**
+     * An array of values representing the old (pixel)sizes of the split panes, which are inside the pane container.
+     */
+    oldSizes?: float[];
+
+    /**
+     * An array of values representing the new (pixel)sizes of the split panes, which are inside the pane container.
+     */
+    newSizes?: float[];
   }
 }
 
@@ -12562,12 +12563,12 @@ declare module "sap/ui/layout/ResponsiveFlowLayout" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    *
    * This is a layout where several controls can be added. These controls are blown up to fit in an entire
    * row. If the window resizes, the controls are moved between the rows and resized again.
    */
-  export default class ResponsiveFlowLayout extends Control {
+  class ResponsiveFlowLayout extends Control {
     /**
      * Constructor for a new ResponsiveFlowLayout.
      *
@@ -12629,7 +12630,7 @@ declare module "sap/ui/layout/ResponsiveFlowLayout" {
      */
     static getMetadata(): ElementMetadata;
     /**
-     * @SINCE 1.48.7
+     * @since 1.48.7
      *
      * Adds some ariaLabelledBy into the association {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -12658,10 +12659,9 @@ declare module "sap/ui/layout/ResponsiveFlowLayout" {
      */
     destroyContent(): this;
     /**
-     * @SINCE 1.48.7
+     * @since 1.48.7
      *
-     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy
-     * ariaLabelledBy}.
+     * Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
      */
     getAriaLabelledBy(): ID[];
     /**
@@ -12709,7 +12709,7 @@ declare module "sap/ui/layout/ResponsiveFlowLayout" {
       iIndex: int
     ): void;
     /**
-     * @SINCE 1.48.7
+     * @since 1.48.7
      *
      * Removes all the controls in the association named {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -12725,7 +12725,7 @@ declare module "sap/ui/layout/ResponsiveFlowLayout" {
      */
     removeAllContent(): Control[];
     /**
-     * @SINCE 1.48.7
+     * @since 1.48.7
      *
      * Removes an ariaLabelledBy from the association named {@link #getAriaLabelledBy ariaLabelledBy}.
      *
@@ -12766,6 +12766,7 @@ declare module "sap/ui/layout/ResponsiveFlowLayout" {
       bResponsive?: boolean
     ): this;
   }
+  export default ResponsiveFlowLayout;
 
   export interface $ResponsiveFlowLayoutSettings extends $ControlSettings {
     /**
@@ -12781,7 +12782,7 @@ declare module "sap/ui/layout/ResponsiveFlowLayout" {
     content?: Control[] | Control | AggregationBindingInfo | `{${string}}`;
 
     /**
-     * @SINCE 1.48.7
+     * @since 1.48.7
      *
      * Association to controls / IDs that label this control (see WAI-ARIA attribute `aria-labelledby`).
      */
@@ -12800,11 +12801,11 @@ declare module "sap/ui/layout/ResponsiveFlowLayoutData" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    *
    * This is a LayoutData element that can be added to a control if this control is used within a ResponsiveFlowLayout.
    */
-  export default class ResponsiveFlowLayoutData extends LayoutData {
+  class ResponsiveFlowLayoutData extends LayoutData {
     /**
      * Constructor for a new ResponsiveFlowLayoutData.
      *
@@ -13011,6 +13012,7 @@ declare module "sap/ui/layout/ResponsiveFlowLayoutData" {
       iWeight?: int
     ): this;
   }
+  export default ResponsiveFlowLayoutData;
 
   export interface $ResponsiveFlowLayoutDataSettings
     extends $LayoutDataSettings {
@@ -13060,7 +13062,7 @@ declare module "sap/ui/layout/ResponsiveSplitter" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.38
+   * @since 1.38
    *
    * A responsive splitter which divides the application into several areas. Overview: The responsive splitter
    * layout structures complex applications into defined areas. These areas may be resizable and are either
@@ -13069,15 +13071,15 @@ declare module "sap/ui/layout/ResponsiveSplitter" {
    * The control is intended for developing administrative tools and applications. Structure: The responsive
    * splitter holds the following hierarchy of containers and controls:
    * 	 - {@link sap.ui.layout.PaneContainer Pane Container} - holds one or more Split Panes and determines
-   * 			the pane orientation. The pane which is stored in `rootPaneContainer` holds all other pane containers
-   * 			and split panes.
+   *     the pane orientation. The pane which is stored in `rootPaneContainer` holds all other pane containers
+   *     and split panes.
    * 	 - {@link sap.ui.layout.SplitPane Split Pane} - independent containers that may interact with one another.
-   * 			Each pane can hold only one control.  Usage: When to use:
+   *     Each pane can hold only one control.  Usage: When to use:
    * 	 - The application has to display several areas side by side that must be resizable.
    * 	 - The application must work on a range of different devices in a responsive manner.  Responsive
-   * 			Behavior:
+   *     Behavior:
    * 	 - As soon as views are in the off-canvas mode, the pagination bar at the bottom of the application
-   * 			allows the user to switch between them.
+   *     allows the user to switch between them.
    * 	 - On touch-enabled devices the bars of the splitter can be moved by touching the grip.
    * 	 - Double-clicking on a splitter will collapse or expand it back to its original position.
    *
@@ -13085,7 +13087,7 @@ declare module "sap/ui/layout/ResponsiveSplitter" {
    * might lead to inconsistent layout. If it is necessary, you need to ensure the sum of all sizes of the
    * SplitPanes doesn't exceed the width of the PaneContainer.
    */
-  export default class ResponsiveSplitter extends Control {
+  class ResponsiveSplitter extends Control {
     /**
      * Constructor for a new ResponsiveSplitter.
      *
@@ -13245,6 +13247,7 @@ declare module "sap/ui/layout/ResponsiveSplitter" {
       sWidth?: CSSSize
     ): this;
   }
+  export default ResponsiveSplitter;
 
   export interface $ResponsiveSplitterSettings extends $ControlSettings {
     /**
@@ -13280,18 +13283,18 @@ declare module "sap/ui/layout/SplitPane" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.38
+   * @since 1.38
    *
    * SplitPane is a container of a single control in a responsive splitter. Could be used as an aggregation
    * of a {@link sap.ui.layout.PaneContainer PaneContainer}.
    *
    * The behavior of the Split Panes is handled by the following properties:
    * 	 - `requiredParentWidth` - determines the minimum width of the parent container (in pixels). When it
-   * 			is reached, the pane will be hidden from the screen.
+   *     is reached, the pane will be hidden from the screen.
    * 	 - `demandPane` - determines if the pane is reachable via the pagination bar after it has been hidden
-   * 			from the screen.
+   *     from the screen.
    */
-  export default class SplitPane extends UI5Element {
+  class SplitPane extends UI5Element {
     /**
      * Constructor for a new SplitPane.
      *
@@ -13438,6 +13441,7 @@ declare module "sap/ui/layout/SplitPane" {
       iRequiredParentWidth?: int
     ): this;
   }
+  export default SplitPane;
 
   export interface $SplitPaneSettings extends $ElementSettings {
     /**
@@ -13476,7 +13480,7 @@ declare module "sap/ui/layout/Splitter" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.22.0
+   * @since 1.22.0
    *
    * Overview: A layout that contains several content areas. The content that is added to the splitter should
    * contain `layoutData` of type {@link sap.ui.layout.SplitterLayoutData SplitterLayoutData} which defines
@@ -13503,7 +13507,7 @@ declare module "sap/ui/layout/Splitter" {
    *
    * Responsive Behavior: On touch-enabled devices the bars of the splitter can be moved by touching the grip.
    */
-  export default class Splitter extends Control {
+  class Splitter extends Control {
     /**
      * Constructor for a new Splitter.
      *
@@ -13594,7 +13598,7 @@ declare module "sap/ui/layout/Splitter" {
       /**
        * The function to be called when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (p1: Event<$SplitterResizeEventParameters>) => void,
       /**
        * Context object to call the event handler with. Defaults to this `sap.ui.layout.Splitter` itself
        */
@@ -13614,7 +13618,7 @@ declare module "sap/ui/layout/Splitter" {
       /**
        * The function to be called when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (p1: Event<$SplitterResizeEventParameters>) => void,
       /**
        * Context object to call the event handler with. Defaults to this `sap.ui.layout.Splitter` itself
        */
@@ -13637,7 +13641,7 @@ declare module "sap/ui/layout/Splitter" {
       /**
        * The function to be called, when the event occurs
        */
-      fnFunction: (p1: Event) => void,
+      fnFunction: (p1: Event<$SplitterResizeEventParameters>) => void,
       /**
        * Context object on which the given function had to be called
        */
@@ -13647,6 +13651,7 @@ declare module "sap/ui/layout/Splitter" {
      * @deprecated (since 1.21) - This method is declared as protected in order to assess the need for this
      * feature. It is declared as deprecated because the API might change in case the need for this is high
      * enough to make it part of the official Splitter interface
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
      *
      * Disables the resize handler for this control, this leads to an automatic resize of the contents whenever
      * the control changes its size. The resize handler is enabled in every control instance by default. For
@@ -13660,6 +13665,8 @@ declare module "sap/ui/layout/Splitter" {
       bTemporarily?: boolean
     ): void;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Disables the resizing of the Splitter contents via keyboard. This changes the Splitter bars to non-focusable
      * elements.
      */
@@ -13668,6 +13675,7 @@ declare module "sap/ui/layout/Splitter" {
      * @deprecated (since 1.21) - This method is declared as protected in order to assess the need for this
      * feature. It is declared as deprecated because the API might change in case the need for this is high
      * enough to make it part of the official Splitter interface
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
      *
      * Disables recalculation and resize of the splitter contents while dragging the splitter bar. This means
      * that the contents are resized only once after moving the splitter bar.
@@ -13677,6 +13685,7 @@ declare module "sap/ui/layout/Splitter" {
      * @deprecated (since 1.21) - This method is declared as protected in order to assess the need for this
      * feature. It is declared as deprecated because the API might change in case the need for this is high
      * enough to make it part of the official Splitter interface
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
      *
      * Enables the resize handler for this control, this leads to an automatic resize of the contents whenever
      * the control changes its size. The resize handler is enabled in every control instance by default. For
@@ -13689,6 +13698,8 @@ declare module "sap/ui/layout/Splitter" {
       bTemporarily?: boolean
     ): void;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Enables the resizing of the Splitter contents via keyboard. This makes the Splitter bars focusable elements.
      */
     enableKeyboardSupport(): void;
@@ -13696,12 +13707,15 @@ declare module "sap/ui/layout/Splitter" {
      * @deprecated (since 1.21) - This method is declared as protected in order to assess the need for this
      * feature. It is declared as deprecated because the API might change in case the need for this is high
      * enough to make it part of the official Splitter interface
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
      *
      * Enables recalculation and resize of the splitter contents while dragging the splitter bar. This means
      * that the contents are resized several times per second when moving the splitter bar.
      */
     enableLiveResize(): void;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * Fires event {@link #event:resize resize} to attached listeners.
      *
      * @returns Reference to `this` in order to allow method chaining
@@ -13710,26 +13724,13 @@ declare module "sap/ui/layout/Splitter" {
       /**
        * Parameters to pass along with the event
        */
-      mParameters?: {
-        /**
-         * The ID of the splitter control. The splitter control can also be accessed by calling getSource() on the
-         * event.
-         */
-        id?: string;
-        /**
-         * An array of values representing the old (pixel-)sizes of the splitter contents
-         */
-        oldSizes?: int[];
-        /**
-         * An array of values representing the new (pixel-)sizes of the splitter contents
-         */
-        newSizes?: int[];
-      }
+      mParameters?: $SplitterResizeEventParameters
     ): this;
     /**
      * @deprecated (since 1.21) - This method is declared as protected in order to assess the need for this
      * feature. It is declared as deprecated because the API might change in case the need for this is high
      * enough to make it part of the official Splitter interface
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
      *
      * Returns the current actual content sizes as pixel value - these values can change with every resize.
      *
@@ -13887,6 +13888,7 @@ declare module "sap/ui/layout/Splitter" {
       forceDirectly?: boolean
     ): void;
   }
+  export default Splitter;
 
   export interface $SplitterSettings extends $ControlSettings {
     /**
@@ -13915,7 +13917,25 @@ declare module "sap/ui/layout/Splitter" {
     /**
      * Event is fired when contents are resized.
      */
-    resize?: (oEvent: Event) => void;
+    resize?: (oEvent: Event<$SplitterResizeEventParameters>) => void;
+  }
+
+  export interface $SplitterResizeEventParameters {
+    /**
+     * The ID of the splitter control. The splitter control can also be accessed by calling getSource() on the
+     * event.
+     */
+    id?: string;
+
+    /**
+     * An array of values representing the old (pixel-)sizes of the splitter contents
+     */
+    oldSizes?: int[];
+
+    /**
+     * An array of values representing the new (pixel-)sizes of the splitter contents
+     */
+    newSizes?: int[];
   }
 }
 
@@ -13932,14 +13952,14 @@ declare module "sap/ui/layout/SplitterLayoutData" {
   import { PropertyBindingInfo } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.22.0
-   * @EXPERIMENTAL (since 1.22.0)
+   * @since 1.22.0
+   * @experimental (since 1.22.0) - API is not yet finished and might change completely
    *
    * Holds layout data for the splitter contents. Allowed size values are numeric values ending in "px" and
    * "%" and the special case "auto". (The CSS value "auto" is used internally to recalculate the size of
    * the content dynamically and is not directly set as style property.)
    */
-  export default class SplitterLayoutData extends LayoutData {
+  class SplitterLayoutData extends LayoutData {
     /**
      * Constructor for a new SplitterLayoutData.
      *
@@ -14088,6 +14108,7 @@ declare module "sap/ui/layout/SplitterLayoutData" {
       sSize?: CSSSize
     ): this;
   }
+  export default SplitterLayoutData;
 
   export interface $SplitterLayoutDataSettings extends $LayoutDataSettings {
     /**
@@ -14113,9 +14134,9 @@ declare module "sap/ui/layout/SplitterLayoutData" {
 declare module "sap/ui/layout/VerticalLayout" {
   import { default as Control, $ControlSettings } from "sap/ui/core/Control";
 
-  import ElementMetadata from "sap/ui/core/ElementMetadata";
+  import { AccessibilityInfo, CSSSize } from "sap/ui/core/library";
 
-  import { CSSSize } from "sap/ui/core/library";
+  import ElementMetadata from "sap/ui/core/ElementMetadata";
 
   import {
     PropertyBindingInfo,
@@ -14123,11 +14144,11 @@ declare module "sap/ui/layout/VerticalLayout" {
   } from "sap/ui/base/ManagedObject";
 
   /**
-   * @SINCE 1.16.0
+   * @since 1.16.0
    *
    * In this layout the content controls are rendered one below the other.
    */
-  export default class VerticalLayout extends Control {
+  class VerticalLayout extends Control {
     /**
      * Constructor for a new VerticalLayout.
      *
@@ -14206,12 +14227,14 @@ declare module "sap/ui/layout/VerticalLayout" {
      */
     destroyContent(): this;
     /**
+     * Protected: DO NOT USE IN APPLICATIONS (only for related classes in the framework)
+     *
      * See:
      * 	sap.ui.core.Control#getAccessibilityInfo
      *
      * @returns An object with the accessibilty infos for this control
      */
-    getAccessibilityInfo(): object;
+    getAccessibilityInfo(): AccessibilityInfo;
     /**
      * Gets content of aggregation {@link #getContent content}.
      *
@@ -14319,6 +14342,7 @@ declare module "sap/ui/layout/VerticalLayout" {
       sWidth?: CSSSize
     ): this;
   }
+  export default VerticalLayout;
 
   export interface $VerticalLayoutSettings extends $ControlSettings {
     /**

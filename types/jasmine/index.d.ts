@@ -123,22 +123,22 @@ declare function afterAll(action: jasmine.ImplementationCallback, timeout?: numb
 
 /**
  * Create an expectation for a spec.
- * @checkReturnValue see https://tsetse.info/check-return-value
  * @param spy
+ * @see see https://tsetse.info/check-return-value
  */
 declare function expect<T extends jasmine.Func>(spy: T | jasmine.Spy<T>): jasmine.FunctionMatchers<T>;
 
 /**
  * Create an expectation for a spec.
- * @checkReturnValue see https://tsetse.info/check-return-value
  * @param actual
+ * @see see https://tsetse.info/check-return-value
  */
 declare function expect<T>(actual: ArrayLike<T>): jasmine.ArrayLikeMatchers<T>;
 
 /**
  * Create an expectation for a spec.
- * @checkReturnValue see https://tsetse.info/check-return-value
  * @param actual Actual computed value to test expectations against.
+ * @see see https://tsetse.info/check-return-value
  */
 declare function expect<T>(actual: T): jasmine.Matchers<T>;
 
@@ -152,8 +152,8 @@ declare function expect(): jasmine.NothingMatcher;
  * that are provided by an asynchronous expectation all return promises
  * which must be either returned from the spec or waited for using `await`
  * in order for Jasmine to associate them with the correct spec.
- * @checkReturnValue see https://tsetse.info/check-return-value
  * @param actual Actual computed value to test expectations against.
+ * @see see https://tsetse.info/check-return-value
  */
 declare function expectAsync<T, U>(actual: T | PromiseLike<T>): jasmine.AsyncMatchers<T, U>;
 
@@ -230,7 +230,11 @@ declare namespace jasmine {
           };
     type SpyObjMethodNames<T = undefined> = T extends undefined
         ? ReadonlyArray<string> | { [methodName: string]: any }
-        : ReadonlyArray<keyof T> | { [P in keyof T]?: T[P] extends Func ? ReturnType<T[P]> : any };
+        : (ReadonlyArray<keyof T> |
+            { [P in keyof T]?:
+                // Value should be the return type (unless this is a method on Object.prototype, since all object literals contain those methods)
+                T[P] extends Func ? (ReturnType<T[P]> | (P extends keyof Object ? Object[P] : never)) : any
+            });
 
     type SpyObjPropertyNames<T = undefined> = T extends undefined
         ? ReadonlyArray<string> | { [propertyName: string]: any }
@@ -731,7 +735,7 @@ declare namespace jasmine {
         /**
          * Add some context for an expect.
          * @param message Additional context to show when the matcher fails
-         * @checkReturnValue see https://tsetse.info/check-return-value
+         * @see see https://tsetse.info/check-return-value
          */
         withContext(message: string): Matchers<T>;
 
@@ -779,7 +783,7 @@ declare namespace jasmine {
         /**
          * Add some context for an expect.
          * @param message Additional context to show when the matcher fails.
-         * @checkReturnValue see https://tsetse.info/check-return-value
+         * @see see https://tsetse.info/check-return-value
          */
         withContext(message: string): ArrayLikeMatchers<T>;
 
@@ -807,7 +811,7 @@ declare namespace jasmine {
         /**
          * Add some context for an expect.
          * @param message Additional context to show when the matcher fails.
-         * @checkReturnValue see https://tsetse.info/check-return-value
+         * @see see https://tsetse.info/check-return-value
          */
         withContext(message: string): FunctionMatchers<Fn>;
 
@@ -880,7 +884,7 @@ declare namespace jasmine {
         /**
          * Add some context for an expect.
          * @param message Additional context to show when the matcher fails.
-         * @checkReturnValue see https://tsetse.info/check-return-value
+         * @see see https://tsetse.info/check-return-value
          */
         withContext(message: string): AsyncMatchers<T, U>;
 
@@ -1060,15 +1064,13 @@ declare namespace jasmine {
     /**
      * Obtains the promised type that a promise-returning function resolves to.
      */
-    type PromisedReturnType<Fn extends Func> = Fn extends (...args: any[]) => PromiseLike<infer TResult>
-        ? TResult
-        : never;
+    type PromisedResolveType<T> = T extends PromiseLike<infer TResult> ? TResult : never;
 
     /**
      * Obtains the type that a promise-returning function can be rejected with.
      * This is so we can use .and.rejectWith() only for functions that return a promise.
      */
-    type PromisedRejectType<Fn extends Function> = Fn extends (...args: any[]) => PromiseLike<unknown> ? any : never;
+    type PromisedRejectType<T> = T extends PromiseLike<unknown> ? any : never;
 
     interface SpyAnd<Fn extends Func> {
         identity: string;
@@ -1082,9 +1084,9 @@ declare namespace jasmine {
         /** By chaining the spy with and.callFake, all calls to the spy will delegate to the supplied function. */
         callFake(fn: Fn): Spy<Fn>;
         /** Tell the spy to return a promise resolving to the specified value when invoked. */
-        resolveTo(val?: PromisedReturnType<Fn>): Spy<Fn>;
+        resolveTo(val?: PromisedResolveType<ReturnType<Fn>>): Spy<Fn>;
         /** Tell the spy to return a promise rejecting with the specified value when invoked. */
-        rejectWith(val?: PromisedRejectType<Fn>): Spy<Fn>;
+        rejectWith(val?: PromisedRejectType<ReturnType<Fn>>): Spy<Fn>;
         /** By chaining the spy with and.throwError, all calls to the spy will throw the specified value. */
         throwError(msg: string | Error): Spy;
         /** When a calling strategy is used for a spy, the original stubbing behavior can be returned at any time with and.stub. */

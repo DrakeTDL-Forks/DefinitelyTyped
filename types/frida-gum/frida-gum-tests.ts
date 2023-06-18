@@ -1,7 +1,14 @@
 Frida.version; // $ExpectType string
 
+const opts: HexdumpOptions = { address: ptr('0x1000') };
+// $ExpectType NativePointer | undefined
+opts.address;
+
 // @ts-expect-error
 SourceMap;
+
+// $ExpectType ScriptRuntime
+Script.runtime;
 
 // $ExpectType any
 Script.evaluate("/true.js", "true");

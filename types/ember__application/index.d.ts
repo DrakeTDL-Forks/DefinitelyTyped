@@ -1,8 +1,9 @@
 // Type definitions for non-npm package @ember/application 4.0
 // Project: https://emberjs.com/api/ember/4.0/modules/@ember%2Fapplication
 // Definitions by: Chris Krycho <https://github.com/chriskrycho>
-//                 Dan Freeman <https://github.com/dfreeman>
+//                 Krystan HuffMenne <https://github.com/gitKrystan>
 //                 James C. Davis <https://github.com/jamescdavis>
+//                 Peter Wagenet <https://github.com/wagenet>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // Minimum TypeScript Version: 4.4
 
@@ -12,9 +13,8 @@ import EventDispatcher from '@ember/application/-private/event-dispatcher';
 import { EventDispatcherEvents } from '@ember/application/types';
 import Router from '@ember/routing/router';
 import Registry from '@ember/application/-private/registry';
-import Resolver from 'ember-resolver';
 import { AnyFn } from 'ember/-private/type-utils';
-import Owner from '@ember/owner';
+import Owner, { Resolver } from '@ember/owner';
 import type GlimmerComponent from '@glimmer/component';
 import EmberObject from '@ember/object';
 

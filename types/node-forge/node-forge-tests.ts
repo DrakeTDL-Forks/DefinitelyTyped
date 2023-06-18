@@ -2,6 +2,17 @@ import * as forge from 'node-forge';
 
 let keypair = forge.pki.rsa.generateKeyPair({ bits: 512 });
 forge.pki.rsa.setPublicKey(keypair.privateKey.n, keypair.privateKey.e);
+forge.pki.setRsaPublicKey(keypair.privateKey.n, keypair.privateKey.e);
+forge.pki.setRsaPrivateKey(
+    keypair.privateKey.n,
+    keypair.privateKey.e,
+    keypair.privateKey.d,
+    keypair.privateKey.p,
+    keypair.privateKey.q,
+    keypair.privateKey.dP,
+    keypair.privateKey.dQ,
+    keypair.privateKey.qInv,
+);
 let privateKeyPem = forge.pki.privateKeyToPem(keypair.privateKey);
 let publicKeyPem = forge.pki.publicKeyToPem(keypair.publicKey);
 let publicKeyRSAPem: forge.pki.PEM = forge.pki.publicKeyToRSAPublicKeyPem(keypair.publicKey);
@@ -624,6 +635,14 @@ if (forge.util.fillString('1', 5) !== '11111') throw Error('forge.util.fillStrin
     forge.pki.ed25519.sign({
         message: toSign2,
         encoding: 'utf8',
+        privateKey,
+    });
+
+    const md = forge.md.sha256.create();
+    md.update('abc', 'utf8');
+
+    forge.pki.ed25519.sign({
+        md,
         privateKey,
     });
 }

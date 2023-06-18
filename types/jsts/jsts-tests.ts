@@ -38,6 +38,9 @@ const ggo2: jsts.operation.GeometryGraphOperation = new jsts.operation.GeometryG
 const ro0: jsts.operation.relate.RelateOp = new jsts.operation.relate.RelateOp(g, g);
 const ro1: jsts.operation.relate.RelateOp = new jsts.operation.relate.RelateOp(g, g, bnr);
 
+var al = new java.utils.ArrayList();
+var hs = new java.utils.HashSet();
+
 str = jsts.version;
 
 c = new jsts.geom.Coordinate(c);
@@ -89,6 +92,8 @@ str = e.toString();
 e.translate(n, n);
 
 g.apply({filter: Geometry => {}});
+g = g.buffer(n);
+g = g.buffer(n, n);
 g = g.buffer(n, n, n);
 if (g instanceof jsts.geom.Polygon) {
   poly = g;
@@ -152,6 +157,7 @@ str = g.toString();
 bool = g.touches(g);
 g = g.union(g);
 bool = g.within(g);
+n = g.hashCode();
 
 c = ls.getCoordinateN(n);
 p = ls.getEndPoint();
@@ -384,3 +390,20 @@ geomCollection = factory.createGeometryCollection([p, ls]);
 g = factory.createEmpty(n);
 g = factory.createGeometry(g);
 n = factory.getSRID();
+
+var polygonizer = new jsts.operation.polygonize.Polygonizer();
+polygonizer = new jsts.operation.polygonize.Polygonizer(bool);
+polygonizer.add([g]);
+polygonizer.add(g);
+polygonizer.setCheckRingsValid(bool);
+g = polygonizer.getGeometry();
+al = polygonizer.getPolygons();
+hs = polygonizer.getDangles();
+al = polygonizer.getCutEdges();
+al = polygonizer.getInvalidRingLines();
+
+var lineMerger = new jsts.operation.linemerge.LineMerger();
+lineMerger.add(g);
+var geomJavaCollection = new java.utils.Collection<jsts.geom.Geometry>();
+lineMerger.add(geomJavaCollection);
+geomJavaCollection = lineMerger.getMergedLineStrings();

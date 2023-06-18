@@ -1,6 +1,7 @@
 declare module 'http' {
     import * as stream from 'stream';
     import { URL } from 'url';
+    import { EventEmitter } from 'events';
     import { Socket, Server as NetServer, LookupFunction } from 'net';
 
     // incoming headers will never contain number
@@ -499,7 +500,7 @@ declare module 'http' {
         scheduling?: 'fifo' | 'lifo' | undefined;
     }
 
-    class Agent {
+    class Agent extends EventEmitter {
         maxFreeSockets: number;
         maxSockets: number;
         maxTotalSockets: number;
@@ -548,6 +549,25 @@ declare module 'http' {
     ): ClientRequest;
     function get(options: RequestOptions | string | URL, callback?: (res: IncomingMessage) => void): ClientRequest;
     function get(url: string | URL, options: RequestOptions, callback?: (res: IncomingMessage) => void): ClientRequest;
+
+    /**
+     * Performs the low-level validations on the provided name that are done when `res.setHeader(name, value)` is called.
+     * Passing illegal value as name will result in a TypeError being thrown, identified by `code: 'ERR_INVALID_HTTP_TOKEN'`.
+     * @param name Header name
+     * @since v14.3.0
+     */
+    function validateHeaderName(name: string): void;
+    /**
+     * Performs the low-level validations on the provided value that are done when `res.setHeader(name, value)` is called.
+     * Passing illegal value as value will result in a TypeError being thrown.
+     * - Undefined value error is identified by `code: 'ERR_HTTP_INVALID_HEADER_VALUE'`.
+     * - Invalid value character error is identified by `code: 'ERR_INVALID_CHAR'`.
+     * @param name Header name
+     * @param value Header value
+     * @since v14.3.0
+     */
+    function validateHeaderValue(name: string, value: string): void;
+
     let globalAgent: Agent;
 
     /**

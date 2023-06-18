@@ -222,6 +222,8 @@ new IssueCollection().set('fileURI', [issue]);
 
 /// https://novadocs.panic.com/api-reference/notification-request/
 
+const unnamedRequest = new NotificationRequest();
+
 const request = new NotificationRequest('foobar-not-found');
 
 request.title = nova.localize('Foobar Not Found');
@@ -240,6 +242,10 @@ promise.then(
 
 nova.path.join('test');
 nova.path.join('test', 'a', 'b');
+
+// @ts-expect-error
+nova.path.relative('/path/to/folder/one');
+nova.path.relative('/path/to/folder/one', '/path/to/folder/two');
 
 /// https://novadocs.panic.com/api-reference/process/
 
@@ -310,6 +316,7 @@ task.setAction(
     new TaskProcessAction('/usr/bin/say', {
         args: ["I'm Building!"],
         env: {},
+        shell: true,
     }),
 );
 
@@ -415,3 +422,76 @@ nova.workspace.openNewTextDocument({ syntax: "html", line: 1 });
 // @ts-expect-error
 nova.workspace.openNewTextDocument({ syntax: "html", column: 2 });
 nova.workspace.openNewTextDocument({ content: "<!doctype html>", syntax: "html", line: 1, column: 2 });
+
+/// https://docs.nova.app/api-reference/configuration/
+
+type ConfigCustomThis = number & { __t: 'ConfigCustomThis' };
+const configCustomThis: ConfigCustomThis = 2 as ConfigCustomThis;
+nova.config.observe(
+    'apexskier.testConfig',
+    function(newValue: string, oldValue: string) {
+        // $ExpectType string
+        newValue;
+        // $ExpectType string
+        oldValue;
+        // $ExpectType ConfigCustomThis
+        this;
+    },
+    configCustomThis,
+);
+
+nova.config.observe<string, ConfigCustomThis>(
+    'apexskier.testConfig',
+    function(newValue: string, oldValue: string) {
+        // $ExpectType string
+        newValue;
+        // $ExpectType string
+        oldValue;
+        // $ExpectType ConfigCustomThis
+        this;
+    },
+    // @ts-expect-error
+    'should fail because string is not the right type',
+);
+
+nova.config.observe(
+    'apexskier.testConfig',
+    (newValue: string, oldValue: string) => {
+        // $ExpectType string
+        newValue;
+        // $ExpectType string
+        oldValue;
+        // Closures (arrow functions) do not preserve this value.
+        // $ExpectType undefined
+        this;
+    },
+    configCustomThis,
+);
+
+nova.config.observe('apexskier.testConfig', (newValue: string, oldValue: string) => {
+    // $ExpectType string
+    newValue;
+    // $ExpectType string
+    oldValue;
+    // $ExpectType undefined
+    this;
+});
+
+const tasks: TaskAssistant = { provideTasks: () => [] };
+nova.assistants.registerTaskAssistant(tasks, {
+    identifier: 'com.my-command',
+    name: 'My command',
+});
+
+// Unable to cleanly create a TaskName directly to it need to be built
+// implicitly with `any` to add the `__type` property then coerced into
+// `taskName`
+const tmpTaskName: any = "MyTask";
+tmpTaskName.__type = "TaskName";
+const taskName: TaskName = tmpTaskName;
+
+const taskActionResolveContext: TaskActionResolveContext<any> = {
+    config: nova.config,
+    action: taskName,
+};
+taskActionResolveContext.config;
