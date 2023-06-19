@@ -300,6 +300,34 @@ declare var GM: {
     getValue<TValue = GM.Value>(key: string, defaultValue?: TValue): Promise<TValue>;
 
     /**
+     * Import internal or remote dependency-free modules
+     * @see {@link https://erosman.github.io/support/content/help.html#import}
+     * @experimental
+     */
+    import(
+        url: string,
+        option?: {
+        type:
+            | "javascript"
+            | "PSL"
+            | "cjs"
+            | "mjs"
+            | "json"
+            | "css"
+            | "text"
+            | "gif"
+            | "jpeg"
+            | "jpg"
+            | "png"
+            | "webp"
+            | "html"
+            | "xhtml"
+            | "xml"
+            | "svg";
+        },
+    ): Promise<Record<string, unknown> | undefined>;
+
+    /**
      * An object container info about the running script.
      * @see {@link https://erosman.github.io/support/content/help.html#info}
      */
