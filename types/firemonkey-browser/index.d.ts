@@ -447,9 +447,15 @@ declare var GM: {
 
     /**
      * Displays a notification to the user, using the underlying operating system's notification mechanism
+     * @param title
+     * This param isn't used, title is same as script
+     * @param image
+     * A data URL, blob URL or http/https URL
+     * @param onclick
+     * This param isn't used
      * @see {@link https://erosman.github.io/support/content/help.html#notification}
      */
-    notification(text: string | { text: string; image?: Blob | string }): Promise<string>;
+    notification(text: string, title?: string, image?: Blob | string, onclick?: () => void): Promise<string>;
 
     /**
      * Opens the specified URL in a new tab.
