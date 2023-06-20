@@ -182,13 +182,14 @@ declare var unsafeWindow: Window;
  * @example
  * // Instead of using defineAs, the script can assign the result of exportFunction to an object in the target scope
  * window.notify = exportFunction(notify, window);
+ * @see {@link https://erosman.github.io/support/content/help.html}
  * @see {@link https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Sharing_objects_with_page_scripts#exportfunction}
  */
-declare function exportFunction<T>(
-    func: T,
+declare function exportFunction<Function extends () => void>(
+    func: Function,
     targetScope: object,
     options?: { defineAs?: string; allowCrossOriginArguments?: boolean },
-): T;
+): Function;
 
 /**
  * This function provides a safe way to take an object defined in a privileged scope and
