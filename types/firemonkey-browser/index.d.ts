@@ -500,9 +500,13 @@ declare var GM: {
 
     /**
      * Sets the current contents of the operating system's clipboard
+     * @param data
+     * Can be either a plain string or data.
+     * @param type
+     * If `data` parameter is something other than plain text, then you must specifiy a MIME type that matches data.
      * @see {@link https://erosman.github.io/support/content/help.html#setClipboard}
      */
-    setClipboard(text: string): Promise<void>;
+    setClipboard(data: string, type: string): Promise<void>;
 
     /**
      * Allows user script authors to persist simple values across page loads and
