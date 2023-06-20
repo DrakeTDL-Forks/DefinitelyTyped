@@ -271,6 +271,8 @@ declare var GM: {
 
     /**
      * Utility function to inject style element.
+     * @param css
+     * A string that contains css code.
      * @example
      * const css = `body {
      *   border-top: 2px solid grey;
