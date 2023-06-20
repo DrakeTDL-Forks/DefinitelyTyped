@@ -357,10 +357,12 @@ declare var GM: {
     fetch(url: string | URL, init?: GM.FetchRequest): Promise<Response>;
 
     /**
-     * Given a defined `@resource`, this method fetches and returns the content of the url
+     * If Metadata Block contains `@resource` and GM.getResourceText, text `@resource` targets (not images) are
+     * fetched at the registration time and cached.
+     * Consequently, the latest version of the file will always be fetched
      * @see {@link https://erosman.github.io/support/content/help.html#getResourceText}
      */
-    getResourceText(resourceName: string): Promise<string | undefined>;
+    getResourceText(resourceName: string): Promise<string>;
 
     /**
      * Given a defined `@resource`, this method returns it as a URL
