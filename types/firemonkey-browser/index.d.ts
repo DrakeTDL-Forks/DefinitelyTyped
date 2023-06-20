@@ -286,10 +286,10 @@ declare var GM: {
      * Script storage change listener that returns the key as listener ID
      * @see {@link https://erosman.github.io/support/content/help.html#addValueChangeListener}
      */
-    addValueChangeListener(
+    addValueChangeListener<ListenerId extends string>(
         key: string,
-        callback: (key?: string, oldValue?: string, newValue?: string, remote?: boolean) => void,
-    ): string;
+        callback: (key: string, oldValue: string, newValue: string, remote: boolean) => void,
+    ): ListenerId;
 
     /**
      * Deletes an existing name / value pair from storage.
