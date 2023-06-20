@@ -253,6 +253,8 @@ declare var GM: {
 
     /**
      * Utility function to inject script element.
+     * @param js 
+     * A string that contains javascript code.
      * @example
      * const js = `function sum(x, y) {
      *   return x + y;
