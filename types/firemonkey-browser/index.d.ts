@@ -223,7 +223,15 @@ declare function cloneInto<Object extends Record<string, any>>(
 
 declare var GM: {
     /**
-     * Appends and returns an element with the specified attributes
+     * Utility function to appends and returns an element with the specified attributes
+     * @param parent
+     * If omitted, it will be set as:
+     *  - `document.head)` || `document.body` for 'script', 'link', 'style', 'meta' tags
+     *  - `document.body)` || `document.documentElement` for others
+     * @param tag
+     * Any valid HTML tag
+     * @param attr
+     * Object with any valid attribute and/or textContent
      * @example
      * // loading an external script
      * const elem = GM.addElement('script', {src: 'https://....'});
@@ -240,8 +248,8 @@ declare var GM: {
      * );
      * @see {@link https://erosman.github.io/support/content/help.html#addElement}
      */
-    addElement(tagName: string, attributes: object): HTMLElement | void;
-    addElement(parentNode: string, tagName: string, attributes: object): HTMLElement | void;
+    addElement(tag: string, attr: Record<string, string>): HTMLElement | undefined;
+    addElement(parent: Node | ShadowRoot, tag: string, attr: Record<string, string>): HTMLElement | undefined;
 
     /**
      * Utility function to inject script element.
