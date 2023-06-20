@@ -210,13 +210,14 @@ declare function exportFunction<Function extends () => void>(
  * @example
  * // object with methods
  * unsafeWindow.messenger = cloneInto(obj, unsafeWindow, {cloneFunctions: true});
+ * @see {@link https://erosman.github.io/support/content/help.html}
  * @see {@link https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Sharing_objects_with_page_scripts#cloneinto}
  */
-declare function cloneInto<T>(
-    obj: T,
+declare function cloneInto<Object extends Record<string, any>>(
+    obj: Object,
     targetScope: object,
     options?: { cloneFunctions?: boolean; wrapReflectors?: boolean },
-): T;
+): Object;
 
 //#region GM3 style APIs
 
