@@ -11,6 +11,7 @@ declare namespace GM {
     type Value = string | boolean | number | object;
     type RequestMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'HEAD' | 'TRACE' | 'OPTIONS' | 'CONNECT';
     type RunAt = 'document_start' | 'document_end' | 'document_idle';
+    type USVString = string;
 
     interface InfoPlatform {
         os: 'mac' | 'win' | 'android' | 'cros' | 'linux' | 'openbsd' | 'fuchsia';
@@ -43,10 +44,6 @@ declare namespace GM {
         injectInto: 'page';
         namespace: string;
         metadata: string;
-    }
-
-    interface Headers {
-        [header: string]: string;
     }
 
     interface XMLRequest {
@@ -108,55 +105,49 @@ declare namespace GM {
     }
 
     interface FetchRequest {
-        /** The request method */
+        /** @default 'GET' */
         method?: RequestMethod;
         /** A set of headers to include in the request */
-        headers?: Headers;
-        /** Any body that you want to add to your request */
-        body?: XMLHttpRequestBodyInit;
-        /** The mode you want to use for the request */
+        headers?: HeadersInit;
+        body?: XMLHttpRequestBodyInit | USVString;
         mode?: RequestMode;
-        /** The request credentials you want to use for the request */
         credentials?: RequestCredentials;
-        /** The cache mode you want to use for the request */
         cache?: RequestCache;
-        /** The redirect mode */
         redirect?: RequestRedirect;
-        /** A USVString */
+        /**
+         *  A USVString
+         * @default 'client'
+         */
         referrer?: 'no-referrer' | 'client' | URL;
-        /** Specifies the value of the referer HTTP header */
         referrerPolicy?: ReferrerPolicy;
         /** Contains the subresource integrity value of the request */
         integrity?: string;
-        /**
-         * The keepalive option can be used to allow the request to outlive the page.
-         * Fetch with the keepalive flag is a replacement for the Navigator.sendBeacon() API.
-         */
+        /** The keepalive option can be used to allow the request to outlive the page. */
         keepalive?: boolean;
         /**
          * An AbortSignal object instance;
          * allows you to communicate with a fetch request and abort it if desired via an AbortController
          */
         signal?: AbortSignal | string;
-        /** Any headers you want to add to your request */
-        responseType?: XMLHttpRequestResponseType;
+        /** @default 'text' */
+        responseType?: XMLHttpRequestResponseType | 'formData';
         /** If true, no cookie will be sent with the request. */
         anonymous?: boolean;
     }
 
     interface FetchResponse {
-        readonly headers: string;
+        readonly headers: Headers;
         readonly bodyUsed: boolean;
         readonly ok: boolean;
         readonly redirected: boolean;
         readonly status: number;
-        readonly statusText: 'OK';
-        readonly type: 'basic';
-        readonly url: URL;
+        readonly statusText: string;
+        readonly type: string;
+        readonly url: string;
 
         // One of the following properties based on responseType, if method is not HEAD
         readonly text?: string;
-        readonly json?: any;
+        readonly json?: JSON;
         readonly blob?: Blob;
         readonly arrayBuffer?: ArrayBuffer;
         readonly formData?: FormData;
@@ -303,11 +294,11 @@ declare var GM: {
      * {@link https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/fetch JavaScript Fetch API}
      * which provides the new Promise based interface for fetching resources (including
      * {@link https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy across the network}).
-     * It will seem familiar to anyone who has used XMLHttpRequest,
-     * but it provides a more powerful and flexible feature set
+     * It will seem familiar to anyone who has used
+     * XMLHttpRequest, but it provides a more powerful and flexible feature set
      * @see {@link https://erosman.github.io/support/content/help.html#fetch}
      */
-    fetch(url: string | URL, init?: GM.FetchRequest): Promise<GM.FetchResponse>;
+    fetch(url: string | URL, init?: GM.FetchRequest): Promise<Response>;
 
     /**
      * Given a defined `@resource`, this method fetches and returns the content of the url
