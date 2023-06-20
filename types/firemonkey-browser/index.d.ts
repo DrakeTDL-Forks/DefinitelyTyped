@@ -459,9 +459,11 @@ declare var GM: {
 
     /**
      * Opens the specified URL in a new tab.
+     * @param opt
+     * Open in background, defaults true
      * @see {@link https://erosman.github.io/support/content/help.html#openInTab}
      */
-    openInTab(url: string, openInBackground?: boolean): Promise<boolean>;
+    openInTab(url: string, opt?: boolean | { active: boolean }): Promise<boolean>;
 
     /**
      * utility function to create a shadow DOM popup blank element with animation that can be customized
