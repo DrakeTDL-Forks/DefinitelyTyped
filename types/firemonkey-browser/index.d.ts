@@ -33,8 +33,7 @@ declare namespace GM {
         namespace: string | null;
         /**
          * An object keyed by resource name.
-         * Each value is an object with keys `name` and `mimetype` and `url`
-         *  with string values.
+         * Each value is an object with keys `name` and `mimetype` and `url` with string values.
          */
         resources: {
             [resourceName: string]: {
@@ -52,8 +51,9 @@ declare namespace GM {
 
     interface XMLRequest<TContext = any> {
         /**
-         * The URL to make the request to. Must be an absolute URL, beginning
-         * with the scheme. May be relative to the current page.
+         * The URL to make the request to.
+         * Must be an absolute URL, beginning with the scheme.
+         * May be relative to the current page.
          */
         url: string | URL;
         /** String type of HTTP request to make (E.G. "GET", "POST") */
@@ -63,29 +63,21 @@ declare namespace GM {
         /**
          * Data to send in the request body. Usually for POST method requests.
          * If the data field contains form-encoded data, you usually must also
-         * set the header `'Content-Type': 'application/x-www-form-urlencoded'`
-         * in the `headers` field.
+         * set the header `'Content-Type': 'application/x-www-form-urlencoded'` in the `headers` field.
          */
         data?: string;
-        /**
-         * A MIME type to specify with the request (e.g.
-         * "text/html; charset=ISO-8859-1")
-         */
+        /** A MIME type to specify with the request (e.g. "text/html; charset=ISO-8859-1") */
         overrideMimeType?: string;
         /** User name to use for authentication purposes. */
         user?: string;
         /** Password to use for authentication purposes */
         password?: string;
-        /**
-         * The number of milliseconds to wait before terminating the call. Zero
-         * (the default) means wait forever.
-         */
+        /** The number of milliseconds to wait before terminating the call. Zero (the default) means wait forever. */
         timeout?: number;
         withCredentials?: boolean;
         responseType?: XMLHttpRequestResponseType;
         anonymous?: boolean;
 
-        /** Callback Functions */
         /** Will be called when the request has completed successfully */
         onload?(response: XMLResponse<TContext>): void;
         /** Will be called if an error occurs while processing the request */
@@ -129,13 +121,19 @@ declare namespace GM {
         referrerPolicy?: ReferrerPolicy;
         /** Contains the subresource integrity value of the request */
         integrity?: string;
-        /** The keepalive option can be used to allow the request to outlive the page. Fetch with the keepalive flag is a replacement for the Navigator.sendBeacon() API. */
+        /**
+         * The keepalive option can be used to allow the request to outlive the page.
+         * Fetch with the keepalive flag is a replacement for the Navigator.sendBeacon() API.
+         */
         keepalive?: boolean;
-        /** An AbortSignal object instance; allows you to communicate with a fetch request and abort it if desired via an AbortController */
+        /**
+         * An AbortSignal object instance;
+         * allows you to communicate with a fetch request and abort it if desired via an AbortController
+         */
         signal?: AbortSignal | string;
         /** Any headers you want to add to your request */
         responseType?: XMLHttpRequestResponseType;
-        /**  If true, no cookie will be sent with the request. */
+        /** If true, no cookie will be sent with the request. */
         anonymous?: boolean;
     }
 
@@ -149,7 +147,7 @@ declare namespace GM {
         readonly type: 'basic';
         readonly url: URL;
 
-        // plus one of the following properties based on responseType, if method is not HEAD
+        // One of the following properties based on responseType, if method is not HEAD
         readonly text?: string;
         readonly json?: any;
         readonly blob?: Blob;
@@ -166,19 +164,28 @@ declare var unsafeWindow: Window;
 
 /**
  * exports content script function to the page script's scope, so the page script can call it.
- * @param func The function to export.
- * @param targetScope The object to attach the function to. This does not have to be the global window object: it could be any other object in the target window, or an object created by the caller.
- * @param options.defineAs determines the name of the function in _targetScope_. If this is omitted, you need to assign the return value of exportFunction() to an object in the target scope.
- * @param options.allowCrossOriginArguments do not check that arguments to the exported function are subsumed by the caller: this allows the caller to pass objects with a different origin
- * into the exported function, which can then use its privileged status to make cross-origin requests with them
- * @returns A function which has been created in the target context.
- * @example // defines a function, then exports it to a content window
+ * @param func
+ * The function to export.
+ * @param targetScope
+ * The object to attach the function to. This does not have to be the global window object:
+ * it could be any other object in the target window, or an object created by the caller.
+ * @param options.defineAs
+ * determines the name of the function in _targetScope_.
+ * If this is omitted, you need to assign the return value of exportFunction() to an object in the target scope.
+ * @param options.allowCrossOriginArguments
+ * do not check that arguments to the exported function are subsumed by the
+ * caller: this allows the caller to pass objects with a different origin into the exported function,
+ * which can then use its privileged status to make cross-origin requests with them
+ * @returns
+ * A function which has been created in the target context.
+ * @example
+ * // defines a function, then exports it to a content window
  * exportFunction(notify, window, {defineAs: 'notify'});
- * @example // Instead of using defineAs, the script can assign the result of exportFunction to an object in the target scope
+ * @example
+ * // Instead of using defineAs, the script can assign the result of exportFunction to an object in the target scope
  * window.notify = exportFunction(notify, window);
  * @see {@link https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Sharing_objects_with_page_scripts#exportfunction}
  */
-
 declare function exportFunction<T>(
     func: T,
     targetScope: object,
@@ -186,15 +193,23 @@ declare function exportFunction<T>(
 ): T;
 
 /**
- * This function provides a safe way to take an object defined in a privileged scope and create a structured clone of it in a less-privileged scope
- * @param obj The object to clone.
- * @param targetScope The object to attach the object to.
- * @param options.cloneFunctions if functions should be cloned. Cloned functions have the same semantics as functions exported using exportFunction()
- * @param options.wrapReflectors if objects reflected from C++, such as DOM objects, should be cloned.
- * @returns A reference to the cloned object.
- * @example // object without methods
+ * This function provides a safe way to take an object defined in a privileged scope and
+ * create a structured clone of it in a less-privileged scope.
+ * @param obj
+ * The object to clone.
+ * @param targetScope
+ * The object to attach the object to.
+ * @param options.cloneFunctions
+ * if functions should be cloned. Cloned functions have the same semantics as functions exported using exportFunction()
+ * @param options.wrapReflectors
+ * if objects reflected from C++, such as DOM objects, should be cloned.
+ * @returns
+ * A reference to the cloned object.
+ * @example
+ * // object without methods
  * unsafeWindow.messenger = cloneInto(obj, unsafeWindow);
- * @example // object with methods
+ * @example
+ * // object with methods
  * unsafeWindow.messenger = cloneInto(obj, unsafeWindow, {cloneFunctions: true});
  * @see {@link https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Sharing_objects_with_page_scripts#cloneinto}
  */
@@ -218,7 +233,11 @@ declare var GM: {
      * const elem = GM_addElement(parentElement.shadowRoot, 'iframe', {src: 'https://....'});
      * @example
      * // appending to DOM
-     * const elem = GM_addElement(parentElement, 'a', {href: 'https://....', title: 'Some title', target: '_blank', textContent: 'Some text'});
+     * const elem = GM_addElement(
+     *   parentElement,
+     *   'a',
+     *   {href: 'https://....', title: 'Some title', target: '_blank', textContent: 'Some text'}
+     * );
      * @see {@link https://erosman.github.io/support/content/help.html#addElement}
      */
     addElement(tagName: string, attributes: object): HTMLElement | void;
@@ -233,7 +252,7 @@ declare var GM: {
      * GM_addScript(js);
      * @example
      * function someFunc() {
-     *   ...
+     *   sayHello() { alert('Hello, world! (named)')}
      * }
      * GM.addScript('(' + someFunc + ')();');
      * @see {@link https://erosman.github.io/support/content/help.html#addScript}
@@ -273,9 +292,12 @@ declare var GM: {
     download(url: string, filename?: string): Promise<number | undefined>;
 
     /**
-     * An API is based on the {@link https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/fetch JavaScript Fetch API}
-     * which provides the new Promise based interface for fetching resources (including {@link https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy across the network}).
-     * It will seem familiar to anyone who has used XMLHttpRequest, but it provides a more powerful and flexible feature set
+     * An API is based on the
+     * {@link https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/fetch JavaScript Fetch API}
+     * which provides the new Promise based interface for fetching resources (including
+     * {@link https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy across the network}).
+     * It will seem familiar to anyone who has used XMLHttpRequest,
+     * but it provides a more powerful and flexible feature set
      * @see {@link https://erosman.github.io/support/content/help.html#fetch}
      */
     fetch(url: string | URL, init?: GM.FetchRequest): Promise<GM.FetchResponse>;
@@ -307,23 +329,23 @@ declare var GM: {
     import(
         url: string,
         option?: {
-        type:
-            | "javascript"
-            | "PSL"
-            | "cjs"
-            | "mjs"
-            | "json"
-            | "css"
-            | "text"
-            | "gif"
-            | "jpeg"
-            | "jpg"
-            | "png"
-            | "webp"
-            | "html"
-            | "xhtml"
-            | "xml"
-            | "svg";
+            type:
+                | 'javascript'
+                | 'PSL'
+                | 'cjs'
+                | 'mjs'
+                | 'json'
+                | 'css'
+                | 'text'
+                | 'gif'
+                | 'jpeg'
+                | 'jpg'
+                | 'png'
+                | 'webp'
+                | 'html'
+                | 'xhtml'
+                | 'xml'
+                | 'svg';
         },
     ): Promise<Record<string, unknown> | undefined>;
 
@@ -332,18 +354,11 @@ declare var GM: {
      * @see {@link https://erosman.github.io/support/content/help.html#info}
      */
     info: {
-        /**
-         * The name of the user script engine handling this script's execution.
-         * The string `FireMonkey`
-         */
+        /** The name of the user script engine handling this script's execution. The string `FireMonkey` */
         scriptHandler: string;
         /** The version of FireMonkey, a string e.g. `2.60` */
         version: string;
-        /**
-         * A string, the entire literal Metadata Block (without the delimiters)
-         * for the currently running script
-         * In FireMonkey it's always null
-         */
+        /** A string, the entire literal Metadata Block (without the delimiters) for the currently running script. */
         scriptMetaStr: string | null;
         /** An object containing data about the currently running platform */
         platform: GM.PlatformInfo;
@@ -366,8 +381,7 @@ declare var GM: {
     log(...data: any[]): void;
 
     /**
-     * Displays a notification to the user, using the underlying operating
-     * system's notification mechanism
+     * Displays a notification to the user, using the underlying operating system's notification mechanism
      * @see {@link https://erosman.github.io/support/content/help.html#notification}
      */
     notification(text: string | { text: string; image?: Blob | string }): Promise<string>;
@@ -435,8 +449,7 @@ declare var GM: {
 
     /**
      * Allows user script authors to persist simple values across page loads and
-     * across origins.
-     * Strings, booleans, and integers are currently the only allowed data types.
+     * across origins. Strings, booleans, and integers are currently the only allowed data types.
      * @see {@link https://erosman.github.io/support/content/help.html#setValue}
      */
     setValue(key: string, value: GM.Value): Promise<void>;
@@ -448,8 +461,8 @@ declare var GM: {
     unregisterMenuCommand(name: string): void;
 
     /**
-     * Performs a similar function to the standard XMLHttpRequest object, but
-     * allows these requests to cross the {@link https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy same origin policy} boundaries.
+     * Performs a similar function to the standard XMLHttpRequest object, but allows these requests to cross the
+     * {@link https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy same origin policy} boundaries.
      * @see {@link https://erosman.github.io/support/content/help.html#xmlHttpRequest}
      */
     xmlHttpRequest(init: GM.XMLRequest): Promise<void>;
@@ -477,8 +490,7 @@ declare var GM_unregisterMenuCommand: typeof GM.unregisterMenuCommand;
 declare var GM_xmlHttpRequest: typeof GM.xmlHttpRequest;
 
 /**
- * Allows user script authors to persist simple values across page loads and
- * across origins.
+ * Allows user script authors to persist simple values across page loads and across origins.
  * Strings, booleans, and integers are currently the only allowed data types.
  * @see {@link https://erosman.github.io/support/content/help.html#setValue}
  */
