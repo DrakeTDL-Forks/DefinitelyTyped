@@ -2,7 +2,7 @@
 // Project: https://github.com/erosman/support/tree/FireMonkey
 // Definitions by: DrakeTDL <https://github.com/DrakeTDL>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-// TypeScript Version: 4.4
+// TypeScript Version: 5.1
 //
 // This definition is based on the API reference of FireMonkey
 // https://erosman.github.io/support/content/help.html#Script-API
@@ -10,20 +10,21 @@
 declare namespace GM {
     type Value = string | boolean | number | object;
     type RequestMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'HEAD' | 'TRACE' | 'OPTIONS' | 'CONNECT';
+    type RunAt = 'document_start' | 'document_end' | 'document_idle';
 
-    interface PlatformInfo {
+    interface InfoPlatform {
         os: 'mac' | 'win' | 'android' | 'cros' | 'linux' | 'openbsd' | 'fuchsia';
         arch: 'arm' | 'x86-32' | 'x86-64';
     }
 
-    interface BrowserInfo {
+    interface InfoBrowser {
         name: 'Firefox';
-        vendor: 'Mozilla';
+        vendor: string;
         version: string;
         buildID: string;
     }
 
-    interface ScriptInfo {
+    interface InfoScript {
         name: string;
         version: string;
         description: string;
@@ -33,19 +34,15 @@ declare namespace GM {
         excludes: string[];
         includeGlobs: string[];
         excludeGlobs: string[];
-        'run-at': 'document_start' | 'document_end' | 'document_idle';
-        namespace: string | null;
-        /**
-         * An object keyed by resource name.
-         * Each value is an object with keys `name` and `mimetype` and `url` with string values.
-         */
-        resources: {
-            [resourceName: string]: {
-                name: string;
-                mimetype: string;
-                url: string;
-            };
-        };
+        grant: string[];
+        require: string[];
+        /** key/pair consisting of ResourceURL/ResourceName  */
+        resources: Record<string, string>;
+        'run-at': RunAt;
+        runAt: RunAt;
+        injectInto: 'page';
+        namespace: string;
+        metadata: string;
     }
 
     interface Headers {
@@ -90,7 +87,7 @@ declare namespace GM {
         /** Will be called when the request is aborted */
         onabort?(response: XMLResponse<TContext>): void;
     }
-    
+
     interface XMLResponse<TContext> {
         readonly readyState: 1 | 2 | 3 | 4;
         readonly response: any;
@@ -354,22 +351,28 @@ declare var GM: {
     ): Promise<Record<string, unknown> | undefined>;
 
     /**
-     * An object container info about the running script.
+     * An object containing info about FireMonkey and the current running script.
      * @see {@link https://erosman.github.io/support/content/help.html#info}
      */
     info: {
-        /** The name of the user script engine handling this script's execution. The string `FireMonkey` */
-        scriptHandler: string;
+        /**
+         * The name of the user script engine handling this script's execution.
+         * The string `FireMonkey`
+         */
+        scriptHandler: 'FireMonkey';
         /** The version of FireMonkey, a string e.g. `2.60` */
         version: string;
-        /** A string, the entire literal Metadata Block (without the delimiters) for the currently running script. */
-        scriptMetaStr: string | null;
         /** An object containing data about the currently running platform */
-        platform: GM.PlatformInfo;
+        platform: GM.InfoPlatform;
         /** An object containing data about the currently running browser */
-        browser: GM.BrowserInfo;
+        browser: GM.InfoBrowser;
+        /**
+         * A string, the entire literal Metadata Block (without the delimiters)
+         * for the currently running script
+         */
+        scriptMetaStr: string;
         /** An object containing data about the currently running script */
-        script: GM.ScriptInfo;
+        script: GM.InfoScript;
     };
 
     /**
