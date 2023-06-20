@@ -49,46 +49,51 @@ declare namespace GM {
         [header: string]: string;
     }
 
-    interface XMLRequest<TContext = any> {
+    interface XMLRequest {
         /**
-         * The URL to make the request to.
-         * Must be an absolute URL, beginning with the scheme.
-         * May be relative to the current page.
+         * The URL to make the request to. May be relative to the current page.
          */
         url: string | URL;
-        /** String type of HTTP request to make (E.G. "GET", "POST") */
         method?: RequestMethod;
         /** A set of headers to include in the request */
-        headers?: Headers;
+        headers?: HeadersInit;
         /**
          * Data to send in the request body. Usually for POST method requests.
          * If the data field contains form-encoded data, you usually must also
-         * set the header `'Content-Type': 'application/x-www-form-urlencoded'` in the `headers` field.
+         * set the header `'Content-Type': 'application/x-www-form-urlencoded'`
+         * in the `headers` field.
          */
-        data?: string;
-        /** A MIME type to specify with the request (e.g. "text/html; charset=ISO-8859-1") */
+        data?: XMLHttpRequestBodyInit;
+        /**
+         * A MIME type to specify with the request (e.g.
+         * "text/html; charset=ISO-8859-1")
+         */
         overrideMimeType?: string;
         /** User name to use for authentication purposes. */
         user?: string;
         /** Password to use for authentication purposes */
         password?: string;
-        /** The number of milliseconds to wait before terminating the call. Zero (the default) means wait forever. */
+        /**
+         * The number of milliseconds to wait before terminating the call. Zero
+         * (the default) means wait forever.
+         */
         timeout?: number;
         withCredentials?: boolean;
         responseType?: XMLHttpRequestResponseType;
+        /** if true, no cookie will be sent with the request */
         anonymous?: boolean;
 
-        /** Will be called when the request has completed successfully */
-        onload?(response: XMLResponse<TContext>): void;
-        /** Will be called if an error occurs while processing the request */
-        onerror?(response: XMLResponse<TContext>): void;
-        /** Will be called if/when the request times out */
-        ontimeout?(response: XMLResponse<TContext>): void;
-        /** Will be called when the request is aborted */
-        onabort?(response: XMLResponse<TContext>): void;
+        /** Called when the request has completed successfully */
+        onload?(response: XMLResponse): void;
+        /** Called if an error occurs while processing the request */
+        onerror?(response: XMLResponse): void;
+        /** Called if/when the request times out */
+        ontimeout?(response: XMLResponse): void;
+        /** Called when the request is aborted */
+        onabort?(response: XMLResponse): void;
     }
 
-    interface XMLResponse<TContext> {
+    interface XMLResponse {
         readonly readyState: 1 | 2 | 3 | 4;
         readonly response: any;
         readonly responseHeaders: string;
@@ -98,6 +103,7 @@ declare namespace GM {
         readonly responseXML: Document | undefined;
         readonly status: number;
         readonly statusText: string;
+        /** clone of responseURL for GM|TM|VM compatibility */
         readonly finalUrl: string;
     }
 
@@ -468,11 +474,12 @@ declare var GM: {
     unregisterMenuCommand(name: string): void;
 
     /**
-     * Performs a similar function to the standard XMLHttpRequest object, but allows these requests to cross the
+     * Performs a similar function to the standard XMLHttpRequest object, but
+     * allows these requests to cross the
      * {@link https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy same origin policy} boundaries.
      * @see {@link https://erosman.github.io/support/content/help.html#xmlHttpRequest}
      */
-    xmlHttpRequest(init: GM.XMLRequest): Promise<void>;
+    xmlHttpRequest(init: GM.XMLRequest): void;
 };
 
 //#endregion
