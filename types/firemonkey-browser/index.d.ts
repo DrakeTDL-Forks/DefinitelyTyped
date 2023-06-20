@@ -341,9 +341,11 @@ declare var GM: {
 
     /**
      * Simple file download from the Internet.
+     * @param url
+     * Must be an absolute/relative path to the file (not on ftp/ftps).
      * @see {@link https://erosman.github.io/support/content/help.html#download}
      */
-    download(url: string, filename?: string): Promise<number | undefined>;
+    download(url: URL | string, filename?: string): Promise<number | undefined>;
 
     /**
      * An API is based on the
