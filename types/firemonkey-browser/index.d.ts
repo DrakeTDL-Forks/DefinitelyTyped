@@ -12,6 +12,34 @@ declare namespace GM {
     type RequestMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'HEAD' | 'TRACE' | 'OPTIONS' | 'CONNECT';
     type RunAt = 'document_start' | 'document_end' | 'document_idle';
     type USVString = string;
+    type PopupAnimationType =
+        | 'center'
+        | 'slide-left'
+        | 'slide-right'
+        | 'slide-top'
+        | 'slide-bottom'
+        | 'panel-left'
+        | 'panel-right'
+        | 'panel-top'
+        | 'panel-bottom';
+
+    interface PopupElement {
+        /** Used to change the popup overall style. */
+        style: Element;
+        /** Used to change the popup overall style. */
+        host: Element;
+        /** Used to style the main content. */
+        content: Element;
+        /** Styles the close button */
+        close: Element;
+        /** Adds styles to the popup overall style. */
+        addStyle: (css: string) => { new (): PopupElement };
+        /** Adds additional element content to popup box */
+        append: (...content: Node[]) => { new (): PopupElement };
+        show: () => { new (): PopupElement };
+        hide: () => { new (): PopupElement };
+        remove: () => void;
+    }
 
     interface InfoPlatform {
         os: 'mac' | 'win' | 'android' | 'cros' | 'linux' | 'openbsd' | 'fuchsia';
@@ -411,34 +439,10 @@ declare var GM: {
     openInTab(url: string, openInBackground?: boolean): Promise<boolean>;
 
     /**
-     * A utility to create popups on the webpage.
+     * utility function to create a shadow DOM popup blank element with animation that can be customized
      * @see {@link https://erosman.github.io/support/content/help.html#popup}
      */
-    popup(options?: {
-        type?:
-            | 'center'
-            | 'slide-left'
-            | 'slide-right'
-            | 'slide-top'
-            | 'slide-bottom'
-            | 'panel-left'
-            | 'panel-right'
-            | 'panel-top'
-            | 'panel-bottom';
-        modal?: boolean;
-    }): {
-        /** Can be used to add style to the popup */
-        addStyle(css: string): void;
-        /** Can be used to add multiple HTML element(s) to the popup */
-        append(...data: HTMLElement[]): void;
-        show(): void;
-        hide(): void;
-        remove(): void;
-        host: HTMLElement;
-        style: HTMLElement;
-        content: HTMLElement;
-        close: HTMLElement;
-    };
+    popup(options?: { type: GM.PopupAnimationType; modal: boolean }): GM.PopupElement;
 
     /**
      * Adds an item to the User Script Commands menu.
