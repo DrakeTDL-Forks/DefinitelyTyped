@@ -320,6 +320,20 @@ declare var GM: {
     ): ListenerId;
 
     /**
+     * Utility function to first convert the string/object to a blob and
+     * then to a string containing a URL representing the object given in the
+     * parameter. The API was created to facilitate GM import.
+     * @param option.type
+     * Requires MIMI type value. Defaults to 'text/javascript'
+     * @returns
+     *  A string containing an object URL that can be used to reference the contents of the specified source object.
+     * @see {@link https://erosman.github.io/support/content/help.html#createObjectURL}
+     * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL_static}
+     * @experimental
+     */
+    createObjectURL(val: string, option?: { type: string }): string;
+
+    /**
      * Deletes an existing name / value pair from storage.
      * @see {@link https://erosman.github.io/support/content/help.html#deleteValue}
      */
