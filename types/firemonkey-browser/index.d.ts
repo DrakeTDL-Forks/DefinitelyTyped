@@ -340,6 +340,7 @@ declare var GM: {
      * @see {@link https://erosman.github.io/support/content/help.html#deleteValue}
      */
     deleteValue(key: string): Promise<void>;
+    deleteValue(key: string): void;
 
     /**
      * Simple file download from the Internet.
@@ -367,6 +368,7 @@ declare var GM: {
      * @see {@link https://erosman.github.io/support/content/help.html#getResourceText}
      */
     getResourceText(resourceName: string): Promise<string>;
+    getResourceText(resourceName: string): string;
 
     /**
      * @returns
@@ -374,13 +376,16 @@ declare var GM: {
      * @see {@link https://erosman.github.io/support/content/help.html#getResourceUrl}
      */
     getResourceUrl(resourceName: string): Promise<string | undefined>;
+    getResourceUrl(resourceName: string): string | undefined;
 
     /**
      * Retrieves a value that was set with `GM.setValue`
      * @see {@link https://erosman.github.io/support/content/help.html#getValue}
      */
     getValue(key: string): Promise<GM.Value>;
+    getValue(key: string): GM.Value;
     getValue<TValue = GM.Value>(key: string, defaultValue?: TValue): Promise<TValue>;
+    getValue<TValue = GM.Value>(key: string, defaultValue?: TValue): TValue;
 
     /**
      * Import internal or remote dependency-free modules
@@ -440,6 +445,7 @@ declare var GM: {
      * @see {@link https://erosman.github.io/support/content/help.html#listValues}
      */
     listValues(): Promise<string[]>;
+    listValues(): string[];
 
     /**
      * The API is added for convenience.
@@ -504,6 +510,7 @@ declare var GM: {
      * @see {@link https://erosman.github.io/support/content/help.html#setValue}
      */
     setValue(key: string, value: GM.Value): Promise<void>;
+    setValue(key: string, value: GM.Value): void;
 
     /**
      * removes an item from the User Script Commands menu.
@@ -528,9 +535,15 @@ declare var GM_addElement: typeof GM.addElement;
 declare var GM_addScript: typeof GM.addScript;
 declare var GM_addStyle: typeof GM.addStyle;
 declare var GM_addValueChangeListener: typeof GM.addValueChangeListener;
+declare var GM_createObjectURL: typeof GM.createObjectURL;
+declare var GM_deleteValue: typeof GM.deleteValue;
 declare var GM_download: typeof GM.download;
 declare var GM_fetch: typeof GM.fetch;
+declare var GM_getResourceText: typeof GM.getResourceText;
+declare var GM_getResourceURL: typeof GM.getResourceUrl;
+declare var GM_getValue: typeof GM.getValue;
 declare var GM_info: typeof GM.info;
+declare var GM_listValues: typeof GM.listValues;
 declare var GM_log: typeof GM.log;
 declare var GM_notification: typeof GM.notification;
 declare var GM_openInTab: typeof GM.openInTab;
@@ -538,45 +551,8 @@ declare var GM_popup: typeof GM.popup;
 declare var GM_registerMenuCommand: typeof GM.registerMenuCommand;
 declare var GM_removeValueChangeListener: typeof GM.removeValueChangeListener;
 declare var GM_setClipboard: typeof GM.setClipboard;
+declare var GM_setValue: typeof GM.setValue;
 declare var GM_unregisterMenuCommand: typeof GM.unregisterMenuCommand;
-declare var GM_xmlHttpRequest: typeof GM.xmlHttpRequest;
-
-/**
- * Allows user script authors to persist simple values across page loads and across origins.
- * Strings, booleans, and integers are currently the only allowed data types.
- * @see {@link https://erosman.github.io/support/content/help.html#setValue}
- */
-declare function GM_setValue(key: string, value: GM.Value): void;
-
-/**
- * Retrieves an array of preference names that this script has stored
- * @see {@link https://erosman.github.io/support/content/help.html#listValues}
- */
-declare function GM_listValues(): string[];
-
-/**
- * Deletes an existing name / value pair from storage.
- * @see {@link https://erosman.github.io/support/content/help.html#deleteValue}
- */
-declare function GM_deleteValue(key: string): void;
-
-/**
- * Retrieves a value that was set with `GM.setValue`
- * @see {@link https://erosman.github.io/support/content/help.html#getValue}
- */
-declare function GM_getValue(key: string): GM.Value;
-declare function GM_getValue<TValue = GM.Value>(key: string, defaultValue?: TValue): TValue;
-
-/**
- * Given a defined `@resource`, this method fetches and returns the content of the url
- * @see {@link https://erosman.github.io/support/content/help.html#getResourceText}
- */
-declare function GM_getResourceText(resourceName: string): string | void;
-
-/**
- * Given a defined `@resource`, this method returns it as a URL
- * @see {@link https://erosman.github.io/support/content/help.html#getResourceUrl}
- */
-declare function GM_getResourceUrl(resourceName: string): string | void;
+declare var GM_xmlhttpRequest: typeof GM.xmlHttpRequest;
 
 //#endregion
