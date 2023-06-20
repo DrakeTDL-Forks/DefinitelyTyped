@@ -8,6 +8,9 @@
 // https://erosman.github.io/support/content/help.html#Script-API
 
 declare namespace GM {
+    type Value = string | boolean | number | object;
+    type RequestMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'HEAD' | 'TRACE' | 'OPTIONS' | 'CONNECT';
+
     interface PlatformInfo {
         os: 'mac' | 'win' | 'android' | 'cros' | 'linux' | 'openbsd' | 'fuchsia';
         arch: 'arm' | 'x86-32' | 'x86-64';
@@ -19,6 +22,7 @@ declare namespace GM {
         version: string;
         buildID: string;
     }
+
     interface ScriptInfo {
         name: string;
         version: string;
@@ -43,8 +47,7 @@ declare namespace GM {
             };
         };
     }
-    type Value = string | boolean | number | object;
-    type RequestMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'HEAD' | 'TRACE' | 'OPTIONS' | 'CONNECT';
+
     interface Headers {
         [header: string]: string;
     }
@@ -87,6 +90,7 @@ declare namespace GM {
         /** Will be called when the request is aborted */
         onabort?(response: XMLResponse<TContext>): void;
     }
+    
     interface XMLResponse<TContext> {
         readonly readyState: 1 | 2 | 3 | 4;
         readonly response: any;
