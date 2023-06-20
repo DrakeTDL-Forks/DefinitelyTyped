@@ -365,7 +365,8 @@ declare var GM: {
     getResourceText(resourceName: string): Promise<string>;
 
     /**
-     * Given a defined `@resource`, this method returns it as a URL
+     * @returns
+     * `@resource` url as string
      * @see {@link https://erosman.github.io/support/content/help.html#getResourceUrl}
      */
     getResourceUrl(resourceName: string): Promise<string | undefined>;
