@@ -183,7 +183,9 @@ declare namespace GM {
 }
 
 /**
- * Window object of the content page where the user script is running on.
+ * An alias for `window.wrappedJSObject`.
+ * @description
+ * You can also use `window.wrappedJSObject` or `window.eval()` to access page JavaScript globals or to create function & objects in `page` context.
  * @see {@link https://erosman.github.io/support/content/help.html#unsafeWindow}
  */
 declare var unsafeWindow: Window;
