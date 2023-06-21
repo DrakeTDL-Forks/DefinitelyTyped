@@ -343,6 +343,13 @@ declare var GM: {
     deleteValue(key: string): void;
 
     /**
+     * Deletes an existing name / value pair from storage.
+     * @see {@link https://erosman.github.io/support/content/help.html#deleteValue}
+     */
+    deleteValues(key: string[]): Promise<void>;
+    deleteValues(key: string[]): void;
+
+    /**
      * Simple file download from the Internet.
      * @param url
      * Must be an absolute/relative path to the file (not on ftp/ftps).
@@ -380,12 +387,31 @@ declare var GM: {
 
     /**
      * Retrieves a value that was set with `GM.setValue`
+     * @param key
+     * if passed null/undefined as key, the entire storage will be returned
      * @see {@link https://erosman.github.io/support/content/help.html#getValue}
      */
     getValue(key: string): Promise<GM.Value>;
     getValue(key: string): GM.Value;
     getValue<TValue = GM.Value>(key: string, defaultValue?: TValue): Promise<TValue>;
     getValue<TValue = GM.Value>(key: string, defaultValue?: TValue): TValue;
+
+    /**
+     * Retrieves a value that was set with `GM.setValue`
+     * @param key
+     * If an empty array/object is passed, an empty object is returned
+     * @example
+     * // get values
+     * const values = await GM.getValue([key, key2]);
+     * @example
+     * // get values with default
+     * const values = await GM.getValue({key: default, key2: default2});
+     * @see {@link https://erosman.github.io/support/content/help.html#getValue}
+     */
+    getValues(key: string[]): Promise<GM.Value> | GM.Value;
+    getValues(key: string[]): GM.Value;
+    getValues<defaultValue extends GM.Value>(key: { [key: string]: defaultValue }): Promise<GM.Value | defaultValue>;
+    getValues<defaultValue extends GM.Value>(key: { [key: string]: defaultValue }): GM.Value | defaultValue;
 
     /**
      * Import internal or remote dependency-free modules
@@ -511,10 +537,20 @@ declare var GM: {
     /**
      * Allows user script authors to persist simple values across page loads and
      * across origins. Strings, booleans, and integers are currently the only allowed data types.
+     * If an item already exists, its value will be updated.
      * @see {@link https://erosman.github.io/support/content/help.html#setValue}
      */
     setValue(key: string, value: GM.Value): Promise<void>;
     setValue(key: string, value: GM.Value): void;
+
+    /**
+     * Allows user script authors to persist simple values across page loads and
+     * across origins. Strings, booleans, and integers are currently the only allowed data types.
+     * If an item already exists, its value will be updated.
+     * @see {@link https://erosman.github.io/support/content/help.html#setValue}
+     */
+    setValues(key: { [key: string]: GM.Value }): Promise<void>;
+    setValues(key: { [key: string]: GM.Value }): void;
 
     /**
      * removes an item from the User Script Commands menu.
@@ -541,11 +577,13 @@ declare var GM_addStyle: typeof GM.addStyle;
 declare var GM_addValueChangeListener: typeof GM.addValueChangeListener;
 declare var GM_createObjectURL: typeof GM.createObjectURL;
 declare var GM_deleteValue: typeof GM.deleteValue;
+declare var GM_deleteValues: typeof GM.deleteValues;
 declare var GM_download: typeof GM.download;
 declare var GM_fetch: typeof GM.fetch;
 declare var GM_getResourceText: typeof GM.getResourceText;
 declare var GM_getResourceURL: typeof GM.getResourceUrl;
 declare var GM_getValue: typeof GM.getValue;
+declare var GM_getValues: typeof GM.getValues;
 declare var GM_info: typeof GM.info;
 declare var GM_listValues: typeof GM.listValues;
 declare var GM_log: typeof GM.log;
@@ -556,6 +594,7 @@ declare var GM_registerMenuCommand: typeof GM.registerMenuCommand;
 declare var GM_removeValueChangeListener: typeof GM.removeValueChangeListener;
 declare var GM_setClipboard: typeof GM.setClipboard;
 declare var GM_setValue: typeof GM.setValue;
+declare var GM_setValues: typeof GM.setValues;
 declare var GM_unregisterMenuCommand: typeof GM.unregisterMenuCommand;
 declare var GM_xmlhttpRequest: typeof GM.xmlHttpRequest;
 
